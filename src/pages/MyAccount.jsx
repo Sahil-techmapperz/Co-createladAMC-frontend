@@ -12,6 +12,8 @@ import Icon8 from '../assets/Icon.png';
 import Sidebar from '../components/Sidebar.jsx';
 import MobileNav from '../components/Mobile/MobileNav.jsx';
 import Navbar from '../components/Navbar.jsx';
+import { Link } from 'react-router-dom';
+
 
 const MyAccount = () => {
     return (
@@ -21,19 +23,14 @@ const MyAccount = () => {
                 <Sidebar />
             </div>
             <div className='myAccount_body  ml-[30px]'>
-
-                <div className="sm:hidden  ml-[10px]">  <MobileNav /> </div>
-
-                <div className="max-sm:hidden" >
                 <Navbar Navtext={"My Account"} />
-                </div>
-
                 <div className='myAccount_main mt-[40px]'>
-                    {/* <p>Dashboard > Account Settings</p> */}
                     <div>
+                        <Link to={"/PersonalInfo"}>
                         <img src={Icon8} />
                         <p className='my_account_main_heading'>Personal info</p>
                         <p>Provide personal details and how we can reach you</p>
+                        </Link>
                     </div>
 
                     <div>

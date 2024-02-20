@@ -53,6 +53,8 @@ nav {
 
 
 .myAccount_main {
+    height: 85vh;
+    overflow-x: auto;
     width: 100%;
     padding: 15px;
     display: grid !important;
@@ -86,16 +88,26 @@ nav {
 }
 
 @media (max-width: 768px) {
+
     .myAccount_main {
-        display: flex !important;
-    flex-direction: column !important;
-
+        height: 85vh;
+        overflow-x: auto;
+        width: 100%;
+        padding: 15px;
+        display: grid !important;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10%;
+        margin-top: 25px;
     }
-
-    .myAccount_main div{
-        margin-top: 30px !important;
-        margin-left: 25px;
-        width: 330px;
+    
+    
+    .myAccount_main div {
+        /* width: 400px; */
+        height: 200px;
+        box-shadow: 0px 6.67557954788208px 17.801546096801758px 0px #0000001F;
+        gap: 20px;
+        border-radius: 20px;
+        padding: 16px 20px 0;
     }
 
 

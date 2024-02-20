@@ -24,12 +24,9 @@ function NoticeBoard() {
             <div className="max-sm:hidden  ">
                 <Sidebar />
             </div>
-            <div className='notice_board_body_main  ml-[30px]' >
-
-                <div className="sm:hidden  ml-[10px]">  <MobileNav /> </div>
-                <div className="max-sm:hidden mt-0">
+            <div className='notice_board_body_main  ml-[30px]' > 
+             
                     <Navbar Board Navtext={"Notice Board"} />
-                </div>
 
                 <div className='notice_board_main_container '>
 

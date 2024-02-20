@@ -120,6 +120,25 @@ nav {
     gap: 10px;
 }
 
+.PersonalInfoBody {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.PersonalEdit button:hover {
+    background-color: #f0f0f0; /* Example hover effect */
+    cursor: pointer;
+}
+
+.PersonalDivider {
+    height: 1px;
+    background-color: #e0e0e0;
+    margin: 10px 0;
+}
+
+
 
 @media (max-width: 768px) {
     .PersonalBody {

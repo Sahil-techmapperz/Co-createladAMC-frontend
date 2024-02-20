@@ -1,5 +1,3 @@
-// Assuming this is in SessionCalendar.js
-
 import React, { useEffect, useState } from "react";
 import { Scheduler } from "@bitnoi.se/react-scheduler";
 
@@ -32,25 +30,35 @@ export default function SessionCalendar() {
   }, []);
 
   return (
-    <div>
-      <h1>Session Calendar</h1>
-      <Scheduler
-        isLoading={isLoading}
-        data={data}
-        onItemClick={(clickedItem) => console.log(clickedItem)}
-        onFilterData={() => {
-          // Implement your filtering logic here
-        }}
-        onClearFilterData={() => {
-          // Implement logic to clear filters
-        }}
-        config={{
-          filterButtonState: 0,
-          zoom: 0,
-          lang: "en",
-          maxRecordsPerPage: 20,
-        }}
-      />
+    <div className="container mx-auto p-4">
+      <h1 className="text-xl font-bold text-center mb-4">Session Calendar</h1>
+      <div className="bg-white shadow-md rounded-lg overflow-hidden">
+        {isLoading ? (
+          <div className="p-4 flex justify-center items-center">
+            <div className="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full" role="status">
+              <span className="visually-hidden">Loading...</span>
+            </div>
+          </div>
+        ) : (
+          <Scheduler
+            isLoading={isLoading}
+            data={data}
+            onItemClick={(clickedItem) => console.log(clickedItem)}
+            onFilterData={() => {
+              // Implement your filtering logic here
+            }}
+            onClearFilterData={() => {
+              // Implement logic to clear filters
+            }}
+            config={{
+              filterButtonState: 0,
+              zoom: 0,
+              lang: "en",
+              maxRecordsPerPage: 20,
+            }}
+          />
+        )}
+      </div>
     </div>
   );
 }

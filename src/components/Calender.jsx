@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
-import FullCalendar from '@fullcalendar/react'
-import dayGridPlugin from '@fullcalendar/daygrid' // a plugin!
-import '../components/Sidebar.jsx';
+import React, { useState } from 'react';
+import FullCalendar from '@fullcalendar/react';
+import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin!
 import Sidebar from '../components/Sidebar.jsx';
-import '../CSS/Calender.css';
+import '../CSS/Calender.css'; // Make sure to adapt or remove custom styles if they conflict with Tailwind
 import MobileNav from './Mobile/MobileNav.jsx';
 import Navbar from './Navbar.jsx';
 
@@ -12,38 +11,26 @@ const Calender = () => {
     { title: 'event 1', date: '2023-12-01' },
     { title: 'event 2', date: '2023-04-02' }
   ]);
-  return (
 
-    <div className='calender_body'>
-      <div className="max-sm:hidden  ">
+  return (
+    <div className="flex flex-col md:flex-row">
+      <div className="hidden md:block md:w-1/4 xl:w-1/5">
         <Sidebar />
       </div>
-
-
-
-
-
-      <div className='calender_main ml-[30px]'>
-
-
-        <div className="sm:hidden  ml-[10px]">  <MobileNav /> </div>
-
-        <div className="max-sm:hidden" >
-          <Navbar Navtext={"Calender"} />
+      <div className="flex-1">
+          <Navbar Navtext="Calendar" />
+        <h2 className="text-xl text-center font-bold text-gray-900 mt-4 mx-4">SCHEDULE</h2>
+        <div className="p-4 h-[80vh] overflow-x-auto">
+          <FullCalendar
+            plugins={[dayGridPlugin]}
+            initialView="dayGridMonth"
+            weekends={false}
+            events={events}
+          />
         </div>
-
-
-
-        <p className='calender_schedule'>SCHEDULE</p>
-        <FullCalendar
-          plugins={[dayGridPlugin]}
-          initialView="dayGridMonth"
-          weekends={false}
-          events={events}
-        />
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Calender;

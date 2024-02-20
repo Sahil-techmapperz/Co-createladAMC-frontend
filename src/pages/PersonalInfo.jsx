@@ -1,135 +1,56 @@
-import React from 'react'
+import React from 'react';
 import Sidebar from '../components/Sidebar.jsx';
-import '../CSS/PersonalInfo.css'
-import { FaGreaterThan } from "react-icons/fa";
+import Navbar from '../components/Navbar.jsx';
 import Port1 from '../assets/svg.png';
 import Port2 from '../assets/svg (1).png';
-import Port3 from '../assets/svg (2).png'
-import MobileNav from '../components/Mobile/MobileNav.jsx';
-import Navbar from '../components/Navbar.jsx';
+import Port3 from '../assets/svg (2).png';
+import PersonalEdit from '../components/PersonalEdit.jsx';
 
 const PersonalInfo = () => {
     return (
-        <div className='PersonalInfoBody'>
-            <div className="max-sm:hidden  ml-[30px]">
+        <div className='flex gap-2'>
+            <div className="hidden sm:block ml-8">
                 <Sidebar />
             </div>
-            <div className='PersonalInfoMain'>
-                <div className="sm:hidden  ml-[10px]">  <MobileNav /> </div>
-
-
-                <div className="max-sm:hidden" >
-
+            <div className='flex flex-col w-full h-[100vh] overflow-y-auto'>
                 <Navbar Navtext={"Personal Info"} />
-
-                    {/* <nav>
-
-                        <div className='Navbarleft'>
-
-                            <p className='navHeader'>Dashboard</p>
-                            <input className='myAccountSearch' placeholder='Search Here' />
-                        </div>
-                        <div className='Navbarright'>
-                            <i className="fa-solid fa-gear"></i>
-                            <i className="fa-solid fa-bell"></i>
-                            <i className="fa-solid fa-right-from-bracket"></i>
-                        </div>
-                    </nav> */}
-                </div>
-                <div className='PersonalInfoMainBody'>
-                    <div className='PersonalBreadCramp'>
-                        <p><b>My Account /</b></p>
-                        {/* <FaGreaterThan /> */}
-
-                        <p><b>Personal Info</b></p>
+                <div className='p-4'>
+                    <div className='flex mb-4'>
+                        <p className='font-bold text-sm mr-2'>My Account /</p>
+                        <p className='font-bold text-sm'>Personal Info</p>
                     </div>
-                    <p className='PersonalHeader'>Personal Info</p>
-
-
-                    <div className='PersonalBody'>
-
-                        <div className='PersonalBodyLeft'>
-                            <div className='PersonalBodyLeft1'>
-                                <div className='PersonalEdit'>
-                                    <div className='PersonalEdit1'>
-                                        <p><b>Legal name</b></p>
-                                        <p className='breckPara'>Peter Griffin</p>
-                                    </div>
-                                    <div classname='personalAdd'><b>Edit</b></div>
-                                </div>
-                                <div className='PersonalDivider'></div>
-                                <div className='PersonalEdit'>
-                                    <div>
-                                        <p><b>Email address</b></p>
-                                        <p className='breckPara'>h***o@designdrops.op</p>
-                                    </div>
-                                    <div classname='personalAdd'><b>Edit</b></div>
-                                </div>
-
-                                <div className='PersonalDivider'></div>
-                                <div className='PersonalEdit'>
-                                    <div>
-                                        <p><b>Phone numbers</b></p>
-                                        <p className='breckPara'>Add a number so confirmed guests and can get in touch. You can add other numbers and choose how they’re used.</p>
-                                    </div>
-                                    <div classname='personalAdd'><b>Add</b></div>
-                                </div>
-                                <div className='PersonalDivider'></div>
-                                <div className='PersonalEdit'>
-                                    <div>
-                                        <p><b>ID</b></p>
-                                        <p className='breckPara'>Not provided</p>
-                                    </div>
-                                    <div classname='personalAdd'><b>Add</b></div>
-                                </div>
-
-                                <div className='PersonalDivider'></div>
-                                <div className='PersonalEdit'>
-                                    <div>
-                                        <p><b>Address</b></p>
-                                        <p className='breckPara'>Not provided</p>
-                                    </div>
-                                    <div classname='personalAdd'><b>Add</b></div>
-                                </div>
-
-                                <div className='PersonalDivider'></div>
-                                <div className='PersonalEdit'>
-                                    <div>
-                                        <p><b>Emergency contact</b></p>
-                                        <p className='breckPara'>Not provided</p>
-                                    </div>
-                                    <div classname='personalAdd'><b>Add</b></div>
-                                </div>
-
-
-                            </div>
+                    <p className='text-2xl font-bold mb-4'>Personal Info</p>
+                    <div className='flex max-md:flex-col  gap-5'>
+                        <div className='w-full'>
+                            <PersonalEdit title="Legal name" content="Peter Griffin" actionText="Edit" />
+                            <PersonalEdit title="Email address" content="h***o@designdrops.op" actionText="Edit" />
+                            <PersonalEdit title="Phone numbers" content="Add a number so confirmed guests and can get in touch. You can add other numbers and choose how they’re used." actionText="Add" />
+                            <PersonalEdit title="ID" content="Not provided" actionText="Add" />
+                            <PersonalEdit title="Address" content="Not provided" actionText="Add" />
+                            <PersonalEdit title="Emergency contact" content="Not provided" actionText="Add" />
                         </div>
-
-                        <div className='PersonalBodyRight'>
-                            <div className='PersonalBodyRight1'>
-                                <img src={Port1} />
-                                <p className='bodyRightHeader'>Why isn’t my info shown here?</p>
+                        <div className='md:w-1/3 w-full   bg-gray-100 p-4 rounded-lg'>
+                            <div className='my-4'>
+                                <img src={Port1} alt="Info Security" />
+                                <p className='text-lg font-bold my-2'>Why isn’t my info shown here?</p>
                                 <p>We’re hiding some account details to protect your identity.</p>
                             </div>
-                            <div className='PersonalBodyRight1'>
-                                <img src={Port2} />
-                                <p className='bodyRightHeader'>Which details can be edited?</p>
-                                <p>Details uses to verify your identity can’t be changed. Contact info and some personal details can be edited, but we may ask you verify your identity the next time you book or create a listing.</p>
+                            <div className='my-4'>
+                                <img src={Port2} alt="Editable Details" />
+                                <p className='text-lg font-bold my-2'>Which details can be edited?</p>
+                                <p>Details used to verify your identity can’t be changed. Contact info and some personal details can be edited, but we may ask you to verify your identity the next time you book or create a listing.</p>
                             </div>
-                            <div className='PersonalBodyRight1'>
-                                <img src={Port3} />
-                                <p className='bodyRightHeader'>What info is shared with others?</p>
-                                <p>only releases contact information for Hosts and guests after a reservation is confirmed.</p>
+                            <div className='my-4'>
+                                <img src={Port3} alt="Shared Info" />
+                                <p className='text-lg font-bold my-2'>What info is shared with others?</p>
+                                <p>Only releases contact information for Hosts and guests after a reservation is confirmed.</p>
                             </div>
                         </div>
-
                     </div>
-
                 </div>
             </div>
-
         </div>
-    )
+    );
 }
 
-export default PersonalInfo
+export default PersonalInfo;

@@ -46,9 +46,9 @@ const AllRoute = () => {
         <Route path='/sign-up' element={<SignUp />} />
         <Route path='/mywithdrawls' element={<MyWithdrawls />} />
         <Route path='/calender' element={<Calender />} />
-        <Route path='/session' element={<MessageChat />} />
+        <Route path='/session' element={<Session />} />
         <Route path='/PersonalInfo' element={<PersonalInfo />} />
-        <Route path='/chatMessage' element={<Session />} />
+        <Route path='/chatMessage' element={<MessageChat />} />
         <Route path='/mobileNav' element={<MobileNav />} />
         <Route path='/navbarSide' element={<NavbarSide />} />
         <Route path='/clientDashboard' element={<ClientDashboard />}/>
