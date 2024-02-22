@@ -128,7 +128,7 @@ const MyWithdrawls = () => {
                 <div className='md:h-[80vh] md:overflow-x-auto'>
                     <div className='mywithdral_payment flex max-md:gap-2 max-md:flex-col md:justify-between md:items-center' >
 
-                        <div className='flex gap-4 max-md:flex-col'>
+                        <div className='flex gap-2  max-md:flex-col'>
                             <div className="filter-group">
                                 <div className="filter-label">Status:</div>
                                 <Select
@@ -179,7 +179,7 @@ const MyWithdrawls = () => {
                                 value={searchInput}
                                 onChange={e => setSearchInput(e.target.value)}
                                 placeholder="Search by amount, payment method..."
-                                style={{ padding: '10px', width: '350px' }}
+                                style={{ padding: '10px', width: '200px' }}
                             />
                         </div>
 

@@ -63,9 +63,9 @@ const Mentordashboard = () => {
                 <div className="ml-[30px] mentorsec">
                     <Navbar Navtext={"Dashboard"} />
                     
-                    <div className='flex flex-wrap md:justify-between items-start w-full gap-5 py-8'>
+                    <div className='grid grid-cols-1 md:grid md:grid-cols-3 md:justify-between items-start w-full gap-5 py-8'>
                         {data.map((item, index) => (
-                            <div key={index} className='flex flex-col items-center bg-white shadow-md rounded-lg p-4 w-full md:w-[30%]'>
+                            <div key={index} className='flex flex-col items-center bg-white shadow-md rounded-lg p-4'>
                                 <div className='flex items-center justify-between w-full'>
                                     <img className={`w-16 object-contain h-16 rounded-[8px] p-2 px-3 relative top-[-35px]`} src={item.iconSrc} alt={`Icon ${index + 1}`} style={{backgroundColor:item.bgColor}} />
                                     <div className='ml-4'>
@@ -84,17 +84,17 @@ const Mentordashboard = () => {
 
 
 
-                    <div className='flex  max-md:flex-col gap-8 relative '>
+                    <div className='grid grid-cols-1 gap-5 md:grid md:grid-cols-2 md:gap-3 relative '>
 
                         <div className="shadow-md  rounded-lg px-4 py-2">
-                            <img src={graph1} className="relative top-[-20px]" />
+                            <img src={graph1} className="relative w-full top-[-20px]" />
 
                             <p>Overall Completed</p>
                             <p>Last Campaign Performance</p>
                             <p>just updated</p>
                         </div>
                         <div className="shadow-md rounded-lg px-4 py-2">
-                            <img src={graph2} className="relative top-[-20px]"/>
+                            <img src={graph2} className="relative w-full top-[-20px]"/>
                             <p>Booking Daily Classes</p>
                             <p>(+15%) increase in today sales.</p>
                             <p>updated 4 min ago</p>

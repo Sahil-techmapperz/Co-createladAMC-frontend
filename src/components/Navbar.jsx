@@ -34,7 +34,7 @@ const Navbar = ({ Navtext }) => {
                 <input
                     type="text"
                     placeholder='Search Here'
-                    className='hidden md:block border-2 border-gray-300 py-1 px-2 rounded-md focus:outline-none focus:border-blue-500'
+                    className='hidden md:block border-2 border-gray-300 py-1 px-2 ml-4 rounded-md focus:outline-none focus:border-blue-500'
                 />
             </div>
 
@@ -49,7 +49,7 @@ const Navbar = ({ Navtext }) => {
                         </div>
                     </div>
                     {showNotifications && (
-                        <div className='absolute top-full mt-2 right-0 bg-white shadow-lg rounded-lg w-48 py-2'>
+                        <div className='z-50 absolute top-full mt-2 right-0 bg-white shadow-lg rounded-lg w-48 py-2'>
                             <p className='text-gray-700 text-sm px-4'>Your notifications go here.</p>
                         </div>
                     )}
@@ -59,7 +59,7 @@ const Navbar = ({ Navtext }) => {
             </div>
 
             {isMenuOpen && (
-                <div className='md:hidden flex flex-col absolute top-full left-0 w-full bg-white shadow-md py-2'>
+                <div className='md:hidden z-30 flex flex-col absolute top-0 left-0 w-[30vw] bg-white shadow-md py-2'>
                     {/* Mobile Menu Items */}
                     <p className='text-blue-500 px-6 py-2 text-sm cursor-pointer'>Home</p>
                     <p className='text-blue-500 px-6 py-2 text-sm cursor-pointer'>About</p>

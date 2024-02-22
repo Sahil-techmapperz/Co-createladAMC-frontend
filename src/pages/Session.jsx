@@ -15,14 +15,14 @@ import { Link } from 'react-router-dom';
 
 const Session = () => {
     return (
-        <div className=' flex gap-2 '>
+        <div className=' flex gap-2 overflow-hidden'>
             <div className='max-sm:hidden'><Sidebar /></div>
-            <div className='w-[90vw] h-[100vh]'>
-                <div>
+            <div className='w-full md:w-3/4 lg:w-4/5 xl:w-5/6'>
+                <div className=''>
                     <Navbar Navtext={"Session"} />
                     <div className='m-[20px] text-[18px] font-[600]'>
-                  <Link to={"/"}>Dashboard</Link> &gt; Session
-                </div>
+                        <Link to={"/"}>Dashboard</Link> &gt; Session
+                    </div>
                     <div className='messageChartVideo'>
                         <div className='messageChartVideo1'>
                             <img src={Video1} />
@@ -38,10 +38,8 @@ const Session = () => {
                             </div>
                         </div>
                     </div>
-
-
                     <div className='flex  max-md:flex-col gap-6 my-2'>
-                        <div className='md:w-[50vw] w-full shadow-md md:h-[72vh] overflow-y-auto p-4 rounded-md bg-gray-50'>
+                        <div className='md:w-[50vw] w-full shadow-md md:h-[60VH] overflow-y-auto p-4 rounded-md bg-gray-50'>
                             <div className='flex my-4 overflow-x-auto'>
                                 <div className='flex space-x-4 min-w-max'>
                                     <button className='w-[120px] h-10 bg-blue-500 text-white rounded-md shadow-md hover:bg-blue-600 transition duration-200 ease-in-out'>All Sessions</button>
@@ -58,7 +56,6 @@ const Session = () => {
                                 <p className='text-blue-600 cursor-pointer hover:underline'>+ Add New Sessions</p>
                             </div>
 
-                            {/* Use consistent structure and styling for each session block */}
                             <div className='flex flex-col gap-4'>
                                 {Array(3).fill().map((_, index) => (
                                     <div key={index} className='rounded-md flex max-md:flex-col justify-around bg-white shadow p-4'>
@@ -95,7 +92,7 @@ const Session = () => {
 
 
 
-                        <div className='md:w-[30vw] w-full shadow-md md:h-[72vh] overflow-y-auto p-4 rounded-md'>
+                        <div className='md:w-[30vw] w-full shadow-md md:h-[60vh] overflow-y-auto p-4 rounded-md'>
                             <div className='lastWeekSection1'>
                                 <p>Last Week Sessions</p>
                                 <div>
@@ -200,7 +197,7 @@ const Session = () => {
                                 </div>
                                 <div className='lastWeekNews mt-[10px]'>
                                     <div>
-                                        {/* <p>NEWEST</p> */}
+
                                         <div className='classNews'>
                                             <div className='border-2 border-emerald-600 classEdit'><RiArrowDropDownLine /></div>
                                             <div>
@@ -211,7 +208,7 @@ const Session = () => {
                                     </div>
 
                                     <div>
-                                        {/* <p>Earning</p> */}
+
                                         <div className='text-green-500'>
                                             2,350
                                         </div>
@@ -220,7 +217,7 @@ const Session = () => {
                                 <p>YESTERDAY</p>
                                 <div className='lastWeekNews mt-[10px]'>
                                     <div>
-                                        {/* <p>NEWEST</p> */}
+
                                         <div className='classNews'>
                                             <div className=' border-2 border-emerald-600 classEdit'><RiArrowDropDownLine /></div>
                                             <div>
@@ -231,7 +228,7 @@ const Session = () => {
                                     </div>
 
                                     <div>
-                                        {/* <p>Earning</p> */}
+
                                         <div className='text-green-500'>
                                             2,350
                                         </div>
@@ -239,7 +236,7 @@ const Session = () => {
                                 </div>
                                 <div className='lastWeekNews mt-[10px]'>
                                     <div>
-                                        {/* <p>NEWEST</p> */}
+
                                         <div className='classNews'>
                                             <div className='classEdit border-2 border-red-600'><RiArrowDropDownLine /></div>
                                             <div>
@@ -250,7 +247,7 @@ const Session = () => {
                                     </div>
 
                                     <div>
-                                        {/* <p>Earning</p> */}
+
                                         <div className='text-green-500'>
                                             2,350
                                         </div>
@@ -269,7 +266,6 @@ const Session = () => {
                                     </div>
 
                                     <div>
-                                        {/* <p>Earning</p> */}
                                         <div className='text-green-500'>
                                             2,350
                                         </div>
