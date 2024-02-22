@@ -10,6 +10,7 @@ import Blog2 from '../assets/Rectangle 6 (1).png';
 import Sidebar from '../components/Sidebar.jsx';
 import MobileNav from '../components/Mobile/MobileNav.jsx';
 import Navbar from '../components/Navbar.jsx';
+import { Link } from 'react-router-dom';
 
 
 
@@ -27,6 +28,9 @@ function NoticeBoard() {
             <div className='notice_board_body_main  ml-[30px]' > 
              
                     <Navbar Board Navtext={"Notice Board"} />
+                    <div className='m-[20px] text-[18px] font-[600]'>
+                  <Link to={"/"}>Dashboard</Link> &gt; Notice Board
+                </div>
 
                 <div className='notice_board_main_container '>
 

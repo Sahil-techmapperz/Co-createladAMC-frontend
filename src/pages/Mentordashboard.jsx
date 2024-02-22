@@ -62,6 +62,7 @@ const Mentordashboard = () => {
             <div className='mentor_main_body '>
                 <div className="ml-[30px] mentorsec">
                     <Navbar Navtext={"Dashboard"} />
+                    
                     <div className='flex flex-wrap md:justify-between items-start w-full gap-5 py-8'>
                         {data.map((item, index) => (
                             <div key={index} className='flex flex-col items-center bg-white shadow-md rounded-lg p-4 w-full md:w-[30%]'>

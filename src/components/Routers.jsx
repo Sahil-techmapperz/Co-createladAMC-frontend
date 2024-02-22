@@ -1,7 +1,6 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom';
 import Mentordashboard from '../pages/Mentordashboard';
-import SignUp from '../pages/SignUp';
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
 import MyAccount from '../pages/MyAccount';
@@ -27,6 +26,8 @@ import ClientMyWallet from '../pages/MentorClient/ClientMyWallet/ClientMyWallet'
 import ClientSidebar from '../pages/MentorClient/ClientSidebar/ClientSidebar';
 import ClientSnCalender from '../pages/MentorClient/ClientSessionCalander/ClientSnCalander';
 import ClientNotice from '../pages/MentorClient/ClientNoticeBoard/ClientNotice';
+import Signin from '../pages/Login';
+import ProtectedRoute from './ProtectedRoute';
 
 
 
@@ -43,27 +44,30 @@ const AllRoute = () => {
         <Route path='/NoticeBoard' element={<NoticeBoard />} />
         <Route path='/MyWallet' element={<MyWallet />} />
         <Route path='/sessionCalender' element={<SessionCalander />} />
-        <Route path='/sign-up' element={<SignUp />} />
+        <Route path='/login' element={<Signin />} />
         <Route path='/mywithdrawls' element={<MyWithdrawls />} />
         <Route path='/calender' element={<Calender />} />
         <Route path='/session' element={<Session />} />
         <Route path='/PersonalInfo' element={<PersonalInfo />} />
-        <Route path='/chatMessage' element={<MessageChat />} />
+        <Route path='/chatMessage' element={
+          <ProtectedRoute>
+            <MessageChat />
+          </ProtectedRoute>
+        } />
         <Route path='/mobileNav' element={<MobileNav />} />
         <Route path='/navbarSide' element={<NavbarSide />} />
-        <Route path='/clientDashboard' element={<ClientDashboard />}/>
+        <Route path='/clientDashboard' element={<ClientDashboard />} />
         <Route path='/clientNavbar' element={<ClientNavbar />} />
         <Route path='/clientIntroSession' element={<ClientIntroSession />} />
         <Route path='/suparAdmin' element={<SuparAdmin />} />
         <Route path='/SuperAdminUserTable' element={<SuperAdminUserTable />} />
         <Route path='/superAdminSide' element={<SuperAdminSide />} />
-        <Route path='/superAdminIssueReport'  element={<SuperAdminIssueReport />}/>
+        <Route path='/superAdminIssueReport' element={<SuperAdminIssueReport />} />
         <Route path='/reactBarchart' element={<ReactBarchart />} />
-        <Route path='/clientMyWallet' element={<ClientMyWallet/>} />
-        <Route path='/clientSideBar' element={<ClientSidebar/>} />
+        <Route path='/clientMyWallet' element={<ClientMyWallet />} />
+        <Route path='/clientSideBar' element={<ClientSidebar />} />
         <Route path='/clientSnCalender' element={<ClientSnCalender />} />
         <Route path='/clientNotice' element={<ClientNotice />} />
-
 
       </Routes>
     </>

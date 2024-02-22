@@ -1,11 +1,10 @@
+
+
+
 .myAccount_main_body p {
     font-size: 14px;
 }
 
-.myAccount_main_body {
-    display: flex;
-    gap: 16px;
-}
 
 .myAccount_body {
     margin-top: 5px;

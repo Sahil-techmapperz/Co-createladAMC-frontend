@@ -5,6 +5,7 @@ import Sidebar from '../components/Sidebar.jsx';
 import '../CSS/Calender.css'; // Make sure to adapt or remove custom styles if they conflict with Tailwind
 import MobileNav from './Mobile/MobileNav.jsx';
 import Navbar from './Navbar.jsx';
+import { Link } from 'react-router-dom';
 
 const Calender = () => {
   const [events, setEvents] = useState([
@@ -19,6 +20,9 @@ const Calender = () => {
       </div>
       <div className="flex-1">
           <Navbar Navtext="Calendar" />
+          <div className='m-[20px] text-[18px] font-[600]'>
+                  <Link to={"/"}>Dashboard</Link> &gt; Calendar
+                </div>
         <h2 className="text-xl text-center font-bold text-gray-900 mt-4 mx-4">SCHEDULE</h2>
         <div className="p-4 h-[80vh] overflow-x-auto">
           <FullCalendar

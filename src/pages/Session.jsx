@@ -11,6 +11,7 @@ import { MdDelete } from "react-icons/md";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import MobileNav from '../components/Mobile/MobileNav.jsx';
 import Navbar from '../components/Navbar.jsx';
+import { Link } from 'react-router-dom';
 
 const Session = () => {
     return (
@@ -19,6 +20,9 @@ const Session = () => {
             <div className='w-[90vw] h-[100vh]'>
                 <div>
                     <Navbar Navtext={"Session"} />
+                    <div className='m-[20px] text-[18px] font-[600]'>
+                  <Link to={"/"}>Dashboard</Link> &gt; Session
+                </div>
                     <div className='messageChartVideo'>
                         <div className='messageChartVideo1'>
                             <img src={Video1} />

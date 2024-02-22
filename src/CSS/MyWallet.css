@@ -1,6 +1,7 @@
 .myWalletMain {
-
     width: 100%;
+    height: 100vh;
+    overflow-x: auto;
 }
 
 .MyWallet_body{
@@ -15,17 +16,12 @@
 .MyWallet_mainContainer {
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    gap:20%;
+    gap:30px;
     /* border:1px solid; */
     margin-top: 24px;
 }
 
-.MyWallet_mainContainer img{
-    width: 460px;
-}
-.MyWalletSecondSection img{
-    width: 460px;
-}
+
 
 .myAccountSearch {
     padding: 0px;

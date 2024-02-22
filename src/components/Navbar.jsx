@@ -3,7 +3,7 @@ import { FaBell } from "react-icons/fa";
 import { IoMdSettings } from "react-icons/io";
 import { IoLogOutOutline } from "react-icons/io5";
 import { RiMenu2Line } from "react-icons/ri";
-import Logo from "../assets/Logo1.png"; // Ensure this path is correct
+import Logo from "../assets/Logo1.png"; 
 
 const Navbar = ({ Navtext }) => {
     const [showNotifications, setShowNotifications] = useState(false);
@@ -19,10 +19,16 @@ const Navbar = ({ Navtext }) => {
         setIsMenuOpen(!isMenuOpen);
     };
 
+    function logout() {
+        localStorage.removeItem('user');
+        localStorage.removeItem('token');
+        window.location.href = '/login'; 
+    }
+
     return (
         <nav className='w-full flex justify-between items-center bg-white py-4 px-6 shadow-md z-10 '>
-            <div className='flex items-center gap-4'>
-                <RiMenu2Line className='md:hidden text-blue-500 text-2xl cursor-pointer' onClick={toggleMenu}/>
+            <div className='flex items-center'>
+                <RiMenu2Line  className='md:hidden text-blue-500 text-2xl cursor-pointer'  onClick={toggleMenu}/>
                 <img src={Logo} alt='logo' className='w-40 h-auto md:hidden'/>
                 <h1 className='hidden md:block font-bold text-xl'>{Navtext}</h1>
                 <input
@@ -49,11 +55,11 @@ const Navbar = ({ Navtext }) => {
                     )}
                 </div>
 
-                <IoLogOutOutline className='text-red-500 text-2xl cursor-pointer'/>
+                <IoLogOutOutline type='button' onClick={logout}  className='text-red-500 text-2xl cursor-pointer'/>
             </div>
 
             {isMenuOpen && (
-                <div className='md:hidden absolute top-full left-0 w-full bg-white shadow-md py-2'>
+                <div className='md:hidden flex flex-col absolute top-full left-0 w-full bg-white shadow-md py-2'>
                     {/* Mobile Menu Items */}
                     <p className='text-blue-500 px-6 py-2 text-sm cursor-pointer'>Home</p>
                     <p className='text-blue-500 px-6 py-2 text-sm cursor-pointer'>About</p>

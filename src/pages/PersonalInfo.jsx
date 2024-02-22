@@ -5,15 +5,19 @@ import Port1 from '../assets/svg.png';
 import Port2 from '../assets/svg (1).png';
 import Port3 from '../assets/svg (2).png';
 import PersonalEdit from '../components/PersonalEdit.jsx';
+import { Link } from 'react-router-dom';
 
 const PersonalInfo = () => {
     return (
         <div className='flex gap-2'>
-            <div className="hidden sm:block ml-8">
+            <div className="hidden sm:block">
                 <Sidebar />
             </div>
             <div className='flex flex-col w-full h-[100vh] overflow-y-auto'>
                 <Navbar Navtext={"Personal Info"} />
+                <div className='m-[20px] text-[18px] font-[600]'>
+                  <Link to={"/"}>Dashboard</Link> &gt; Personal Info
+                </div>
                 <div className='p-4'>
                     <div className='flex mb-4'>
                         <p className='font-bold text-sm mr-2'>My Account /</p>

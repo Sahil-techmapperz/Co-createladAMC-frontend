@@ -17,14 +17,17 @@ import { Link } from 'react-router-dom';
 
 const MyAccount = () => {
     return (
-        <div className='myAccount_main_body'>
+        <div className='flex gap-[16px] h-[100vh] overflow-hidden'>
 
             <div className="max-sm:hidden ">
                 <Sidebar />
             </div>
             <div className='myAccount_body  ml-[30px]'>
                 <Navbar Navtext={"My Account"} />
-                <div className='myAccount_main mt-[40px]'>
+                <div className='m-[20px] text-[18px] font-[600]'>
+                  <Link to={"/"}>Dashboard</Link> &gt; My Account
+                </div>
+                <div className='myAccount_main my-[20px]'>
                     <div>
                         <Link to={"/PersonalInfo"}>
                         <img src={Icon8} />

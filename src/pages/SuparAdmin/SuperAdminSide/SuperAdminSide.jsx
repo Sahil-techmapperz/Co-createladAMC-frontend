@@ -16,7 +16,7 @@ import "../../../pages/MyWithdrawls.jsx";
 import "../../../pages/NoticeBoard.jsx";
 import "../../../pages/Session.jsx";
 import "../../../pages/SessionCalander.jsx";
-import "../../../pages/SignUp.jsx";
+import "../../Login.jsx";
 
 import exitLogo from "../../../assets/material-symbols_logout (1).png";
 import notification from "../../../assets/GroupNotification.png";
