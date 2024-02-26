@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import Sidebar from '../components/Sidebar.jsx';
-import Navbar from './Navbar.jsx';
+import Navbar from '../components/Navbar.jsx';
 import { Link } from 'react-router-dom';
 import "./../CSS/Calender.css"
 

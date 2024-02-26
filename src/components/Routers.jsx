@@ -6,9 +6,8 @@ import Sidebar from './Sidebar';
 import MyAccount from '../pages/MyAccount';
 import NoticeBoard from '../pages/NoticeBoard';
 import MyWallet from '../pages/MyWallet';
-import SessionCalander from '../pages/SessionCalander';
 import MyWithdrawls from '../pages/MyWithdrawls';
-import Calender from '../components/Calender';
+import Calender from '../pages/Calender';
 import MessageChat from '../pages/MessageChat';
 import PersonalInfo from '../pages/PersonalInfo';
 import Session from '../pages/Session';
@@ -45,7 +44,6 @@ const AllRoute = () => {
         <Route path='/Myaccounts' element={<MyAccount />} />
         <Route path='/NoticeBoard' element={<NoticeBoard />} />
         <Route path='/MyWallet' element={<MyWallet />} />
-        <Route path='/sessionCalender' element={<SessionCalander />} />
         <Route path='/login' element={<Signin />} />
         <Route path='/mywithdrawls' element={<MyWithdrawls />} />
         <Route path='/calender' element={<Calender />} />
