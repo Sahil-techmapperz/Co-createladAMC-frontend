@@ -29,6 +29,7 @@ import ClientNotice from '../pages/MentorClient/ClientNoticeBoard/ClientNotice';
 import Signin from '../pages/Login';
 import ProtectedRoute from './ProtectedRoute';
 import NotFoundPage from '../pages/NotFoundPage';
+import ClientMyAcc from '../pages/MentorClient/ClientMyAccount/ClientMyAcc';
 
 
 
@@ -69,6 +70,7 @@ const AllRoute = () => {
         <Route path='/clientSideBar' element={<ClientSidebar />} />
         <Route path='/clientSnCalender' element={<ClientSnCalender />} />
         <Route path='/clientNotice' element={<ClientNotice />} />
+        <Route path='/clientMyAccount' element={<ClientMyAcc />} />
         <Route path='*' element={<NotFoundPage />} />
 
       </Routes>

@@ -4,13 +4,13 @@ import { IoIosMenu } from "react-icons/io";
 import { FaBell } from "react-icons/fa6";
 import { AiFillMessage } from "react-icons/ai";
 import { FaFilter } from "react-icons/fa";
-// import Logo from '../../assets/Logo1.png'
+
 import Logo from '../../../assets/Logo1.png'
 import "./clientMobileNav.css"
 import NavSidebar from '../../../components/Mobile/NavbarSide';
 
 
-const MobileNav = () => {
+const CilentMobileNav = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleSidebar = () => setIsOpen(!isOpen);
@@ -47,4 +47,4 @@ const MobileNav = () => {
     )
 }
 
-export default MobileNav
+export default CilentMobileNav

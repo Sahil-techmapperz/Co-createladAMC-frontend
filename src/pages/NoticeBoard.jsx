@@ -3,12 +3,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBookmark } from '@fortawesome/free-solid-svg-icons';
 import "../CSS/NoticeBoard.css";
 import '../components/Sidebar.jsx';
-
-
 import Blog1 from '../assets/Rectangle 5 (1).png';
 import Blog2 from '../assets/Rectangle 6 (1).png';
 import Sidebar from '../components/Sidebar.jsx';
-import MobileNav from '../components/Mobile/MobileNav.jsx';
 import Navbar from '../components/Navbar.jsx';
 import { Link } from 'react-router-dom';
 
@@ -27,7 +24,7 @@ const articles = [
     {
         id: 2,
         classes: 'flex-col justify-center rounded-lg items-center p-2',
-        imageSrc: Blog1,
+        imageSrc: Blog2,
         title: 'Hay When You Need It',
         icon: faBookmark,
         description: "it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years,",
@@ -68,7 +65,7 @@ function NoticeBoard() {
                                 <div className='notice_board_blog1'>
                                     <div>
                                         {/* Ensure imageSrc is correctly handled. If it's a path string, use it directly. If it's a variable representing an imported image, make sure it's imported at the top. */}
-                                        <img src={article.imageSrc} alt={article.title} />
+                                        <img src={article.imageSrc} alt={article.title} className='h-full'/>
                                     </div>
                                     <div className='notice_board_header_part'>
                                         <div className='notice_board_blogHeader'>
@@ -78,8 +75,10 @@ function NoticeBoard() {
                                         </div>
 
                                         <p className='notice_board_blog_cotesion'>{article.description}</p>
+                                       <div className='flex justify-between px-2'>
                                         <p className='noticeBoardName'>{article.author}</p>
                                         <p className='noticeBoardDate'>{article.date}</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

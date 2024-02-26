@@ -11,54 +11,53 @@ import ClientSidebar from '../ClientSidebar/ClientSidebar'
 const ClientMyWallet = () => {
     return (
         <>
-
             <div className='flex'>
                 <div className="max-sm:hidden ">
                     <ClientSidebar />
                 </div>
-                <div className='w-[100%] ml-[30px]'>
-                    <div className="sm:hidden  ml-[10px]">  <MobileNav /> </div>
-                    <div className='max-sm:hidden'>  <ClientNavbar Navtext={"My Wallet"} /></div>
 
-                    <div className='flex justify-between mt-[60px] p-[20px]'>
-                        <h1 className='text-xl font-bold'>My Wallet</h1>
+                <div className='w-[80%] ml-[30px] max-sm:ml-[0px] max-sm:w-[100%]'>
+                    {/* <div className="sm:hidden  ml-[10px]">  <MobileNav /> </div> */}
+                    <div className=''>  <ClientNavbar Navtext={"My Wallet"} /></div>
+
+                    <div className='flex justify-between mt-[10px] pt-[20px] pb-[20px] pr-[20px] pl-[0px] max-sm:mt-[0px] max-sm:pl-[20px]'>
+                        <h1 className='text-lg font-medium'>My Wallet</h1>
                     </div>
 
-                    <div className='flex gap-[20px] max-sm:flex-col'>
-                        <div className='w-[350px] pt-[10px] rounded-lg h-[500px]  shadow-lg max-sm:w-[250px]'>
+                    <div className='flex gap-[20px] max-sm:flex-col  max-sm:ml-[15px]'>
+                        <div className='w-[350px] pt-[10px] rounded-lg h-[480px]  shadow-lg max-sm:w-[250px]'>
                             <div className='flex justify-center items-center'><img src={BasicImage} /></div>
                             <div className='text-center'>
-                                <p className='text-2xl font-bold'>Team</p>
+                                <p className='text-xl font-bold'>Team</p>
                                 <p className='font-bold text-4xl '>350 CCL=$15</p>
-                                <p className='text-2xl'>/month</p>
-                                <div className='flex justify-center items-center'>
+                                <p className='text-base'>/month</p>
+                                <div className='flex justify-center items-center mt-[10px]'>
                                     <TiTick />
-                                    <p className='text-2xl'>1 User Per Account</p>
+                                    <p className='text-base '>1 User Per Account</p>
                                 </div>
-                                <div className='flex justify-center items-center'>
+                                <div className='flex justify-center items-center mt-[10px]'>
                                     <TiTick />
-                                    <p className='text-2xl'>Them Customizetion</p>
+                                    <p className='text-base'>Them Customizetion</p>
                                 </div>
-                                <div className='flex justify-center items-center'>
+                                <div className='flex justify-center items-center mt-[10px]'>
                                     <TiTick />
-                                    <p className='text-2xl'>Ecomerce Thems</p>
+                                    <p className='text-base'>Ecomerce Thems</p>
                                 </div>
-                                <div className='flex justify-center items-center'>
+                                <div className='flex justify-center items-center mt-[10px]'>
                                     <TiTick />
-                                    <p className='text-2xl'>Wordpress Thems</p>
+                                    <p className='text-base'>Wordpress Thems</p>
                                 </div>
-                                <div className='flex justify-center items-center'>
+                                <div className='flex justify-center items-center mt-[10px]'>
                                     <TiTick />
-                                    <p className='text-2xl'>Email Announcment</p>
+                                    <p className='text-base'>Email Announcment</p>
                                 </div>
-
                             </div>
-                            <div className='flex justify-center items-center'><button className='mt-[30px] rounded-lg flex justify-center items-center w-[300px] text-white font-bold text-xl bg-sky-500 h-[50px] max-sm:w-[200px]'>My Current Plan</button></div>
+                            <div className='flex justify-center items-center'><button className='mt-[10px] rounded-lg flex justify-center items-center w-[300px] text-white font-bold text-base bg-sky-500 h-[50px] max-sm:w-[200px]'>My Current Plan</button></div>
                         </div>
 
                         <div className='max-sm:hidden  flex justify-center items-center '>
                             <div className='bg-sky-500 w-[200px] h-[200px] flex justify-center items-center gap-[10px] rounded-lg'>
-                                <div className='text-4xl bg-white p-[5px] rounded-full text-sky-500 flex items-center justify-center'><FaPlus /></div> <br />
+                                <div className='text-2xl bg-white p-[5px] rounded-full text-sky-500 flex items-center justify-center'><FaPlus /></div> <br />
 
                                 <p className=' text-xl text-white font-bold text-center flex justify-center items-center'>Add More</p>
                             </div>

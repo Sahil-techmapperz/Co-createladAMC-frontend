@@ -44,7 +44,7 @@ const Sidebar = ({liname}) => {
                 <div className={`${isSidebarOpen ? 'block' : 'hidden'} lg:block`}>
                     <div>
                         <Link to={"/"}>
-                            <img className='md:min-h-[10vh] w-full mx-auto' src={Logo} alt="Website Logo" />
+                            <img className='md:min-h-[10vh] w-full mx-auto object-contain' src={Logo} alt="Website Logo" />
                         </Link>
                     </div>
 

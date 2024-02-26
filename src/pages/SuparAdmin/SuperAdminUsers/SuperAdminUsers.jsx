@@ -16,6 +16,286 @@ const SuperAdminUserTable = () => {
             accountCreatedAt: '2024-02-02 08:00 AM',
             roleCreatedDate: '2024-02-02 08:15 AM',
         },
+        {
+            name: 'John Doe',
+            type: 'User',
+            email: 'john.doe@email.com',
+            contactNumber: '(555) 123-4567',
+            accountCreatedAt: '2024-02-02 08:00 AM',
+            roleCreatedDate: '2024-02-02 08:15 AM',
+        },
+        {
+            name: 'John Doe',
+            type: 'User',
+            email: 'john.doe@email.com',
+            contactNumber: '(555) 123-4567',
+            accountCreatedAt: '2024-02-02 08:00 AM',
+            roleCreatedDate: '2024-02-02 08:15 AM',
+        },
+        {
+            name: 'John Doe',
+            type: 'User',
+            email: 'john.doe@email.com',
+            contactNumber: '(555) 123-4567',
+            accountCreatedAt: '2024-02-02 08:00 AM',
+            roleCreatedDate: '2024-02-02 08:15 AM',
+        },
+        {
+            name: 'John Doe',
+            type: 'User',
+            email: 'john.doe@email.com',
+            contactNumber: '(555) 123-4567',
+            accountCreatedAt: '2024-02-02 08:00 AM',
+            roleCreatedDate: '2024-02-02 08:15 AM',
+        },
+        {
+            name: 'John Doe',
+            type: 'User',
+            email: 'john.doe@email.com',
+            contactNumber: '(555) 123-4567',
+            accountCreatedAt: '2024-02-02 08:00 AM',
+            roleCreatedDate: '2024-02-02 08:15 AM',
+        },
+        {
+            name: 'John Doe',
+            type: 'User',
+            email: 'john.doe@email.com',
+            contactNumber: '(555) 123-4567',
+            accountCreatedAt: '2024-02-02 08:00 AM',
+            roleCreatedDate: '2024-02-02 08:15 AM',
+        },
+        {
+            name: 'John Doe',
+            type: 'User',
+            email: 'john.doe@email.com',
+            contactNumber: '(555) 123-4567',
+            accountCreatedAt: '2024-02-02 08:00 AM',
+            roleCreatedDate: '2024-02-02 08:15 AM',
+        },
+        {
+            name: 'John Doe',
+            type: 'User',
+            email: 'john.doe@email.com',
+            contactNumber: '(555) 123-4567',
+            accountCreatedAt: '2024-02-02 08:00 AM',
+            roleCreatedDate: '2024-02-02 08:15 AM',
+        },
+        {
+            name: 'John Doe',
+            type: 'User',
+            email: 'john.doe@email.com',
+            contactNumber: '(555) 123-4567',
+            accountCreatedAt: '2024-02-02 08:00 AM',
+            roleCreatedDate: '2024-02-02 08:15 AM',
+        },
+        {
+            name: 'John Doe',
+            type: 'User',
+            email: 'john.doe@email.com',
+            contactNumber: '(555) 123-4567',
+            accountCreatedAt: '2024-02-02 08:00 AM',
+            roleCreatedDate: '2024-02-02 08:15 AM',
+        },
+        {
+            name: 'John Doe',
+            type: 'User',
+            email: 'john.doe@email.com',
+            contactNumber: '(555) 123-4567',
+            accountCreatedAt: '2024-02-02 08:00 AM',
+            roleCreatedDate: '2024-02-02 08:15 AM',
+        },
+        {
+            name: 'John Doe',
+            type: 'User',
+            email: 'john.doe@email.com',
+            contactNumber: '(555) 123-4567',
+            accountCreatedAt: '2024-02-02 08:00 AM',
+            roleCreatedDate: '2024-02-02 08:15 AM',
+        },
+        {
+            name: 'John Doe',
+            type: 'User',
+            email: 'john.doe@email.com',
+            contactNumber: '(555) 123-4567',
+            accountCreatedAt: '2024-02-02 08:00 AM',
+            roleCreatedDate: '2024-02-02 08:15 AM',
+        },
+        {
+            name: 'John Doe',
+            type: 'User',
+            email: 'john.doe@email.com',
+            contactNumber: '(555) 123-4567',
+            accountCreatedAt: '2024-02-02 08:00 AM',
+            roleCreatedDate: '2024-02-02 08:15 AM',
+        },
+        {
+            name: 'John Doe',
+            type: 'User',
+            email: 'john.doe@email.com',
+            contactNumber: '(555) 123-4567',
+            accountCreatedAt: '2024-02-02 08:00 AM',
+            roleCreatedDate: '2024-02-02 08:15 AM',
+        },
+        {
+            name: 'John Doe',
+            type: 'User',
+            email: 'john.doe@email.com',
+            contactNumber: '(555) 123-4567',
+            accountCreatedAt: '2024-02-02 08:00 AM',
+            roleCreatedDate: '2024-02-02 08:15 AM',
+        },
+        {
+            name: 'John Doe',
+            type: 'User',
+            email: 'john.doe@email.com',
+            contactNumber: '(555) 123-4567',
+            accountCreatedAt: '2024-02-02 08:00 AM',
+            roleCreatedDate: '2024-02-02 08:15 AM',
+        },
+        {
+            name: 'John Doe',
+            type: 'User',
+            email: 'john.doe@email.com',
+            contactNumber: '(555) 123-4567',
+            accountCreatedAt: '2024-02-02 08:00 AM',
+            roleCreatedDate: '2024-02-02 08:15 AM',
+        },
+        {
+            name: 'John Doe',
+            type: 'User',
+            email: 'john.doe@email.com',
+            contactNumber: '(555) 123-4567',
+            accountCreatedAt: '2024-02-02 08:00 AM',
+            roleCreatedDate: '2024-02-02 08:15 AM',
+        },
+        {
+            name: 'John Doe',
+            type: 'User',
+            email: 'john.doe@email.com',
+            contactNumber: '(555) 123-4567',
+            accountCreatedAt: '2024-02-02 08:00 AM',
+            roleCreatedDate: '2024-02-02 08:15 AM',
+        },
+        {
+            name: 'John Doe',
+            type: 'User',
+            email: 'john.doe@email.com',
+            contactNumber: '(555) 123-4567',
+            accountCreatedAt: '2024-02-02 08:00 AM',
+            roleCreatedDate: '2024-02-02 08:15 AM',
+        },
+        {
+            name: 'John Doe',
+            type: 'User',
+            email: 'john.doe@email.com',
+            contactNumber: '(555) 123-4567',
+            accountCreatedAt: '2024-02-02 08:00 AM',
+            roleCreatedDate: '2024-02-02 08:15 AM',
+        },
+        {
+            name: 'John Doe',
+            type: 'User',
+            email: 'john.doe@email.com',
+            contactNumber: '(555) 123-4567',
+            accountCreatedAt: '2024-02-02 08:00 AM',
+            roleCreatedDate: '2024-02-02 08:15 AM',
+        },
+        {
+            name: 'John Doe',
+            type: 'User',
+            email: 'john.doe@email.com',
+            contactNumber: '(555) 123-4567',
+            accountCreatedAt: '2024-02-02 08:00 AM',
+            roleCreatedDate: '2024-02-02 08:15 AM',
+        },
+        {
+            name: 'John Doe',
+            type: 'User',
+            email: 'john.doe@email.com',
+            contactNumber: '(555) 123-4567',
+            accountCreatedAt: '2024-02-02 08:00 AM',
+            roleCreatedDate: '2024-02-02 08:15 AM',
+        },
+        {
+            name: 'John Doe',
+            type: 'User',
+            email: 'john.doe@email.com',
+            contactNumber: '(555) 123-4567',
+            accountCreatedAt: '2024-02-02 08:00 AM',
+            roleCreatedDate: '2024-02-02 08:15 AM',
+        },
+        {
+            name: 'John Doe',
+            type: 'User',
+            email: 'john.doe@email.com',
+            contactNumber: '(555) 123-4567',
+            accountCreatedAt: '2024-02-02 08:00 AM',
+            roleCreatedDate: '2024-02-02 08:15 AM',
+        },
+        {
+            name: 'John Doe',
+            type: 'User',
+            email: 'john.doe@email.com',
+            contactNumber: '(555) 123-4567',
+            accountCreatedAt: '2024-02-02 08:00 AM',
+            roleCreatedDate: '2024-02-02 08:15 AM',
+        },
+        {
+            name: 'John Doe',
+            type: 'User',
+            email: 'john.doe@email.com',
+            contactNumber: '(555) 123-4567',
+            accountCreatedAt: '2024-02-02 08:00 AM',
+            roleCreatedDate: '2024-02-02 08:15 AM',
+        },
+        {
+            name: 'John Doe',
+            type: 'User',
+            email: 'john.doe@email.com',
+            contactNumber: '(555) 123-4567',
+            accountCreatedAt: '2024-02-02 08:00 AM',
+            roleCreatedDate: '2024-02-02 08:15 AM',
+        },
+        {
+            name: 'John Doe',
+            type: 'User',
+            email: 'john.doe@email.com',
+            contactNumber: '(555) 123-4567',
+            accountCreatedAt: '2024-02-02 08:00 AM',
+            roleCreatedDate: '2024-02-02 08:15 AM',
+        },
+        {
+            name: 'John Doe',
+            type: 'User',
+            email: 'john.doe@email.com',
+            contactNumber: '(555) 123-4567',
+            accountCreatedAt: '2024-02-02 08:00 AM',
+            roleCreatedDate: '2024-02-02 08:15 AM',
+        },
+        {
+            name: 'John Doe',
+            type: 'User',
+            email: 'john.doe@email.com',
+            contactNumber: '(555) 123-4567',
+            accountCreatedAt: '2024-02-02 08:00 AM',
+            roleCreatedDate: '2024-02-02 08:15 AM',
+        },
+        {
+            name: 'John Doe',
+            type: 'User',
+            email: 'john.doe@email.com',
+            contactNumber: '(555) 123-4567',
+            accountCreatedAt: '2024-02-02 08:00 AM',
+            roleCreatedDate: '2024-02-02 08:15 AM',
+        },
+        {
+            name: 'John Doe',
+            type: 'User',
+            email: 'john.doe@email.com',
+            contactNumber: '(555) 123-4567',
+            accountCreatedAt: '2024-02-02 08:00 AM',
+            roleCreatedDate: '2024-02-02 08:15 AM',
+        },
         // Add more user data as needed
     ];
 
@@ -23,18 +303,18 @@ const SuperAdminUserTable = () => {
 
         <div className='flex' >
             <div className="max-sm:hidden "> <SuperAdminSide /></div>
-            <div className='ml-[30px] w-[100%] max-sm:ml-[10px] '>
+            <div className='ml-[30px] w-[80%] max-sm:ml-[10px] '>
 
                 <div className="sm:hidden  ml-[10px]">  <MobileNav /> </div>
-                <div className='max-sm:hidden'>  <ClientNavbar /></div>
-                <div className='max-sm:hidden flex justify-between mt-[60px] '>
+                <div className='max-sm:hidden'>  <ClientNavbar   Navtext={"Users"}  /></div>
+                <div className='max-sm:hidden  flex justify-between mt-[20px] '>
                     <div>
                         <p className=' text-base font-bold'>Manage Users</p>
-                        <p>Administer and oversee user accounts and privileges within the platform.</p>
+                        <p className=' text-gray-600'>Administer and oversee user accounts and privileges within the platform.</p>
                     </div>
                     <div className='flex gap-[20px]'>
-                        <button className="text-white bg-blue-500 h-[40px] w-[200px] flex justify-center items-center rounded-lg">Add Admin</button>
-                        <button className="text-white bg-blue-500 h-[40px] w-[200px] flex justify-center items-center rounded-lg">Add User</button>
+                        <button className="text-white bg-blue-500 h-[40px] w-[150px] flex justify-center items-center rounded-lg">Add Admin</button>
+                        <button className="text-white bg-blue-500 h-[40px] w-[150px] flex justify-center items-center rounded-lg">Add User</button>
                     </div>
                 </div>
 
@@ -44,13 +324,13 @@ const SuperAdminUserTable = () => {
                     <button className="text-white bg-blue-500 h-[40px] w-[100px] flex justify-center items-center rounded-lg">Add User</button>
                 </div>
                 <div className="sm:hidden ">
-                    <p>Administer and oversee user accounts and privileges within the platform.</p>
+                    <p >Administer and oversee user accounts and privileges within the platform.</p>
                 </div>
 
-                <p className=' text-base font-bold mt-[20px]'><u>Users</u></p>
+                {/* <p className=' text-base font-bold mt-[20px]'><u>Users</u></p> */}
 
-                <div className="container m-0 p-4   max-sm:overflow-y-auto max-sm:overflow-x-auto">
-                    <table className="min-w-full bg-white border border-gray-300  ">
+                <div className="container  p-4 shadow-lg rounded-xl mt-[40px]  max-sm:overflow-y-auto max-sm:overflow-x-auto">
+                    <table className="min-w-full bg-white border  border-gray-300  ">
                         <thead>
                             <tr>
                                 <th className="py-2 px-4 border-b">Name</th>

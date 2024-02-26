@@ -4,6 +4,7 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import Sidebar from '../components/Sidebar.jsx';
 import Navbar from './Navbar.jsx';
 import { Link } from 'react-router-dom';
+import "./../CSS/Calender.css"
 
 const Calender = () => {
   const [events, setEvents] = useState([

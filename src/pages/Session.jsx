@@ -145,7 +145,7 @@ const Session = () => {
 
 
     return (
-        <div className=' flex  overflow-hidden'>
+        <div className='flex gap-2 overflow-hidden'>
             <div className='max-sm:hidden'><Sidebar liname={"Session"}/></div>
             <div className='w-full  py-[15px]'>
                 <Navbar Navtext={"Session"} />

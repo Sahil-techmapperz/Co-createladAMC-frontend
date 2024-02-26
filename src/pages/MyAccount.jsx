@@ -17,11 +17,11 @@ import { Link } from 'react-router-dom';
 const gridItems = [
     { icon: Icon8, heading: 'Personal info', description: 'Provide personal details and how we can reach you', link: "/PersonalInfo" },
     { icon: Icon1, heading: 'Login & security', description: 'Update your password and secure your account', link: "/LoginSecurity" },
-    { icon: Icon2, heading: 'Payments & payouts', description: 'Review payments, payouts, coupons, and gift cards', link: "/PaymentsPayouts" },
+    { icon: Icon2, heading: 'Payments & payouts', description: 'Review payments, payouts, coupons, and gift cards', link: "/mywithdrawls" },
     { icon: Icon3, heading: 'Notifications', description: 'Choose notification preferences and how you want to be contacted', link: "/NoticeBoard" },
-    { icon: Icon4, heading: 'Privacy & sharing', description: 'Manage your personal data, connected services, and data sharing settings', link: "/PrivacySharing" },
+    // { icon: Icon4, heading: 'Privacy & sharing', description: 'Manage your personal data, connected services, and data sharing settings', link: "/PrivacySharing" },
     { icon: Icon5, heading: 'Skills', description: 'Get professional tools if you manage several properties on Airbnb', link: "/Skills" },
-    { icon: Icon6, heading: 'Services To Provide', description: 'Set your default language, currency, and timezone', link: "/ServicesProvide" },
+    // { icon: Icon6, heading: 'Services To Provide', description: 'Set your default language, currency, and timezone', link: "/ServicesProvide" },
     { icon: Icon7, heading: 'Delete Account', description: 'Add a work email for business trip benefits', link: "/DeleteAccount" }
 ];
 
@@ -42,7 +42,7 @@ const MyAccount = () => {
                         <div key={index} className='p-4'>
                             <Link to={item.link}>
                                 <img src={item.icon} alt={item.heading} />
-                                <p className='my_account_main_heading'>{item.heading}</p>
+                                <p className={`my_account_main_heading ${item.heading=="Delete Account"&& 'text-red-600'}`} >{item.heading}</p>
                                 <p>{item.description}</p>
                             </Link>
                         </div>
