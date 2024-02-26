@@ -1,27 +1,27 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { MdEdit, MdDelete, MdImage, MdAttachFile, MdFileDownload, MdInsertEmoticon } from "react-icons/md"; // Add MdInsertEmoticon for the emoji icon
-
-function ChatInterface({ socket, selectedUser, messages, message, setMessage, handleSendMessage, handleEditMessage, handleDeleteMessage }) {
+import { MdEdit, MdDelete } from "react-icons/md"; // Add MdInsertEmoticon for the emoji icon
+import useWindowSize from '../../hooks/useWindowSize';
+function ChatInterface({ selectedUser, messages, message, setMessage, handleSendMessage, handleEditMessage, handleDeleteMessage }) {
     const user = JSON.parse(localStorage.getItem('user'));
     const [editingMessageId, setEditingMessageId] = useState(null);
     const [editedContent, setEditedContent] = useState("");
     const [hoveredMessageId, setHoveredMessageId] = useState(null);
-
+    const { width, height } = useWindowSize();
 
     // Inline styles
     const chatInterfaceStyle = {
+        display: width > 768 ? (selectedUser != null ? 'flex' : 'none') : "flex",
         border: '1px solid #ccc',
         borderRadius: '4px',
         padding: '20px',
         margin: '0 auto',
-        display: 'flex',
         flexDirection: 'column',
-        height: '92vh',
-        width: '70%',
-        maxWidth: "70%",
+        width: width > 768? '70%':"100%",
+        maxWidth:width > 768? '70%':"100%",
         backgroundPosition: 'center',
         fontFamily: "'Roboto', sans-serif",
     };
+
 
     const headingStyle = {
         color: '#333',
@@ -44,6 +44,7 @@ function ChatInterface({ socket, selectedUser, messages, message, setMessage, ha
         borderRadius: '4px',
         backgroundColor: '#e3f2fd',
         backgroundSize: 'cover',
+        minHeight: '50vh',
     };
 
     const messageStyle = {
@@ -76,7 +77,7 @@ function ChatInterface({ socket, selectedUser, messages, message, setMessage, ha
     };
 
     const buttonStyle = {
-        width:"max-content",
+        width: "max-content",
         padding: '10px 20px',
         borderRadius: '4px',
         backgroundColor: '#007bff',
@@ -117,12 +118,14 @@ function ChatInterface({ socket, selectedUser, messages, message, setMessage, ha
         fontSize: '0.8rem',
         borderRadius: '4px',
         cursor: 'pointer',
+        width: 'fit-content'
     };
 
     const editButtonStyle = {
         ...actionButtonStyle,
         backgroundColor: '#FFCA28',
         color: 'black',
+
     };
 
     const deleteButtonStyle = {
@@ -130,6 +133,10 @@ function ChatInterface({ socket, selectedUser, messages, message, setMessage, ha
         backgroundColor: '#F44336',
         color: 'white',
     };
+
+
+
+    
 
     // New function to handle mouse enter and leave
     const handleMouseEnter = (msgId) => {
@@ -167,14 +174,29 @@ function ChatInterface({ socket, selectedUser, messages, message, setMessage, ha
 
 
     const enhancedHandleSendMessage = () => {
-            handleSendMessage();
+        handleSendMessage();
     };
 
-
+    const handleback = () => {
+        // Logic to execute on button click
+        // console.log('Button clicked');
+        // For example, navigate back or any custom logic
+         window.location.reload(); // Uncomment this if you want to go back to the previous page
+    };
 
     return (
+
         <div style={chatInterfaceStyle}>
-            {selectedUser && <h2 style={headingStyle}>Chat with {selectedUser.name}</h2>}
+            {selectedUser && (
+                <div className='flex justify-between px-2'>
+                    <h2 style={headingStyle}>Chat with {selectedUser.name}</h2>
+                    <button onClick={handleback} className="bg-blue-500 hover:bg-blue-700 md:hidden text-white font-bold py-2 px-4 rounded h-[fit-content] w-[fit-content]">
+                        Back
+                    </button>
+                </div>
+            )}
+
+
             <div style={messagesStyle}>
                 {messages.map((msg) => (
                     (msg.senderId === selectedUser._id && msg.receiverId === user._id) ||
@@ -241,6 +263,7 @@ function ChatInterface({ socket, selectedUser, messages, message, setMessage, ha
                 </button>
             </div>
         </div>
+
     );
 }
 

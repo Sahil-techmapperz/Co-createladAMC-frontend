@@ -12,11 +12,11 @@ const Calender = () => {
   ]);
 
   return (
-    <div className="flex flex-col md:flex-row">
-      <div className="hidden md:block md:w-1/4 xl:w-1/5">
-        <Sidebar />
+    <div className="flex gap-2 flex-col md:flex-row">
+      <div className="hidden md:block">
+        <Sidebar liname={"SCHEDULE"}/>
       </div>
-      <div className="flex-1">
+      <div className="flex-1 py-[15px]">
         <Navbar Navtext="Calendar" />
         <div className=' text-lg font-semibold'>
           <Link to={"/"} className="text-blue-600 hover:text-blue-700 transition ease-in-out duration-150">Dashboard</Link> &gt; Calendar

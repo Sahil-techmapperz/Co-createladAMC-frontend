@@ -57,10 +57,10 @@ const Mentordashboard = () => {
     return (
         <div className='flex gap-2'>
             <div className="max-sm:hidden ">
-                <Sidebar />
+                <Sidebar liname={"Dashboard"} />
             </div>
-            <div className='mentor_main_body '>
-                <div className="ml-[30px] mentorsec">
+            <div className='flex flex-col w-full h-[100vh] overflow-x-auto'>
+                <div className="px-1">
                     <Navbar Navtext={"Dashboard"} />
                     
                     <div className='grid grid-cols-1 md:grid md:grid-cols-3 md:justify-between items-start w-full gap-5 py-8'>
@@ -68,12 +68,12 @@ const Mentordashboard = () => {
                             <div key={index} className='flex flex-col items-center bg-white shadow-md rounded-lg p-4'>
                                 <div className='flex items-center justify-between w-full'>
                                     <img className={`w-16 object-contain h-16 rounded-[8px] p-2 px-3 relative top-[-35px]`} src={item.iconSrc} alt={`Icon ${index + 1}`} style={{backgroundColor:item.bgColor}} />
-                                    <div className='ml-4'>
-                                        <p className='font-semibold text-lg'>{item.title}</p>
-                                        <p className='text-xl text-right font-bold'>{item.count}</p>
+                                    <div className=''>
+                                        <p className='font-semibold text-md w-[max-content]'>{item.title}</p>
+                                        <p className='text-sm text-right font-bold'>{item.count}</p>
                                     </div>
                                 </div>
-                                <div className='mt-4 flex gap-1 w-full'>
+                                <div className=' flex gap-1 w-full'>
                                     <p className='text-sm font-semibold text-green-600'>{item.percentageChange}</p>
                                     <p className='text-sm'>than last week</p>
                                 </div>

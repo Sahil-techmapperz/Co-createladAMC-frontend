@@ -11,9 +11,9 @@ const PersonalInfo = () => {
     return (
         <div className='flex gap-2'>
             <div className="hidden sm:block">
-                <Sidebar />
+                <Sidebar liname={"Personal Info"}/>
             </div>
-            <div className='flex flex-col w-full h-[100vh] overflow-y-auto'>
+            <div className='flex flex-col w-full h-[100vh] overflow-y-auto py-[15px]'>
                 <Navbar Navtext={"Personal Info"} />
                 <div className='m-[20px] text-[18px] font-[600]'>
                   <Link to={"/"}>Dashboard</Link> &gt; Personal Info

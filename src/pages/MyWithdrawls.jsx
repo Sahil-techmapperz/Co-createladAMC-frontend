@@ -118,14 +118,14 @@ const MyWithdrawls = () => {
     } = useTable({ columns, data: filteredData });
 
     return (
-        <div className='MyWithdrawls_main_container'>
-            <div className="max-sm:hidden"><Sidebar /></div>
-            <div className='myWithdrawl_body ml-[30px]'>
+        <div className='flex gap-2'>
+            <div className="max-sm:hidden"><Sidebar liname={"My Withdrawal"}/></div>
+            <div className='w-full h-[100vh] md:overflow-y-hidden py-[15px]'>
                 <Navbar Navtext={"My Withdrawal"} />
                 <div className='m-[20px] text-[18px] font-[600]'>
                   <Link to={"/"}>Dashboard</Link> &gt; My Withdrawal
                 </div>
-                <div className='md:h-[80vh] md:overflow-x-auto'>
+                <div className='md:h-[80vh] md:overflow-x-auto max-md:px-[10px]'>
                     <div className='mywithdral_payment flex max-md:gap-2 max-md:flex-col md:justify-between md:items-center' >
 
                         <div className='flex gap-2  max-md:flex-col'>
@@ -185,7 +185,7 @@ const MyWithdrawls = () => {
 
                     </div>
 
-                    <table {...getTableProps()} >
+                    <table {...getTableProps()}  className='max-md:ml-0' >
                         <thead>
                             {headerGroups.map(headerGroup => (
                                 <tr {...headerGroup.getHeaderGroupProps()}>

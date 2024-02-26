@@ -1,57 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import Sound from "../../assets/whatsapp_notification.mp3";
 import { FiCircle, FiMail } from "react-icons/fi"; // Using FiMail for unread messages
 import Avatardefault from "../../assets/avatar-default.png";
 import { MdExitToApp } from 'react-icons/md';
+import useWindowSize from '../../hooks/useWindowSize';
 
-function UsersList({ onSelectUser, socket, messages }) {
-    const [users, setUsers] = useState([]);
-    const [error, setError] = useState('');
-    const [userHasInteracted, setUserHasInteracted] = useState(false);
-
+function UsersList({onSelectUser,users }) {
+    const { width, height } = useWindowSize();
+    const [userlisthide,Setuserlisthide]=useState(false);
     const loginUser = JSON.parse(localStorage.getItem('user'));
-
-    useEffect(() => {
-        const audio = new Audio(Sound);
-        socket.emit('getUserDataWithMessages', { userId: loginUser._id });
-
-        socket.on('userDataWithMessages', (userData) => {
-            const filteredUsers = userData
-                .filter(user => user._id !== loginUser._id)
-                .map(user => ({
-                    ...user,
-                    lastMessage: user.lastMessage !== 'empty' ? {
-                        content: user.lastMessage.content,
-                        createdAt: user.lastMessage.createdAt,
-                        isRead: user.lastMessage.isRead,
-                    } : null,
-                    unreadCount: user.unreadCount !== 0 ? user.unreadCount : null,
-                    isOnline: user.isOnline,
-                }));
-
-            // Check if users array is different from filteredUsers
-            const isDifferent = users.length !== filteredUsers.length || filteredUsers.some((filteredUser, index) => {
-                const currentUser = users[index];
-                return !currentUser ||
-                    currentUser.lastMessage?.content !== filteredUser.lastMessage?.content ||
-                    currentUser.unreadCount !== filteredUser.unreadCount;
-            });
-
-            if (isDifferent && userHasInteracted) { // Ensures sound plays only after user interaction
-                audio.play().catch(error => console.log("Audio play failed:", error));
-            }
-
-            setUsers(filteredUsers);
-        });
-
-        return () => {
-            socket.off('userDataWithMessages');
-        };
-    }, [users, userHasInteracted, messages]); // Assuming userHasInteracted is set to true on user interaction
-
-
     const handleUserSelect = (user) => {
-        setUserHasInteracted(true);
+        let Mobile=width < 768 ;
+        if(Mobile){
+            Setuserlisthide(true);
+        }
+        // console.log(Mobile);
         onSelectUser(user);
     };
 
@@ -62,10 +24,21 @@ function UsersList({ onSelectUser, socket, messages }) {
         window.location.href = '/login';
     }
 
+    const userListStyle = {
+        boxShadow: '0 2px 5px rgba(0,0,0,0.1)',
+        margin: '0 auto',
+        padding: '10px'
+      };
+
+
+      
+
 
     return (
-        <div className="user-list" style={{ overflow: 'hidden', boxShadow: '0 2px 5px rgba(0,0,0,0.1)', margin: '0 auto', padding: '10px' }}>
-            {loginUser && (
+        <>
+        {!userlisthide &&
+        <div  className="w-full md:h-[100%] md:w-1/4 lg:w-2/6 overflow-y-auto border-r border-gray-200" style={userListStyle}>
+           
                 <div className='w-[100%] flex items-center justify-between bg-[#e3f2fd] p-[10px] rounded-[5px] my-[10px]' style={{boxShadow: 'inset 0 1px 2px rgba(0,0,0,0.1)'}}>
                     <div className='flex gap-2'>
                         <img src={Avatardefault} alt="User avatar" style={{ width: '30px', height: '30px', borderRadius: '50%' }} />
@@ -77,8 +50,6 @@ function UsersList({ onSelectUser, socket, messages }) {
                         <MdExitToApp size="24px" title="Logout" />
                     </button>
                 </div>
-            )}
-            {error && <p style={{ color: 'red' }}>{error}</p>}
             {users.map(user => (
                 <div key={user._id} style={{
                     display: 'flex',
@@ -116,7 +87,8 @@ function UsersList({ onSelectUser, socket, messages }) {
                     )}
                 </div>
             ))}
-        </div>
+        </div>}
+        </>
     );
 }
 

@@ -88,8 +88,8 @@ function MyWallet() {
 
   return (
     <div className='MyWallet_body'>
-      <div className='max-sm:hidden'><Sidebar /></div>
-      <div className='myWalletMain max-md:w-[100vw] max-md:overflow-x-auto  '>      
+      <div className='max-sm:hidden'><Sidebar liname={"My Wallet"} /></div>
+      <div className='myWalletMain max-md:w-[100vw] max-md:overflow-x-auto py-[15px] '>      
         <Navbar Navtext={"My Wallet"} />
         <div className='m-[20px] text-[18px] font-[600]'>
           <Link to={"/"}>Dashboard</Link> &gt; My Wallet

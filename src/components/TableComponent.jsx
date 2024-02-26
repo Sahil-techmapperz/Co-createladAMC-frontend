@@ -4,10 +4,10 @@ import { MdCheckCircle, MdCancel } from 'react-icons/md';
 const TableComponent = ({ data }) => {
     return (
         <div className='shadow-md rounded-lg my-6 p-4 max-w-full overflow-x-auto'>
-            <h2 className="text-xl md:text-2xl font-bold mb-4">New Clients Joining</h2>
+            <h2 className="text-xl md:text-lg font-bold mb-4">New Clients Joining</h2>
             <div className="min-w-[320px]">
-              <table className="w-full text-center">
-                  <thead className="bg-gray-50">
+              <table className="w-full" style={{margin: '0'}}>
+                  <thead className="bg-gray-50" >
                       <tr>
                           <th className="px-2 py-2 text-xs md:text-sm">Name</th>
                           <th className="px-2 py-2 text-xs md:text-sm">Value (CCL)</th>

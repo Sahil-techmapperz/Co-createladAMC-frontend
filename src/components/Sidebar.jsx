@@ -12,7 +12,7 @@ import contact from "../assets/account-circle.png";
 import walletImg from "../assets/text-box.png";
 import { BiSupport } from "react-icons/bi";
 
-const Sidebar = () => {
+const Sidebar = ({liname}) => {
     const [showWalletDropdown, setShowWalletDropdown] = useState(false);
     const [isSidebarOpen, setIsSidebarOpen] = useState(false); // State to manage sidebar visibility on mobile
 
@@ -24,6 +24,12 @@ const Sidebar = () => {
         setIsSidebarOpen(!isSidebarOpen);
     };
 
+    const liactivestyle = {
+        backgroundColor: "#0078C5",
+        border: "1px solid"
+    };
+    
+
     return (
         <>
             {/* Mobile view menu button */}
@@ -32,7 +38,7 @@ const Sidebar = () => {
             </div>
 
             {/* Sidebar */}
-            <div className={`min-h-screen overflow-y-auto ${isSidebarOpen ? 'w-64' : 'w-0'} lg:w-64 text-white flex flex-col justify-between transition-width duration-300`}>
+            <div className={`min-h-screen overflow-y-auto ${isSidebarOpen ? 'w-[13rem]' : 'w-0'} lg:w-[13rem] text-white flex flex-col justify-between transition-width duration-300`}>
 
                 {/* Sidebar content */}
                 <div className={`${isSidebarOpen ? 'block' : 'hidden'} lg:block`}>
@@ -44,9 +50,9 @@ const Sidebar = () => {
 
                     <div className='min-h-[90vh] rounded-[8px] relative' style={{ background: 'linear-gradient(176.83deg, #52E7CF 0.29%, #0096F6 3.41%, #1DB3E8 57.31%, #52E7CF 85.81%)' }}>
                         {/* Profile and dropdown */}
-                        <div className='flex items-center pt-3 px-5 gap-2 mb-1'>
+                        <div className='flex justify-center items-center  gap-2 py-2'>
                             <Link to={"/PersonalInfo"}>
-                                <img className='w-10 h-10 rounded-[50%]' src={Profile} alt="Profile" />
+                            <img className='w-10 h-10  rounded-full object-cover' src={Profile} alt="Profile" />
                             </Link>
                             <div>
                                 <select
@@ -63,43 +69,43 @@ const Sidebar = () => {
 
                         {/* Navigation */}
                         <ul className='flex flex-col gap-2'>
-                            <li className='px-5 py-2 hover:bg-gray-700'>
+                            <li style={liname=="Dashboard"?liactivestyle:{}} className='px-4 py-2 hover:bg-[#0078C5] hover:border-[1px]'>
                                 <Link to='/' className='flex items-center gap-2'>
                                     <img className='w-5 h-5' src={dashboardImg} alt="Dashboard" />
-                                    <span>Dashboard</span>
+                                    <span className='w-[max-content]'>Dashboard</span>
                                 </Link>
                             </li>
-                            <li className='px-5 py-2 hover:bg-gray-700'>
+                            <li style={liname=="Session"?liactivestyle:{}}  className='px-4 py-2 hover:bg-[#0078C5] hover:border-[1px]'>
                                 <Link to='/session' className='flex items-center gap-2'>
                                     <img className='w-5 h-5' src={openBook} alt="Session" />
-                                    <span>Session</span>
+                                    <span className='w-[max-content]'>Session</span>
                                 </Link>
                             </li>
-                            <li className='px-5 py-2 hover:bg-gray-700'>
+                            <li style={liname=="Session Calender"?liactivestyle:{}} className='px-4 py-2 hover:bg-[#0078C5] hover:border-[1px]'>
                                 <Link to='/calender' className='flex items-center gap-2'>
                                     <img className='w-5 h-5' src={planning} alt="Session Calender" />
-                                    <span>Session Calender</span>
+                                    <span className='w-[max-content]'>Session Calender</span>
                                 </Link>
                             </li>
-                            <li className='px-5 py-2 hover:bg-gray-700'>
+                            <li style={liname=="Notice Board"?liactivestyle:{}} className='px-4 py-2 hover:bg-[#0078C5] hover:border-[1px]'>
                                 <Link to='/NoticeBoard' className='flex items-center gap-2'>
                                     <img className='w-5 h-5' src={NoticeImage} alt="Notice Board" />
-                                    <span>Notice Board</span>
+                                    <span className='w-[max-content]'>Notice Board</span>
                                 </Link>
                             </li>
-                            <li className='px-5 py-2 hover:bg-gray-700'>
+                            <li style={liname=="Messages"?liactivestyle:{}} className='px-4 py-2 hover:bg-[#0078C5] hover:border-[1px]'>
                                 <Link to='/chatMessage' className='flex items-center gap-2'>
                                     <img className='w-5 h-5' src={messageImg} alt="Messages" />
-                                    <span>Messages</span>
+                                    <span className='w-[max-content]'>Messages</span>
                                 </Link>
                             </li>
-                            <li className='px-5 py-2 hover:bg-gray-700'>
+                            <li style={liname=="My Account"?liactivestyle:{}} className='px-4 py-2 hover:bg-[#0078C5] hover:border-[1px]'>
                                 <Link to='/Myaccounts' className='flex items-center gap-2'>
                                     <img className='w-5 h-5' src={contact} alt="My Account" />
-                                    <span>My Account</span>
+                                    <span className='w-[max-content]'>My Account</span>
                                 </Link>
                             </li>
-                            <li className='px-5 py-2 cursor-pointer'>
+                            <li  className='px-4 py-2 cursor-pointer'>
                                 <span className='flex items-center gap-2 cursor-pointer' onClick={toggleWalletDropdown}>
                                     <img className='w-5 h-5' src={walletImg} alt="My Wallet" />
                                     <span>My Wallet</span>
@@ -108,12 +114,12 @@ const Sidebar = () => {
                                 {showWalletDropdown && (
                                     <ul className='flex flex-col gap-2'>
                                         <Link to={"/MyWallet"}>
-                                            <li className='px-5 hover:bg-gray-700'>
+                                            <li style={liname=="My Wallet"?liactivestyle:{}} className='px-4 hover:bg-[#0078C5] hover:border-[1px]'>
                                                 Wallet
                                             </li>
                                         </Link>
                                         <Link to={"/mywithdrawls"}>
-                                            <li className='px-5 hover:bg-gray-700'>
+                                            <li style={liname=="My Withdrawal"?liactivestyle:{}} className='px-4 hover:bg-[#0078C5] hover:border-[1px]'>
                                                 Withdrawals
                                             </li>
                                         </Link>
@@ -123,10 +129,10 @@ const Sidebar = () => {
                         </ul>
 
                         {/* Help & Support */}
-                        <div className='absolute bottom-3 left-auto right-auto px-5 py-4 text-[#0078C5] font-[600]'>
+                        <div className='absolute bottom-3 pl-4 py-4 text-[#0078C5] font-[600]'>
                             <Link to="/" className='flex items-center gap-2'>
                                 <BiSupport />
-                                <span>Help & Support</span>
+                                <span className='w-[max-content]'>Help & Support</span>
                             </Link>
                         </div>
                     </div>

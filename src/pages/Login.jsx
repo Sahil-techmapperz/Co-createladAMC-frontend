@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Navigate } from 'react-router-dom';
+
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../CSS/SignUp.css';
 import Signup1 from '../assets/signup.png';
@@ -10,11 +11,11 @@ const Signin = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   let BaseUrl = import.meta.env.VITE_Base_Url; // Ensure this is defined in your .env file
-
+  let navigate= useNavigate();
   useEffect(() => {
     const token = localStorage.getItem('token'); // Prefer checking the token over 'user'
     if (token) {
-      <Navigate to="/" replace />
+      navigate("/");
     }
     // Removed `navigate` from the dependency array to prevent re-triggering by navigate changes
   }, []); 
@@ -37,7 +38,7 @@ const Signin = () => {
         localStorage.setItem('token', JSON.stringify(token));
 
         // Redirect to home page
-        <Navigate to="/" replace />
+        navigate("/");
       }
     } catch (error) {
       console.error('Login error', error.response || error);

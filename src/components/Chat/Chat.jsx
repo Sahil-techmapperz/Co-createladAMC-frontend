@@ -4,8 +4,10 @@ import ChatInterface from './ChatInterface';
 import './Chat.css';
 import io from 'socket.io-client';
 import Sound from "../../assets/whatsapp_notification.mp3";
+import useWindowSize from '../../hooks/useWindowSize';
 
-let BaseUrl = import.meta.env.VITE_Base_Url;
+// let BaseUrl = import.meta.env.VITE_Base_Url;
+let BaseUrl = "https://chatdb-161w.onrender.com";
 const socket = io(BaseUrl);
 
 
@@ -13,7 +15,9 @@ function Chat() {
     const [selectedUser, setSelectedUser] = useState(null);
     const [message, setMessage] = useState('');
     const [messages, setMessages] = useState([]);
+    const [users, setUsers] = useState([]);
     const user = JSON.parse(localStorage.getItem('user'));
+    const { width, height } = useWindowSize();
 
     useEffect(() => {
         const audio = new Audio(Sound);
@@ -23,6 +27,7 @@ function Chat() {
 
         if (user && user._id) {
             socket.emit('register', { userId: user._id });
+            socket.emit('getUserDataWithMessages', { userId: user._id  });
         }
 
         socket.on('message', (newMessage) => {
@@ -44,7 +49,6 @@ function Chat() {
 
 
         socket.on('messageUpdated', (updatedMessage) => {
-            // console.log(updatedMessage);
             setMessages((prevMessages) => prevMessages.map(msg => msg._id === updatedMessage._id ? updatedMessage : msg));
         });
 
@@ -53,6 +57,38 @@ function Chat() {
             setMessages((prevMessages) => prevMessages.filter(msg => msg._id !== deletedMessageId));
         });
 
+
+        socket.on('userDataWithMessages', (userData) => {
+            // console.log("in");
+            // console.log(userData);
+            const loginUser = JSON.parse(localStorage.getItem('user'));
+            const filteredUsers = userData
+                .filter(user => user._id !== loginUser._id)
+                .map(user => ({
+                    ...user,
+                    lastMessage: user.lastMessage !== 'empty' ? {
+                        content: user.lastMessage.content,
+                        createdAt: user.lastMessage.createdAt,
+                        isRead: user.lastMessage.isRead,
+                    } : null,
+                    unreadCount: user.unreadCount !== 0 ? user.unreadCount : null,
+                    isOnline: user.isOnline,
+                }));
+
+            // Check if users array is different from filteredUsers
+            const isDifferent = users.length !== filteredUsers.length || filteredUsers.some((filteredUser, index) => {
+                const currentUser = users[index];
+                return !currentUser ||
+                    currentUser.lastMessage?.content !== filteredUser.lastMessage?.content ||
+                    currentUser.unreadCount !== filteredUser.unreadCount;
+            });
+
+            if (isDifferent && !selectedUser) { 
+                playSound();
+            }
+
+            setUsers(filteredUsers);
+        });
 
 
 
@@ -63,7 +99,7 @@ function Chat() {
             socket.off('messageDeleted');
             socket.off('userDataWithMessages');
         };
-    }, [user]);
+    }, [user,messages]);
 
     const handleSendMessage = () => {
         if (message && selectedUser) {
@@ -72,7 +108,6 @@ function Chat() {
                 senderId: user._id,
                 receiverId: selectedUser._id,
             });
-            // socket.emit('getUserDataWithMessages',{userId: user._id});
             setMessage('');
         }
     };
@@ -94,15 +129,20 @@ function Chat() {
                 senderId: user._id,
                 receiverId: selectedUser._id,
             });
-            socket.emit('getUserDataWithMessages', { userId: user._id });
         }
     };
 
     return (
-        <div className="chat-container">
-            <UsersList selectedUser={selectedUser} onSelectUser={handleSelectUser} socket={socket} messages={messages} />
+        <div className="flex flex-col md:flex-row  md:h-[88vh] overflow-hidden">
+            <UsersList
+                users={users}
+                onSelectUser={handleSelectUser}
+                selectedUser={selectedUser}
+            />
             {selectedUser ? (
+
                 <ChatInterface
+                    className="flex-1 p-4"
                     socket={socket}
                     selectedUser={selectedUser}
                     messages={messages}
@@ -113,8 +153,8 @@ function Chat() {
                     handleDeleteMessage={handleDeleteMessage}
                 />
             ) : (
-                <div className="no-user-selected">
-                    <div>Hey there! 👋 Let's get started by choosing someone to chat with from the user list on the left.</div>
+                <div style={{ display: width > 768 ? 'flex' : 'none' }} className="flex-1 items-center justify-center p-4 text-gray-500">
+                    Hey there! 👋 Let's get started by choosing someone to chat with from the user list on the left.
                 </div>
 
             )}
