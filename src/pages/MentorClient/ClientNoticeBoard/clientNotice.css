@@ -3,18 +3,11 @@
     gap:16px;
 }
 
-.notice_board_main_container p{
-    font-size: 14px;
-    margin-top: 15px;
-  
-}
 
-.notice_board_main_container {
-    width: 95%;
+   
     
-    
-    /* column-gap: 20px; */
-}
+
+
 
 .notice_board_left_part {
 
@@ -77,7 +70,7 @@
 }
 
 .notice_board_blog_cotesion {
-    padding: 5px;
+    margin-top: 20px;
 }
 
 

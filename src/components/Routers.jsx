@@ -18,9 +18,7 @@ import NavbarSide from './Mobile/NavbarSide';
 import ClientDashboard from '../pages/MentorClient/ClientDashboard/ClientDashboard';
 import ClientNavbar from '../pages/MentorClient/ClientNavbar/ClientNavbar';
 import ClientIntroSession from '../pages/ClientIntroSession/ClientIntroSession';
-import SuparAdmin from '../pages/SuparAdmin/SuperAdminDashboard/SuparAdmin';
 import SuperAdminUserTable from '../pages/SuparAdmin/SuperAdminUsers/SuperAdminUsers';
-import SuperAdminSide from '../pages/SuparAdmin/SuperAdminSide/SuperAdminSide';
 import SuperAdminIssueReport from '../pages/SuparAdmin/SuperAdminIssuReport/SuperAdminIssuReport';
 import ReactBarchart from '../pages/SuparAdmin/ReactBarchart/ReactBarchart';
 import ClientMyWallet from '../pages/MentorClient/ClientMyWallet/ClientMyWallet';
@@ -28,9 +26,12 @@ import ClientSidebar from '../pages/MentorClient/ClientSidebar/ClientSidebar';
 import ClientSnCalender from '../pages/MentorClient/ClientSessionCalander/ClientSnCalander';
 import ClientNotice from '../pages/MentorClient/ClientNoticeBoard/ClientNotice';
 import ClientMyAcc from '../pages/MentorClient/ClientMyAccount/ClientMyAcc';
-import SuperAdminNav from '../pages/SuparAdmin/SuperAdminNav/SuperAdminNav';
-import SuperAdminSidebar from '../pages/SuparAdmin/SuperAdminSiderbar/SuperAdminSider';
 import CilentMobileNav from '../pages/MentorClient/ClientMobileNav/ClientMobileNav';
+import SuperAdminNavbar from '../pages/SuparAdmin/SuperAdminNav/SuperAdminNav';
+import SuperAdminSide from '../pages/SuparAdmin/SuperAdminSide/SuperAdminSide';
+import SuparAdmin from '../pages/SuparAdmin/SuperAdminDashboard/SuparAdmin';
+
+
 
 
 
@@ -61,18 +62,17 @@ const AllRoute = () => {
         <Route path='/reactBarchart' element={<ReactBarchart />} />
         <Route path='/clientMyWallet' element={<ClientMyWallet />} />
         <Route path='/cilentMobileNav' element={<CilentMobileNav />} />
-
-
         <Route path='/clientSideBar' element={<ClientSidebar />} />
         <Route path='/clientSnCalender' element={<ClientSnCalender />} />
         <Route path='/clientMyAccount' element={<ClientMyAcc />} />
         <Route path='/clientNotice' element={<ClientNotice />} />
-        <Route path='/suparAdmin' element={<SuparAdmin />} />
+       
         <Route path='/SuperAdminUserTable' element={<SuperAdminUserTable />} />
-        <Route path='/superAdminSide' element={<SuperAdminSide />} />
         <Route path='/superAdminIssueReport' element={<SuperAdminIssueReport />} />
-        <Route path='/superAdminNav' element={<SuperAdminNav />} />
-        <Route path='/superAdminSidebar' element={<SuperAdminSidebar />} />
+        <Route path='/superAdminNav' element={<SuperAdminNavbar />} />
+      <Route path='/superadminSidebar' element={<SuperAdminSide />} />
+      <Route path='/superAdmin' element={<SuparAdmin/>} />
+   
 
 
 

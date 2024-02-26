@@ -21,7 +21,7 @@ const ClientSidebar = () => {
     };
 
     return (
-        <div className='min-h-screen  w-64  text-white flex flex-col justify-between'>
+        <div className='min-h-screen  w-64  text-white flex flex-col justify-between '>
             <div className='py-[10px]'>
                 <Link to={"/"}>
                     <img className=' w-full mx-auto' src={Logo} alt="Website Logo" />
@@ -38,52 +38,58 @@ const ClientSidebar = () => {
                             className="bg-transparent text-white cursor-pointer text-sm font-medium p-2 px-4 pl-[20px]" // Added padding with p-2
                             defaultValue="Jhon Das" // Control the initial selection with defaultValue
                         >
-                            <option className='text-[black]' value="/Jhon Das" >Jhon Das</option>
-                            <option className='text-[black]' value="/PersonalInfo">Profile</option>
-                            <option className='text-[black]' value="/settings">Settings</option>
-                            <option className='text-[black]' value="/logout">Logout</option>
+                            <option className='text-[black] ' value="/Jhon Das" >Jhon Das</option>
+                            <option className='text-[black] ' value="/PersonalInfo">Profile</option>
+                            <option className='text-[black] ' value="/settings">Settings</option>
+                            <option className='text-[black] ' value="/logout">Logout</option>
                         </select>
                     </div>
                 </div>
 
                 <ul className='flex flex-col gap-4'>
                     <li className='px-5 py-2 hover:bg-gray-700'>
-                        <Link to='/' className='flex items-center gap-2'>
+                        <Link to='/clientDashboard' className='flex items-center gap-2 '>
                             <img className='w-5 h-5' src={dashboardImg} alt="Dashboard" />
                             <span>Dashboard</span>
                         </Link>
                     </li>
                     <li className='px-5 py-2 hover:bg-gray-700'>
-                        <Link to='/session' className='flex items-center gap-2'>
+                        <Link to='/clientIntroSession' className='flex items-center gap-2 '>
                             <img className='w-5 h-5' src={openBook} alt="Session" />
                             <span>Session</span>
                         </Link>
                     </li>
                     <li className='px-5 py-2 hover:bg-gray-700'>
-                        <Link to='/calender' className='flex items-center gap-2'>
+                        <Link to='/clientSnCalender' className='flex items-center gap-2 '>
                             <img className='w-5 h-5' src={planning} alt="Session Calender" />
                             <span>Session Calender</span>
                         </Link>
                     </li>
                     <li className='px-5 py-2 hover:bg-gray-700'>
-                        <Link to='/NoticeBoard' className='flex items-center gap-2'>
+                        <Link to='/clientNotice' className='flex items-center gap-2 '>
                             <img className='w-5 h-5' src={NoticeImage} alt="Notice Board" />
                             <span>Notice Board</span>
                         </Link>
                     </li>
                     <li className='px-5 py-2 hover:bg-gray-700'>
-                        <Link to='/chatMessage' className='flex items-center gap-2'>
+                        <Link to='' className='flex items-center gap-2 '>
                             <img className='w-5 h-5' src={messageImg} alt="Messages" />
                             <span>Messages</span>
                         </Link>
                     </li>
                     <li className='px-5 py-2 hover:bg-gray-700'>
-                        <Link to='/Myaccounts' className='flex items-center gap-2'>
+                        <Link to='/clientMyAccount' className='flex items-center gap-2 '>
                             <img className='w-5 h-5' src={contact} alt="My Account" />
                             <span>My Account</span>
                         </Link>
                     </li>
-                    <li className='px-5 py-2 cursor-pointer'>
+                    <li className='px-5 py-2 hover:bg-gray-700'>
+                        <Link to='/clientMyWallet' className='flex items-center gap-2 '>
+                            <img className='w-5 h-5' src={walletImg} alt="My Wallet" />
+                            <span>My Wallet</span>
+                        </Link>
+                    </li>
+                    {/* <li className='px-5 py-2 cursor-pointer'>
                         <span className='flex items-center gap-2 cursor-pointer' onClick={toggleWalletDropdown}>
                             <img className='w-5 h-5' src={walletImg} alt="My Wallet" />
                             <span>My Wallet</span>
@@ -98,10 +104,10 @@ const ClientSidebar = () => {
                                 </Link>
                             </ul>
                         )}
-                    </li>
+                    </li> */}
                 </ul>
-                <div className='px-5 py-4 text-[#0078C5] font-[600]'>
-                    <Link to="/" className='flex items-center gap-2'>
+                <div className='px-5 py-4 mt-[50px] text-[#0078C5] font-[600]'>
+                    <Link to="/" className='flex items-center gap-2 '>
                         <BiSupport />
                         <span>Help & Support</span>
                     </Link>

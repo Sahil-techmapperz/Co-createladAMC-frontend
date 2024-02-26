@@ -23,24 +23,28 @@ const ClientSnCalender = () => {
 
 
 
-            <div className='calender_main ml-[30px]'>
+            <div className='w-[80%] calender_main ml-[30px]   max-sm:ml-[0px] max-sm:w-[100%]'>
 
 
-              
 
-                <div className="max-sm:hidden" >
+
+                <div className="" >
                     <ClientNavbar Navtext={"Calender"} />
                 </div>
 
 
 
                 <p className='calender_schedule'>SCHEDULE</p>
-                <FullCalendar
-                    plugins={[dayGridPlugin]}
-                    initialView="dayGridMonth"
-                    weekends={false}
-                    events={events}
-                />
+                <div className=' md:h-[85vh] md:overflow-y-auto max-sm:w-[90%]'>
+                    <FullCalendar
+                        plugins={[dayGridPlugin]}
+                        initialView="dayGridMonth"
+                        weekends={false}
+                        events={events}
+
+                    />
+
+                </div>
             </div>
         </div>
     )

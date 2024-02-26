@@ -1,152 +1,127 @@
-import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-
-import Logo from "../../../assets/Logo1.png"
-import Setting from "../../../assets/settings.png";
-import "./superAdminSide.css";
-
-
-import PersonalInfo from "../../../pages/PersonalInfo.jsx";
-import "../../../pages/Mentordashboard.jsx";
-import "../../../pages/MessageChat.jsx";
-import "../../../pages/MyAccount.jsx";
-import "../../../pages/MyWallet.jsx";
-import "../../../pages/MyWithdrawls.jsx";
-import "../../../pages/NoticeBoard.jsx";
-import "../../../pages/Session.jsx";
-import "../../../pages/SessionCalander.jsx";
-import "../../../pages/SignUp.jsx";
-
-import exitLogo from "../../../assets/material-symbols_logout (1).png";
-import notification from "../../../assets/GroupNotification.png";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { BiChevronDown } from "react-icons/bi";
+import Logo from "../../../assets/Logo1.png";
 import Profile from "../../../assets/web.png";
-import dropdownArrow from "../../../assets/pngfind-2@2x.png";
 import dashboardImg from "../../../assets/dashboard.png";
 import openBook from "../../../assets/open-book 1 (1).png";
 import planning from "../../../assets/planning 1.png";
-import groupSession from "../../../assets/group 1 (1).png";
 import NoticeImage from "../../../assets/clipboard-outline.png";
-import walletImg from "../../../assets/text-box.png";
-import withdrallImg from "../../../assets/receipt-outline.png";
 import messageImg from "../../../assets/chat 1 (1).png";
 import contact from "../../../assets/account-circle.png";
-import contact1 from "../../../assets/contact2.png";
-import store from "../../../assets/store.png";
-import graph1 from "../../../assets/Group 1000002280.png";
-import graph2 from "../../../assets/Group 1000002281.png";
+import walletImg from "../../../assets/text-box.png";
+import withdrallImg from "../../../assets/receipt-outline.png";
+import { BiSupport } from "react-icons/bi";
+import "./superAdminSide.css";
+
+
+   
+
 
 const SuperAdminSide = () => {
+
+    const [showWalletDropdown, setShowWalletDropdown] = useState(false);
+
+    const toggleWalletDropdown = () => {
+        setShowWalletDropdown(!showWalletDropdown);
+    };
+
     return (
 
-        <div className='admin_side_part_one'>
+        <div className='min-h-screen  w-64  text-white flex flex-col justify-between '>
+        <div className='py-[10px]'>
+            <Link to={"/"}>
+                <img className=' w-full mx-auto' src={Logo} alt="Website Logo" />
+            </Link>
+        </div>
 
-            <img className='websiteLogo' src={Logo} />
-
-
-
-            <div className='admin_side_para'>
-
-                {/* <div className='admin_side_part_two'> */}
-
-                <div className='admin_profile'>
-                    <img src={Profile} />
-                    <a href='/PersonalInfo'><p>Jhon Das</p></a>
-                    <i className="dropdownIcon  fa-solid fa-caret-down"></i>
-
+        <div className='h-[90vh] rounded-[8px]' style={{ background: 'linear-gradient(176.83deg, #52E7CF 0.29%, #0096F6 3.41%, #1DB3E8 57.31%, #52E7CF 85.81%)' }}>
+            <div className='flex items-center pt-3 px-5 gap-2 mb-5'>
+                <Link to={"/PersonalInfo"}>
+                    <img className='w-10 h-10 rounded-[50%]' src={Profile} alt="Profile" />
+                </Link>
+                <div>
+                    <select
+                        className="bg-transparent text-white cursor-pointer text-sm font-medium p-2 px-4 pl-[20px]" // Added padding with p-2
+                        defaultValue="Jhon Das" // Control the initial selection with defaultValue
+                    >
+                        <option className='text-[black] ' value="/Jhon Das" >Jhon Das</option>
+                        <option className='text-[black] ' value="/PersonalInfo">Profile</option>
+                        <option className='text-[black] ' value="/settings">Settings</option>
+                        <option className='text-[black] ' value="/logout">Logout</option>
+                    </select>
                 </div>
-                <div className='Profile_devider'></div>
-
-
-
-                <ul className='sideBar_main'>
-                    <li>
-                        {/* <div className="admin_dashboard1"> */}
-                        <img src={dashboardImg} />
-                        <a href='/suparAdmin'><p>Dashboard</p></a>
-
-                        {/* </div> */}
-                    </li>
-
-
-                    <li>
-                        {/* <div className='session'> */}
-                        <img src={openBook} />
-                        <a href='/SuperAdminUserTable'><p>Manage Users </p></a>
-
-                        {/* </div> */}
-                    </li>
-
-
-                    <li>
-                        {/* <div className='session_Calander'> */}
-                        <img src={planning} />
-                        <a href=''><p>Issue Reported</p></a>
-
-                        {/* </div> */}
-                    </li>
-
-                    {/* <li> */}
-                    {/* <div className='group_Session'> */}
-                    {/* <img src={groupSession} />
-                        <a href=''><p>Group Session</p></a> */}
-
-                    {/* </div> */}
-                    {/* </li> */}
-                    {/*  */}
-
-                    {/* <li> */}
-                    {/* <div className='noticeBoard'> */}
-                    {/* <img src={NoticeImage} />
-                        <a href='/NoticeBoard'><p>Notice Board</p></a> */}
-
-                    {/* </div> */}
-                    {/* </li> */}
-
-                    {/* <div className='message'> */}
-                    <li>
-                        <img src={messageImg} />
-                        <a href='/chatMessage'><p>Messages</p></a>
-                        {/* </div> */}
-                    </li>
-                    <li>
-                        <img src={contact} />
-                        <a href='/Myaccounts'><p>My Account</p></a>
-                        {/* </div> */}
-                    </li>
-
-
-
-                    {/* <div className='admin_side_para_divider1'>
-
-            </div> */}
-                    <li>
-                        {/* <div className='my_wallet'> */}
-                        <img src={walletImg} />
-                        <a href='/MyWallet'><p>Notice Board</p></a>
-
-                        {/* </div> */}
-                    </li>
-
-                    {/* <li> */}
-                    {/* <div className='myWithdrals'> */}
-                    {/* <img src={withdrallImg} />
-                        <a href='/mywithdrawls'><p>My Withdrawals</p></a> */}
-
-                    {/* </div> */}
-                    {/* </li> */}
-
-
-
-                </ul >
-
-                {/* </div> */}
-
             </div>
 
-
+            <ul className='flex flex-col gap-4'>
+                <li className='px-5 py-2 hover:bg-gray-700'>
+                    <Link to='/clientDashboard' className='flex items-center gap-2 '>
+                        <img className='w-5 h-5' src={dashboardImg} alt="Dashboard" />
+                        <span>Dashboard</span>
+                    </Link>
+                </li>
+                <li className='px-5 py-2 hover:bg-gray-700'>
+                    <Link to='/clientIntroSession' className='flex items-center gap-2 '>
+                        <img className='w-5 h-5' src={openBook} alt="Session" />
+                        <span>Session</span>
+                    </Link>
+                </li>
+                <li className='px-5 py-2 hover:bg-gray-700'>
+                    <Link to='/clientSnCalender' className='flex items-center gap-2 '>
+                        <img className='w-5 h-5' src={planning} alt="Session Calender" />
+                        <span>Session Calender</span>
+                    </Link>
+                </li>
+                <li className='px-5 py-2 hover:bg-gray-700'>
+                    <Link to='/clientNotice' className='flex items-center gap-2 '>
+                        <img className='w-5 h-5' src={NoticeImage} alt="Notice Board" />
+                        <span>Notice Board</span>
+                    </Link>
+                </li>
+                <li className='px-5 py-2 hover:bg-gray-700'>
+                    <Link to='' className='flex items-center gap-2 '>
+                        <img className='w-5 h-5' src={messageImg} alt="Messages" />
+                        <span>Messages</span>
+                    </Link>
+                </li>
+                <li className='px-5 py-2 hover:bg-gray-700'>
+                    <Link to='/clientMyAccount' className='flex items-center gap-2 '>
+                        <img className='w-5 h-5' src={contact} alt="My Account" />
+                        <span>My Account</span>
+                    </Link>
+                </li>
+                <li className='px-5 py-2 hover:bg-gray-700'>
+                    <Link to='/clientMyWallet' className='flex items-center gap-2 '>
+                        <img className='w-5 h-5' src={walletImg} alt="My Wallet" />
+                        <span>My Wallet</span>
+                    </Link>
+                </li>
+                {/* <li className='px-5 py-2 cursor-pointer'>
+                    <span className='flex items-center gap-2 cursor-pointer' onClick={toggleWalletDropdown}>
+                        <img className='w-5 h-5' src={walletImg} alt="My Wallet" />
+                        <span>My Wallet</span>
+                        <BiChevronDown className="w-5 h-5" />
+                    </span>
+                    {showWalletDropdown && (
+                        <ul className='flex flex-col gap-2'>
+                            <Link to={"/MyWallet"}>
+                                <li className='px-5 hover:bg-gray-700'>
+                                    Wallet
+                                </li>
+                            </Link>
+                        </ul>
+                    )}
+                </li> */}
+            </ul>
+            <div className='px-5 py-4 mt-[50px] text-[#0078C5] font-[600]'>
+                <Link to="/" className='flex items-center gap-2 '>
+                    <BiSupport />
+                    <span>Help & Support</span>
+                </Link>
+            </div>
         </div>
-    )
+    </div>
+    );
 }
 
-export default SuperAdminSide
+export default SuperAdminSide;

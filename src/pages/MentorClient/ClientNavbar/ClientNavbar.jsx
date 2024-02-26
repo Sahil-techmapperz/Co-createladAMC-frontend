@@ -18,12 +18,13 @@ const Navbar = ({ Navtext }) => {
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
+    
 
     return (
         <nav className='w-full flex justify-between items-center bg-white py-4 px-6 shadow-md z-10 '>
             <div className='flex items-center gap-4'>
-                <RiMenu2Line className='md:hidden text-blue-500 text-2xl cursor-pointer' onClick={toggleMenu}/>
-                <img src={Logo} alt='logo' className='w-40 h-auto md:hidden'/>
+                <RiMenu2Line className='md:hidden text-blue-500 text-2xl cursor-pointer' onClick={toggleMenu} />
+                <img src={Logo} alt='logo' className='w-40 h-auto md:hidden' />
                 <h1 className='hidden md:block font-bold text-xl'>{Navtext}</h1>
                 <input
                     type="text"
@@ -32,12 +33,26 @@ const Navbar = ({ Navtext }) => {
                 />
             </div>
 
+
+{/* 
+            <div className='flex gap-[30px]'>
+                <div className='flex gap-[5px]'>
+                    <p className='flex items-center justify-center'>Advanced Search</p>
+                </div>
+                <div className='flex gap-[5px]'>
+                    <p>Sorting-</p>
+
+                    <Select options={options} onChange={handleChange} />
+                </div>
+            </div> */}
+
+
             <div className='flex items-center gap-4'>
-                <IoMdSettings className='hidden md:block text-blue-500 text-2xl cursor-pointer'/>
-                
+                <IoMdSettings className='hidden md:block text-blue-500 text-2xl cursor-pointer' />
+
                 <div className='relative'>
                     <div onClick={toggleNotifications} className='cursor-pointer'>
-                        <FaBell className='text-blue-500 text-2xl'/>
+                        <FaBell className='text-blue-500 text-2xl' />
                         <div className='absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full px-1.5 py-0.5'>
                             3
                         </div>
@@ -49,7 +64,7 @@ const Navbar = ({ Navtext }) => {
                     )}
                 </div>
 
-                <IoLogOutOutline className='text-red-500 text-2xl cursor-pointer'/>
+                <IoLogOutOutline className='text-red-500 text-2xl cursor-pointer' />
             </div>
 
             {isMenuOpen && (
