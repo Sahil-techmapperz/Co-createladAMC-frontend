@@ -1,21 +1,21 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom';
-import Mentordashboard from '../pages/Mentordashboard';
+import Mentordashboard from '../pages/Mentor/Mentordashboard';
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
-import MyAccount from '../pages/MyAccount';
-import NoticeBoard from '../pages/NoticeBoard';
-import MyWallet from '../pages/MyWallet';
-import MyWithdrawls from '../pages/MyWithdrawls';
-import Calender from '../pages/Calender';
-import MessageChat from '../pages/MessageChat';
-import PersonalInfo from '../pages/PersonalInfo';
-import Session from '../pages/Session';
+import MyAccount from '../pages/Mentor/MyAccount';
+import NoticeBoard from '../pages/Mentor/NoticeBoard';
+import MyWallet from '../pages/Mentor/MyWallet';
+import MyWithdrawls from '../pages/Mentor/MyWithdrawls';
+import Calender from '../pages/Mentor/Calender';
+import MessageChat from '../pages/Mentor/MessageChat';
+import PersonalInfo from '../pages/Mentor/PersonalInfo';
+import Session from '../pages/Mentor/Session';
 import MobileNav from './Mobile/MobileNav';
 import NavbarSide from './Mobile/NavbarSide';
 import ClientDashboard from '../pages/MentorClient/ClientDashboard/ClientDashboard';
 import ClientNavbar from '../pages/MentorClient/ClientNavbar/ClientNavbar';
-import ClientIntroSession from '../pages/ClientIntroSession/ClientIntroSession';
+import ClientIntroSession from '../pages/MentorClient/ClientIntroSession/ClientIntroSession';
 import SuparAdmin from '../pages/SuparAdmin/SuperAdminDashboard/SuparAdmin';
 import SuperAdminUserTable from '../pages/SuparAdmin/SuperAdminUsers/SuperAdminUsers';
 import SuperAdminSide from '../pages/SuparAdmin/SuperAdminSide/SuperAdminSide';
@@ -70,7 +70,6 @@ const AllRoute = () => {
         <Route path='/clientNotice' element={<ClientNotice />} />
         <Route path='/clientMyAccount' element={<ClientMyAcc />} />
         <Route path='*' element={<NotFoundPage />} />
-
       </Routes>
     </>
   )

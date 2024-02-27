@@ -1,19 +1,19 @@
 import React, { useState } from 'react'
-import '../CSS/MessageChat.css';
-import '../components/Sidebar.jsx';
-import Sidebar from '../components/Sidebar.jsx';
-import Video1 from '../assets/Video.png';
+import './../../CSS/MessageChat.css';
+import '../../components/Sidebar.jsx';
+import Sidebar from '../../components/Sidebar.jsx';
+import Video1 from './../../assets/Video.png';
 import { PiBookOpen } from "react-icons/pi";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Profile1 from '../assets/web.png';
+import Profile1 from './../../assets/web.png';
 import { MdEdit } from "react-icons/md";
 import { MdDelete } from "react-icons/md";
 import { RiArrowDropDownLine } from "react-icons/ri";
-import MobileNav from '../components/Mobile/MobileNav.jsx';
-import Navbar from '../components/Navbar.jsx';
+import MobileNav from '../../components/Mobile/MobileNav.jsx';
+import Navbar from '../../components/Navbar.jsx';
 import { Link } from 'react-router-dom';
 import { FaPlus } from "react-icons/fa6";
-import AddSessionModal from '../components/AddSessionModal.jsx';
+import AddSessionModal from '../../components/AddSessionModal.jsx';
 
 const categories = {
     'all Sessions': [

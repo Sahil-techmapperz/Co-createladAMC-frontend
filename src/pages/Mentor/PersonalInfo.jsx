@@ -1,10 +1,10 @@
 import React from 'react';
-import Sidebar from '../components/Sidebar.jsx';
-import Navbar from '../components/Navbar.jsx';
-import Port1 from '../assets/svg.png';
-import Port2 from '../assets/svg (1).png';
-import Port3 from '../assets/svg (2).png';
-import PersonalEdit from '../components/PersonalEdit.jsx';
+import Sidebar from '../../components/Sidebar.jsx';
+import Navbar from '../../components/Navbar.jsx';
+import Port1 from './../../assets/svg.png';
+import Port2 from './../../assets/svg (1).png';
+import Port3 from './../../assets/svg (2).png';
+import PersonalEdit from '../../components/PersonalEdit.jsx';
 import { Link } from 'react-router-dom';
 
 const PersonalInfo = () => {

@@ -3,9 +3,9 @@ import { useTable } from 'react-table';
 import Select from 'react-select';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
-import Sidebar from '../components/Sidebar.jsx';
-import Navbar from '../components/Navbar.jsx';
-import '../CSS/MyWithdrawls.css';
+import Sidebar from '../../components/Sidebar.jsx';
+import Navbar from '../../components/Navbar.jsx';
+import './../../CSS/MyWithdrawls.css';
 import { Link } from 'react-router-dom';
 
 
@@ -185,7 +185,7 @@ const MyWithdrawls = () => {
 
                     </div>
 
-                    <table {...getTableProps()}  className='max-md:ml-0' >
+                    <table {...getTableProps()}  className='md:m-[20px]' >
                         <thead>
                             {headerGroups.map(headerGroup => (
                                 <tr {...headerGroup.getHeaderGroupProps()}>

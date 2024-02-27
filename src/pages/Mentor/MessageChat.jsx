@@ -1,7 +1,7 @@
 import React from 'react'
-import Navbar from '../components/Navbar.jsx';
-import Sidebar from '../components/Sidebar.jsx';
-import Chat from '../components/Chat/Chat.jsx';
+import Navbar from '../../components/Navbar.jsx';
+import Sidebar from '../../components/Sidebar.jsx';
+import Chat from '../../components/Chat/Chat.jsx';
 import { Link } from 'react-router-dom';
 
 

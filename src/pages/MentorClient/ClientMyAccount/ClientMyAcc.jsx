@@ -26,7 +26,7 @@ const ClientMyAccount = () => { // Renamed to avoid conflict
     return (
         <div className='flex gap-2 h-[100vh] overflow-hidden'>
             <div className="max-sm:hidden">
-                <ClientSidebar liname={"My Account"}/> {/* Ensure this is correct usage */}
+                <ClientSidebar liname={"clientMyAccount"}/> {/* Ensure this is correct usage */}
             </div>
             <div className='myAccount_body py-[15px]'>
                 <ClientNavbar Navtext={"My Account"} />

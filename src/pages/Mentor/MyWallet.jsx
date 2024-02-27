@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import Select from 'react-select';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, BarChart, Bar } from 'recharts';
 import { startOfWeek, endOfWeek, startOfMonth, endOfMonth, startOfYear, endOfYear, isWithinInterval, parseISO, startOfDay, endOfDay, compareAsc } from 'date-fns';
-import "../CSS/MyWallet.css";
-import Sidebar from '../components/Sidebar.jsx';
-import Navbar from '../components/Navbar.jsx';
+import "./../../CSS/MyWallet.css";
+import Sidebar from '../../components/Sidebar.jsx';
+import Navbar from '../../components/Navbar.jsx';
 
 const actualData = [
     { date: '2024-01-01', Revenue: 4000, Courses: 2400, ProfileViews: 2400 },

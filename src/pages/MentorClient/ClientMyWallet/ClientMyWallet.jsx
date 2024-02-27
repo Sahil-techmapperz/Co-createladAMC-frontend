@@ -9,61 +9,58 @@ import ClientSidebar from '../ClientSidebar/ClientSidebar'
 
 
 const ClientMyWallet = () => {
+    const Functions=["1 User Per Account","Them Customizetion","Ecomerce Thems","Wordpress Thems","Email Announcment"];
     return (
         <>
             <div className='flex'>
                 <div className="max-sm:hidden ">
-                    <ClientSidebar />
+                    <ClientSidebar liname={"clientMyWallet"} />
                 </div>
 
-                <div className='w-[80%] ml-[30px] max-sm:ml-[0px] max-sm:w-[100%]'>
+                <div className='w-[80%] h-[100vh] md:overflow-y-hidden ml-[30px] max-sm:ml-[0px] max-sm:w-[100%]'>
                     {/* <div className="sm:hidden  ml-[10px]">  <MobileNav /> </div> */}
                     <div className=''>  <ClientNavbar Navtext={"My Wallet"} /></div>
 
-                    <div className='flex justify-between mt-[10px] pt-[20px] pb-[20px] pr-[20px] pl-[0px] max-sm:mt-[0px] max-sm:pl-[20px]'>
+                    <div className='flex justify-between py-[10px] pr-[20px] pl-[0px] max-sm:mt-[0px] max-sm:pl-[20px]'>
                         <h1 className='text-lg font-medium'>My Wallet</h1>
                     </div>
 
-                    <div className='flex gap-[20px] max-sm:flex-col  max-sm:ml-[15px]'>
-                        <div className='w-[350px] pt-[10px] rounded-lg h-[480px]  shadow-lg max-sm:w-[250px]'>
-                            <div className='flex justify-center items-center'><img src={BasicImage} /></div>
+                    <div className='flex gap-5 items-center'>
+                        {/* Card UI adjusted for top-left placement and responsive height */}
+                        <div className='w-full ml-2 p-4 max-w-xs rounded-lg shadow-lg bg-white' >
+                            <div className='flex justify-center'>
+                                <img src={BasicImage} alt="Basic Plan" className='h-32' /> {/* Adjusted for responsive design */}
+                            </div>
                             <div className='text-center'>
                                 <p className='text-xl font-bold'>Team</p>
-                                <p className='font-bold text-4xl '>350 CCL=$15</p>
-                                <p className='text-base'>/month</p>
-                                <div className='flex justify-center items-center mt-[10px]'>
-                                    <TiTick />
-                                    <p className='text-base '>1 User Per Account</p>
-                                </div>
-                                <div className='flex justify-center items-center mt-[10px]'>
-                                    <TiTick />
-                                    <p className='text-base'>Them Customizetion</p>
-                                </div>
-                                <div className='flex justify-center items-center mt-[10px]'>
-                                    <TiTick />
-                                    <p className='text-base'>Ecomerce Thems</p>
-                                </div>
-                                <div className='flex justify-center items-center mt-[10px]'>
-                                    <TiTick />
-                                    <p className='text-base'>Wordpress Thems</p>
-                                </div>
-                                <div className='flex justify-center items-center mt-[10px]'>
-                                    <TiTick />
-                                    <p className='text-base'>Email Announcment</p>
-                                </div>
+                                <p className='text-4xl font-bold'>350 CCL = $15</p>
+                                <p>/month</p>
+                                {Functions.map((_, index) => (
+                                    <div key={index} className='flex justify-center items-center mt-2'>
+                                        <TiTick />
+                                        <p className='ml-2'>{Functions[index]}</p>
+                                    </div>
+                                ))}
                             </div>
-                            <div className='flex justify-center items-center'><button className='mt-[10px] rounded-lg flex justify-center items-center w-[300px] text-white font-bold text-base bg-sky-500 h-[50px] max-sm:w-[200px]'>My Current Plan</button></div>
-                        </div>
-
-                        <div className='max-sm:hidden  flex justify-center items-center '>
-                            <div className='bg-sky-500 w-[200px] h-[200px] flex justify-center items-center gap-[10px] rounded-lg'>
-                                <div className='text-2xl bg-white p-[5px] rounded-full text-sky-500 flex items-center justify-center'><FaPlus /></div> <br />
-
-                                <p className=' text-xl text-white font-bold text-center flex justify-center items-center'>Add More</p>
+                            <div className='flex justify-center mt-4'>
+                                <button className='rounded-lg bg-sky-500 text-white font-bold py-2 px-4 w-fit'>My Current Plan</button>
                             </div>
                         </div>
 
-                        <div className='sm:hidden ml-[85%] text-4xl text-white p-[5px] rounded-full w-[50px] h-[50px] bg-sky-500 flex items-center justify-center'><FaPlus /></div> <br />
+                        {/* Hidden on smaller screens, shown on larger screens */}
+                        <div className='hidden sm:flex cursor-pointer justify-center items-center'>
+                            <div className='bg-sky-500 rounded-lg flex flex-col items-center justify-center p-4 h-48 w-48'>
+                                <div className='bg-white p-2 rounded-full text-sky-500'>
+                                    <FaPlus />
+                                </div>
+                                <p className='mt-4 text-white font-bold'>Add More</p>
+                            </div>
+                        </div>
+
+                        {/* Floating action button for smaller screens */}
+                        <div className='sm:hidden cursor-pointer fixed bottom-4 right-4 bg-sky-500 text-white rounded-full p-3'>
+                            <FaPlus />
+                        </div>
                     </div>
                 </div>
 

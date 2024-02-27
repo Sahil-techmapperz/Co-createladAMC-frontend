@@ -1,19 +1,18 @@
 import React from "react";
-import "../CSS/mentor_dashboard.css";
+import "./../../CSS/mentor_dashboard.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../components/Sidebar.jsx';
+import '../../components/Sidebar.jsx';
 
 
 
-import Scheduled_Sessions from "../assets/account-circle.png";
-import Total_Clients from "../assets/contact2.png";
-import Wallet_Balances from "../assets/store.png";
-import graph1 from "../assets/Group 1000002280.png";
-import graph2 from "../assets/Group 1000002281.png";
-import Sidebar from "../components/Sidebar.jsx";
-import Navbar from "../components/Navbar.jsx";
-import MobileNav from "../components/Mobile/MobileNav.jsx";
-import TableComponent from "../components/TableComponent.jsx";
+import Scheduled_Sessions from "./../../assets/account-circle.png";
+import Total_Clients from "./../../assets/contact2.png";
+import Wallet_Balances from "./../../assets/store.png";
+import graph1 from "./../../assets/Group 1000002280.png";
+import graph2 from "./../../assets/Group 1000002281.png";
+import Sidebar from "../../components/Sidebar.jsx";
+import Navbar from "../../components/Navbar.jsx";
+import TableComponent from "../../components/TableComponent.jsx";
 
 
 

@@ -8,6 +8,10 @@
     color: #f5c908;
 }
 
+.react-multiple-carousel__arrow{
+    width: fit-content !important;
+}
+
 
 @media (max-width: 768px) {
 

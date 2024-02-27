@@ -1,12 +1,12 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBookmark } from '@fortawesome/free-solid-svg-icons';
-import "../CSS/NoticeBoard.css";
-import '../components/Sidebar.jsx';
-import Blog1 from '../assets/Rectangle 5 (1).png';
-import Blog2 from '../assets/Rectangle 6 (1).png';
-import Sidebar from '../components/Sidebar.jsx';
-import Navbar from '../components/Navbar.jsx';
+import "./../../CSS/NoticeBoard.css";
+import '../../components/Sidebar.jsx';
+import Blog1 from './../../assets/Rectangle 5 (1).png';
+import Blog2 from './../../assets/Rectangle 6 (1).png';
+import Sidebar from '../../components/Sidebar.jsx';
+import Navbar from '../../components/Navbar.jsx';
 import { Link } from 'react-router-dom';
 
 
