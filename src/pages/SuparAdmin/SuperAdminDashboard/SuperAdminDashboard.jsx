@@ -5,11 +5,11 @@ import Pichart from '../../../assets/Group 268.png'
 import Image1 from '../../../assets/Ellipse 17.png'
 import Image2 from '../SuperAdminAssets/Group294.png'
 import Image3 from '../SuperAdminAssets/Group293.png'
-import './suparAdmin.css'
+import './superAdminDashboard.css'
 import MobileNav from '../../../components/Mobile/MobileNav'
 import SuperAdminSide from '../SuperAdminSide/SuperAdminSide'
 
-const SuparAdmin = () => {
+const SuperAdminDashboard = () => {
 
   const tableData = [
     {
@@ -23,16 +23,16 @@ const SuparAdmin = () => {
 
   return (
     <>
-      <div className='flex'>
+      <div className='flex gap-[30px] h-[100vh] md:overflow-y-hidden'>
         <div className="max-sm:hidden ">
           <SuperAdminSide />
         </div>
-        <div className='w-[80%] ml-[30px] max-sm:ml-[0px]'>
+        <div className='w-[100%]  max-sm:ml-[0px]'>
 
 
           <div className="sm:hidden  ml-[10px]">  <MobileNav /> </div>
           <div className='max-sm:hidden'> <ClientNavbar Navtext={"Dashboard"} /> </div>
-          <div className='md:h-[85vh] md:overflow-y-auto'>
+          <div className='md:h-[90vh] md:overflow-y-auto'>
             <div className='flex justify-between mt-[20px] w-[100%] max-sm:mt-[10px]'>
               <div className='flex justify-between w-[100%] max-sm:flex-col max-sm:gap-[10px]'>
                 <div className='flex justify-between w-[45%]  text-white background1 max-sm:gap-0 h-[70px]  rounded-lg items-center max-sm:w-[350px] p-[5px]'>
@@ -52,7 +52,7 @@ const SuparAdmin = () => {
             </div>
 
 
-            <div className='flex gap-[10px] w-[100%] justify-between mt-[20px] p-[0px] max-sm:flex-col max-sm:gap-[10px]'>
+            <div className='flex gap-[10px] w-[100%] justify-between mt-[20px]  max-sm:flex-col max-sm:gap-[10px]'>
 
               <div className='flex shadow gap-[80px] p-4 h-[170px] rounded-lg'>
                 <div className=' h-[200px]'>
@@ -97,7 +97,7 @@ const SuparAdmin = () => {
 
             <div className='flex w-[100%]  mt-[20px] justify-between p-[8px] max-sm:flex-col max-sm:gap-[10px]'>
               <img className='shadow-lg w-[60%]' src={Image2} />
-              <img className='shadow-lg' src={Image3} />
+              <img className='shadow-lg w-[35%]' src={Image3} />
             </div>
 
 
@@ -191,4 +191,4 @@ const SuparAdmin = () => {
   )
 }
 
-export default SuparAdmin;
+export default SuperAdminDashboard;

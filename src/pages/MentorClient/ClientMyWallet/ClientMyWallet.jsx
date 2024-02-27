@@ -11,17 +11,17 @@ import ClientSidebar from '../ClientSidebar/ClientSidebar'
 const ClientMyWallet = () => {
     return (
         <>
-            <div className='flex'>
+            <div className='flex gap-[30px] h-[100vh] md:overflow-y-hidden'>
                 <div className="max-sm:hidden ">
                     <ClientSidebar />
                 </div>
 
-                <div className='w-[80%] ml-[30px] max-sm:ml-[0px] max-sm:w-[100%]'>
+                <div className='w-[100%]  max-sm:ml-[0px] max-sm:w-[100%]'>
                     {/* <div className="sm:hidden  ml-[10px]">  <MobileNav /> </div> */}
                     <div className=''>  <ClientNavbar Navtext={"My Wallet"} /></div>
 
                     <div className='flex justify-between mt-[10px] pt-[20px] pb-[20px] pr-[20px] pl-[0px] max-sm:mt-[0px] max-sm:pl-[20px]'>
-                        <h1 className='text-lg font-medium'>My Wallet</h1>
+                        <h1 className='text-lg font-bold'>My Wallet</h1>
                     </div>
 
                     <div className='flex gap-[20px] max-sm:flex-col  max-sm:ml-[15px]'>

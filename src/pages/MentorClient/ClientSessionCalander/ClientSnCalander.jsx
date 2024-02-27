@@ -14,7 +14,7 @@ const ClientSnCalender = () => {
     ]);
     return (
 
-        <div className='calender_body'>
+        <div className='calender_body flex gap-[30px]'>
             <div className="max-sm:hidden  ">
                 <ClientSidebar />
             </div>
@@ -23,7 +23,7 @@ const ClientSnCalender = () => {
 
 
 
-            <div className='w-[80%] calender_main ml-[30px]   max-sm:ml-[0px] max-sm:w-[100%]'>
+            <div className='w-[100%] calender_main    max-sm:ml-[0px] max-sm:w-[100%]'>
 
 
 

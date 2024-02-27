@@ -3,6 +3,8 @@ import { FaBell } from "react-icons/fa";
 import { IoMdSettings } from "react-icons/io";
 import { IoLogOutOutline } from "react-icons/io5";
 import { RiMenu2Line } from "react-icons/ri";
+import { FaFilter } from "react-icons/fa";
+import { BiMenuAltLeft } from "react-icons/bi";
 import Logo from "../../../assets/Logo1.png"; // Ensure this path is correct
 
 const Navbar = ({ Navtext }) => {
@@ -18,34 +20,43 @@ const Navbar = ({ Navtext }) => {
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
-    
+
 
     return (
-        <nav className='w-full flex justify-between items-center bg-white py-4 px-6 shadow-md z-10 '>
-            <div className='flex items-center gap-4'>
-                <RiMenu2Line className='md:hidden text-blue-500 text-2xl cursor-pointer' onClick={toggleMenu} />
-                <img src={Logo} alt='logo' className='w-40 h-auto md:hidden' />
-                <h1 className='hidden md:block font-bold text-xl'>{Navtext}</h1>
-                <input
-                    type="text"
-                    placeholder='Search Here'
-                    className='hidden md:block border-2 border-gray-300 py-1 px-2 rounded-md focus:outline-none focus:border-blue-500'
-                />
+        <nav className='w-[98%] flex justify-between items-center bg-white py-4 px-6 shadow-md z-10 '>
+
+            <div className='flex gap-5'>
+
+                <div className='flex items-center gap-5'>
+                    <RiMenu2Line className='md:hidden text-blue-500 text-2xl cursor-pointer' onClick={toggleMenu} />
+                    <img src={Logo} alt='logo' className='w-40 h-auto md:hidden' />
+                    <h1 className='hidden md:block font-bold text-xl'>{Navtext}</h1>
+                    <input
+                        type="text"
+                        placeholder='Search Here'
+                        className='hidden md:block border-2 border-gray-300 py-1 px-2 rounded-md focus:outline-none focus:border-blue-500'
+                    />
+                </div>
+
+                <div className='flex gap-5'>
+                    <div className='flex items-center justify-center gap-[5px]'>
+                        <div className='text-blue-500'><FaFilter /></div>
+                        <p className='flex items-center justify-center'>Advanced Search</p>
+                    </div>
+                    <div className='flex items-center justify-center gap-[5px] '>
+                        <div className='text-blue-500 '>< BiMenuAltLeft className=' text-2xl' /></div>
+                        <div className='flex gap-[5px]'>
+                            <p>Sorting-</p>
+                            <select>
+                                <option value="option1">Top Mentor</option>
+                                <option value="option2">Mentor 1</option>
+                                <option value="option3">Mentor 2</option>
+                                {/* <!-- Add more options as needed --> */}
+                            </select>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-
-{/* 
-            <div className='flex gap-[30px]'>
-                <div className='flex gap-[5px]'>
-                    <p className='flex items-center justify-center'>Advanced Search</p>
-                </div>
-                <div className='flex gap-[5px]'>
-                    <p>Sorting-</p>
-
-                    <Select options={options} onChange={handleChange} />
-                </div>
-            </div> */}
-
 
             <div className='flex items-center gap-4'>
                 <IoMdSettings className='hidden md:block text-blue-500 text-2xl cursor-pointer' />
@@ -68,8 +79,9 @@ const Navbar = ({ Navtext }) => {
             </div>
 
             {isMenuOpen && (
-                <div className='md:hidden absolute top-full left-0 w-full bg-white shadow-md py-2'>
+                <div className='md:hidden absolute top-0 left-0 w-[50%] bg-white shadow-md py-2'>
                     {/* Mobile Menu Items */}
+                    <button onClick={toggleMenu}>Close</button>
                     <p className='text-blue-500 px-6 py-2 text-sm cursor-pointer'>Home</p>
                     <p className='text-blue-500 px-6 py-2 text-sm cursor-pointer'>About</p>
                     {/* Add more navigation items as needed */}
