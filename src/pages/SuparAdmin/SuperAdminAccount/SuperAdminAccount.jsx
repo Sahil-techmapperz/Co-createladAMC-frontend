@@ -15,12 +15,12 @@ import MobileNav from '../../../components/Mobile/MobileNav.jsx';
 
 const SuperAdminAccount = () => {
     return (
-        <div className=' flex'>
+        <div className='flex gap-[30px] h-[100vh] md:overflow-y-hidden'>
 
             <div className="max-sm:hidden ">
                 <SuperAdminSide />
             </div>
-            <div className='w-[80%]   ml-[30px] max-sm:ml-[0] max-sm:w-[100%]'>
+            <div className='w-[100%] mr-[12px] max-sm:ml-[0] max-sm:w-[100%]'>
 
                 {/* <div className="sm:hidden  ml-[10px]">  <MobileNav /> </div> */}
 

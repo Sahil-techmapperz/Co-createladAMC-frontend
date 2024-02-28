@@ -90,7 +90,7 @@ const SuperAdminSide = ({ liname }) => {
                             </li>
 
                             <li style={liname == "Messages" ? liactivestyle : {}} className='px-4 py-2 hover:bg-[#0078C5] hover:border-[1px]'>
-                                <Link to='/chatMessage' className='flex items-center gap-2'>
+                                <Link to='' className='flex items-center gap-2'>
                                     <img className='w-5 h-5' src={messageImg} alt="Messages" />
                                     <span className='w-[max-content]'>Messages</span>
                                 </Link>

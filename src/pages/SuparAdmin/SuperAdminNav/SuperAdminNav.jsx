@@ -23,7 +23,7 @@ const SuperAdminNavbar = ({ Navtext }) => {
 
 
     return (
-        <nav className='w-[98%] flex justify-between items-center bg-white py-4 px-6 shadow-md z-10 '>
+        <nav className='w-[100%] flex justify-between items-center bg-white py-4 px-6 shadow-md z-10 '>
 
             <div className='flex gap-5'>
 

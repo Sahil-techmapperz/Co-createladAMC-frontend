@@ -18,14 +18,14 @@ import SuperAdminNavbar from '../SuperAdminNav/SuperAdminNav.jsx';
 function SuperAdminNoticeBoard() {
     return (
 
-        <div className='notice_board_body flex gap-1'>
+        <div className='notice_board_body flex gap-[30px] h-[100vh] md:overflow-y-hidden '>
 
 
 
             <div className="max-sm:hidden  ">
                 <SuperAdminSide />
             </div>
-            <div className='w-[80%] notice_board_body_main  ml-[30px] max-sm:w-[100%] max-sm:ml-[0px]' >
+            <div className='w-[100%] mr-[12px] notice_board_body_main   max-sm:w-[100%] max-sm:ml-[0px]' >
 
                 {/* <div className="sm:hidden  ml-[10px]">  <MobileNav /> </div> */}
                 <div className="">
@@ -48,7 +48,7 @@ function SuperAdminNoticeBoard() {
                                         </div>
 
                                         <p className='notice_board_blog_cotesion text-[14px] mt-[20px] p-0'>it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years,</p>
-                                        <div className='flex justify-between'>
+                                        <div className='flex justify-between mt-[20px]'>
                                             <p className='noticeBoardName text-[14px]'>George Washington</p>
                                             <p className='noticeBoardDate text-[14px] mt-[0]'>Thurday 09 2022</p>
                                         </div>
