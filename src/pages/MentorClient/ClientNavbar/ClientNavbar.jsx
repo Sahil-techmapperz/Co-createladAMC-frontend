@@ -6,7 +6,14 @@ import { RiMenu2Line } from "react-icons/ri";
 import { FaFilter } from "react-icons/fa";
 import { BiMenuAltLeft } from "react-icons/bi";
 import Logo from "../../../assets/Logo1.png"; // Ensure this path is correct
-
+import dashboardImg from "../../../assets/dashboard.png";
+import openBook from "../../../assets/open-book 1 (1).png";
+import planning from "../../../assets/planning 1.png";
+import NoticeImage from "../../../assets/clipboard-outline.png";
+import messageImg from "../../../assets/chat 1 (1).png";
+import contact from "../../../assets/account-circle.png";
+import walletImg from "../../../assets/text-box.png";
+import { Link } from 'react-router-dom';
 const Navbar = ({ Navtext }) => {
     const [showNotifications, setShowNotifications] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,13 +29,44 @@ const Navbar = ({ Navtext }) => {
     };
 
 
+    // Define menu items in an array for easier management
+    const menuItems = [
+        { name: "Dashboard", path: "/clientDashboard", imgSrc: dashboardImg, altText: "Dashboard" },
+        { name: "Session", path: "/clientIntroSession", imgSrc: openBook, altText: "Session" },
+        { name: "Calendar", path: "/clientSnCalender", imgSrc: planning, altText: "Calender" }, // Corrected spelling
+        { name: "Notice Board", path: "/clientNotice", imgSrc: NoticeImage, altText: "Notice Board" },
+        { name: "Messages", path: "/chatMessage", imgSrc: messageImg, altText: "chatMessage" },
+        { name: "My Account", path: "/clientMyAccount", imgSrc: contact, altText: "My Account" },
+        { name: "My Wallet", path: "/clientMyWallet", imgSrc: contact, altText: "My Wallet" },
+        // { name: "My Withdrawal", path: "/mywithdrawls", imgSrc: contact, altText: "My Account" },
+    ];
+
+    const liactivestyle = {
+        backgroundColor: "#0078C5",
+        border: "1px solid"
+    };
+
+    // Function to render each menu item
+    const MenuItem = ({ item, liname, liactivestyle }) => (
+        <li className={`pl-[5px] py-2 hover:bg-[#0078C5] hover:border-[1px] ${liname === item.altText ? 'active-class' : ''}`} style={liname === item.altText ? liactivestyle : {}}>
+            <Link to={item.path} className='flex items-center gap-2'>
+                <img className='w-5 h-5' src={item.imgSrc} alt={item.altText} />
+                <span className='w-[max-content]'>{item.name}</span>
+            </Link>
+        </li>
+    );
+
+
+
+
+
     return (
         <nav className='w-[98%] flex justify-between items-center bg-white py-4 px-6 shadow-md z-10 '>
 
             <div className='flex gap-5'>
 
                 <div className='flex items-center gap-5'>
-                    <RiMenu2Line className='md:hidden text-blue-500 text-2xl cursor-pointer' onClick={toggleMenu} />
+                <RiMenu2Line className='md:hidden text-blue-500 text-2xl cursor-pointer' onClick={toggleMenu} />
                     <img src={Logo} alt='logo' className='w-40 h-auto md:hidden' />
                     <h1 className='hidden md:block font-bold text-xl'>{Navtext}</h1>
                     <input
@@ -38,7 +76,7 @@ const Navbar = ({ Navtext }) => {
                     />
                 </div>
 
-                <div className='flex gap-5'>
+                <div className='flex gap-5 max-sm:hidden'>
                     <div className='flex items-center justify-center gap-[5px]'>
                         <div className='text-blue-500'><FaFilter /></div>
                         <p className='flex items-center justify-center max-sm:hidden'>Advanced Search</p>
@@ -79,12 +117,13 @@ const Navbar = ({ Navtext }) => {
             </div>
 
             {isMenuOpen && (
-                <div className='md:hidden absolute  top-0 left-0 w-[50%] bg-white shadow-md py-2'>
-                    {/* Mobile Menu Items */}
-                    <button onClick={toggleMenu}>Close</button>
-                    <p className='text-blue-500 px-6 py-2 text-sm cursor-pointer'>Home</p>
-                    <p className='text-blue-500 px-6 py-2 text-sm cursor-pointer'>About</p>
-                    {/* Add more navigation items as needed */}
+                <div className='md:hidden z-30 flex flex-col absolute top-0 left-0 w-[50vw] h-[100vh] bg-white shadow-md py-2'>
+                    <span onClick={toggleMenu} class="close-button cursor-pointer text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-xl p-1.5 ml-auto inline-flex items-center" >&times;</span>
+                    <ul className='flex flex-col gap-2'>
+                        {menuItems.map(item => (
+                            <MenuItem key={item.name} item={item} liname={Navtext} liactivestyle={liactivestyle} />
+                        ))}
+                    </ul>
                 </div>
             )}
         </nav>

@@ -6,10 +6,6 @@
 }
 
 
-.myAccount_body {
-    margin-top: 5px;
-    width: 100%;
-}
 
 .myAccountSearch {
     padding: 0px;
@@ -18,35 +14,6 @@
 }
 
 
-
-nav {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    background-color: aliceblue;
-    padding: 10px 20px;
-    position: static;
-    height: 50px;
-    border-radius: 5px;
-    top: 2px;
-}
-
-.navHeader {
-    font-size: 16px;
-    font-weight: bold;
-}
-
-
-.Navbarleft {
-    display: flex;
-    gap: 10px;
-}
-
-.Navbarright {
-    display: flex;
-    gap: 10px;
-}
 
 
 
@@ -57,9 +24,12 @@ nav {
 .myAccount_main div {
     /* width: 400px; */
     /* height: 200px; */
-    box-shadow: 0px 6.67557954788208px 17.801546096801758px 0px #0000001F;
+
+    /* box-shadow: 0px 6.67557954788208px 17.801546096801758px 0px #0000001F; */
+
+    /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
     border-radius: 20px;
-    padding: 16px 20px 0;
+    /* padding: 16px 20px 0; */
 }
 
 

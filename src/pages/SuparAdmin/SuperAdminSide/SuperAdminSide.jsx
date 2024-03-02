@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { BiChevronDown, BiMenu } from "react-icons/bi"; // Import BiMenu for the toggle button
-// import Logo from "../../../assets/Logo1.png";
+
 import Logo from "../../../assets/Logo1.png";
 import Profile from "../../../assets/web.png";
 import dashboardImg from "../../../assets/dashboard.png";
@@ -12,6 +12,12 @@ import messageImg from "../../../assets/chat 1 (1).png";
 import contact from "../../../assets/account-circle.png";
 import walletImg from "../../../assets/text-box.png";
 import { BiSupport } from "react-icons/bi";
+import { AiOutlineMessage } from "react-icons/ai";
+import { IoMdContact } from "react-icons/io";
+import { FaRegCalendarDays } from "react-icons/fa6";
+import { IoMdClipboard } from "react-icons/io";
+import { HiUserGroup } from "react-icons/hi2";
+import { TbFileReport } from "react-icons/tb";
 
 const SuperAdminSide = ({ liname }) => {
     const [showWalletDropdown, setShowWalletDropdown] = useState(false);
@@ -30,11 +36,10 @@ const SuperAdminSide = ({ liname }) => {
         border: "1px solid"
     };
 
-
     return (
         <>
             {/* Mobile view menu button */}
-            <div className="text-white  fixed top-0 right-0 p-4 z-50 lg:hidden">
+            <div className="text-white fixed top-0 right-0 p-4 z-50 lg:hidden">
                 <BiMenu className="w-6 h-6" onClick={toggleSidebar} />
             </div>
 
@@ -44,8 +49,8 @@ const SuperAdminSide = ({ liname }) => {
                 {/* Sidebar content */}
                 <div className={`${isSidebarOpen ? 'block' : 'hidden'} lg:block`}>
                     <div>
-                        <Link to={"/"}>
-                            <img className='md:min-h-[10vh] w-full mx-auto' src={Logo} alt="Website Logo" />
+                        <Link to={"/superAdminDashboard"}>
+                            <img className='md:min-h-[10vh] w-full mx-auto object-contain' src={Logo} alt="Website Logo" />
                         </Link>
                     </div>
 
@@ -57,7 +62,7 @@ const SuperAdminSide = ({ liname }) => {
                             </Link>
                             <div>
                                 <select
-                                    className="bg-transparent text-white cursor-pointer text-sm font-medium p-2 px-4 pl-[20px]"
+                                    className="bg-transparent w-[150px] text-white cursor-pointer text-sm font-medium "
                                     defaultValue="Jhon Das"
                                 >
                                     <option className='text-[black]' value="/Jhon Das" >Jhon Das</option>
@@ -68,47 +73,53 @@ const SuperAdminSide = ({ liname }) => {
                             </div>
                         </div>
 
+                        <hr className="bg-[#FFFFFF] mb-3"></hr>
+
                         {/* Navigation */}
                         <ul className='flex flex-col gap-2'>
-                            <li style={liname == "Dashboard" ? liactivestyle : {}} className='px-4 py-2 hover:bg-[#0078C5] hover:border-[1px]'>
+                            <li style={liname == "Super Amin Dashboard" ? liactivestyle : {}} className='px-4 py-2 hover:bg-[#0078C5] hover:border-[1px]'>
                                 <Link to='/superAdminDashboard' className='flex items-center gap-2'>
                                     <img className='w-5 h-5' src={dashboardImg} alt="Dashboard" />
                                     <span className='w-[max-content]'>Dashboard</span>
                                 </Link>
                             </li>
-                            <li style={liname == "Session" ? liactivestyle : {}} className='px-4 py-2 hover:bg-[#0078C5] hover:border-[1px]'>
-                                <Link to='/SuperAdminUserTable' className='flex items-center gap-2'>
-                                    <img className='w-5 h-5' src={openBook} alt="Session" />
+                            <li style={liname == "Super Admin Table" ? liactivestyle : {}} className='px-4 py-2 hover:bg-[#0078C5] hover:border-[1px]'>
+                                <Link to='/superAdminUserTable' className='flex items-center gap-2'>
+                                    {/* <img className='w-5 h-5' src={openBook} alt="Session" /> */}
+                                    <HiUserGroup />
                                     <span className='w-[max-content]'>Manage Users</span>
                                 </Link>
                             </li>
-                            <li style={liname == "Session Calender" ? liactivestyle : {}} className='px-4 py-2 hover:bg-[#0078C5] hover:border-[1px]'>
+                            <li style={liname == "Issue Reported" ? liactivestyle : {}} className='px-4 py-2 hover:bg-[#0078C5] hover:border-[1px]'>
                                 <Link to='/superAdminIssueReport' className='flex items-center gap-2'>
-                                    <img className='w-5 h-5' src={planning} alt="Session Calender" />
-                                    <span className='w-[max-content]'>Issued Reported</span>
+                                <TbFileReport />
+                                    {/* <img className='w-5 h-5' src={planning} alt="Session Calender" /> */}
+                                    <span className='w-[max-content]'>Issue Reported</span>
                                 </Link>
                             </li>
 
                             <li style={liname == "Messages" ? liactivestyle : {}} className='px-4 py-2 hover:bg-[#0078C5] hover:border-[1px]'>
-                                <Link to='/chatMessage' className='flex items-center gap-2'>
-                                    <img className='w-5 h-5' src={messageImg} alt="Messages" />
+                                <Link to='' className='flex items-center gap-2'>
+                                    {/* <img className='w-5 h-5' src={messageImg} alt="Messages" /> */}
+                                    <AiOutlineMessage />
                                     <span className='w-[max-content]'>Messages</span>
                                 </Link>
                             </li>
+
                             <li style={liname == "My Account" ? liactivestyle : {}} className='px-4 py-2 hover:bg-[#0078C5] hover:border-[1px]'>
                                 <Link to='/superAdminAccount' className='flex items-center gap-2'>
-                                    <img className='w-5 h-5' src={contact} alt="My Account" />
+                                    {/* <img className='w-5 h-5' src={contact} alt="My Account" /> */}
+                                    <IoMdContact />
                                     <span className='w-[max-content]'>My Account</span>
                                 </Link>
                             </li>
-
                             <li style={liname == "Notice Board" ? liactivestyle : {}} className='px-4 py-2 hover:bg-[#0078C5] hover:border-[1px]'>
                                 <Link to='/superAdminNoticeBoard' className='flex items-center gap-2'>
-                                    <img className='w-5 h-5' src={NoticeImage} alt="Notice Board" />
+                                    {/* <img className='w-5 h-5' src={NoticeImage} alt="Notice Board" /> */}
+                                    <IoMdClipboard />
                                     <span className='w-[max-content]'>Notice Board</span>
                                 </Link>
                             </li>
-                            
                         </ul>
 
                         {/* Help & Support */}

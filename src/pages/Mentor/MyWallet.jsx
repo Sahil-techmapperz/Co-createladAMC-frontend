@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import {FaCoins } from "react-icons/fa";
 import Select from 'react-select';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, BarChart, Bar } from 'recharts';
 import { startOfWeek, endOfWeek, startOfMonth, endOfMonth, startOfYear, endOfYear, isWithinInterval, parseISO, startOfDay, endOfDay, compareAsc } from 'date-fns';
@@ -8,14 +9,14 @@ import Sidebar from '../../components/Sidebar.jsx';
 import Navbar from '../../components/Navbar.jsx';
 
 const actualData = [
-    { date: '2024-01-01', Revenue: 4000, Courses: 2400, ProfileViews: 2400 },
-    { date: '2024-02-01', Revenue: 3000, Courses: 1398, ProfileViews: 2210 },
-    { date: '2024-03-01', Revenue: 2000, Courses: 9800, ProfileViews: 2290 },
-    { date: '2025-01-01', Revenue: 4000, Courses: 2400, ProfileViews: 2400 },
-    { date: '2025-02-01', Revenue: 3000, Courses: 1398, ProfileViews: 2210 },
-    { date: '2023-03-01', Revenue: 2000, Courses: 9800, ProfileViews: 2290 },
-    // Continue for other months
-  ];
+  { date: '2024-01-01', Revenue: 4000, Courses: 2400, ProfileViews: 2400 },
+  { date: '2024-02-01', Revenue: 3000, Courses: 1398, ProfileViews: 2210 },
+  { date: '2024-03-01', Revenue: 2000, Courses: 9800, ProfileViews: 2290 },
+  { date: '2025-01-01', Revenue: 4000, Courses: 2400, ProfileViews: 2400 },
+  { date: '2025-02-01', Revenue: 3000, Courses: 1398, ProfileViews: 2210 },
+  { date: '2023-03-01', Revenue: 2000, Courses: 9800, ProfileViews: 2290 },
+  // Continue for other months
+];
 
 // Options for the select box
 const filterOptions = [
@@ -73,48 +74,53 @@ function MyWallet() {
   };
 
   // Render Select function for reusability
-  const renderSelect = (selectedOption, setSelectedOption,title) => (
+  const renderSelect = (selectedOption, setSelectedOption, title) => (
     <div className='flex justify-between '>
-        <h1 className="text-[18px] font-bold">{title}</h1>
-    <Select
-      value={selectedOption}
-      onChange={setSelectedOption}
-      options={filterOptions}
-      className="mb-4"
-      styles={{ container: (provided) => ({ ...provided, width: '150px',zIndex:20 }) }}
-    />
+      <h1 className="text-[18px] font-bold">{title}</h1>
+      <Select
+        value={selectedOption}
+        onChange={setSelectedOption}
+        options={filterOptions}
+        className="mb-4"
+        styles={{ container: (provided) => ({ ...provided, width: '150px', zIndex: 20 }) }}
+      />
     </div>
   );
 
   return (
-    <div className='MyWallet_body'>
+    <div className='MyWallet_body gap-[30px] '>
       <div className='max-sm:hidden'><Sidebar liname={"My Wallet"} /></div>
-      <div className='myWalletMain max-md:w-[100vw] max-md:overflow-x-auto py-[15px] '>      
+      <div className='myWalletMain mr-[12px] max-md:w-[100vw] overflow-y-hidden py-[15px] '>
         <Navbar Navtext={"My Wallet"} />
         <div className='m-[20px] text-[18px] font-[600]'>
           <Link to={"/"}>Dashboard</Link> &gt; My Wallet
         </div>
-        <div className='MyWallet_mainContainer max-md:p-4'>
+        {/* Wallet Balance Display */}
+        <div className='walletBalanceDisplay flex max-sm:flex-col items-center justify-between font-bold text-lg mb-4'>
+          <div className='flex items-center gap-2'> Total Wallet Balance: 1000 {" "} <FaCoins/></div> 
+          <button className='w-[150px] p-[5px] border rounded text-white bg-blue-500 h-fit'>Withdrawal</button>
+          </div>
+        <div className='MyWallet_mainContainer  overflow-y-auto h-[60vh] md:h-[75vh] max-md:p-4'>
           {/* Revenue Chart with its filter */}
           <div className="chartWithFilter">
             {/* <div className="text-[18px] font-bold">Revenue</div> */}
-            {renderSelect(selectedOptionRevenue, setSelectedOptionRevenue,"Revenue")}
+            {renderSelect(selectedOptionRevenue, setSelectedOptionRevenue, "Revenue")}
             {renderChart("Revenue", "#ffc658", "Revenue", selectedOptionRevenue)}
           </div>
-          
+
           {/* Courses Chart with its filter */}
           <div className="chartWithFilter">
             {/* <div className="text-[18px] font-bold">Courses</div> */}
-            {renderSelect(selectedOptionCourses, setSelectedOptionCourses,"Courses")}
-            {renderChart("Courses", "#8884d8", "Courses", selectedOptionCourses)}
+            {renderSelect(selectedOptionCourses, setSelectedOptionCourses, "Withdrawal")}
+            {renderChart("Courses", "#8884d8", "Withdrawal", selectedOptionCourses)}
           </div>
-          
+
           {/* Profile Views Chart with its filter */}
-          <div className="chartWithFilter">
-            {/* <div className="text-[18px] font-bold">Profile Views</div> */}
+          {/* <div className="chartWithFilter">
+            <div className="text-[18px] font-bold">Profile Views</div>
             {renderSelect(selectedOptionProfileViews, setSelectedOptionProfileViews,"Profile Views")}
             {renderChart("ProfileViews", "#82ca9d", "Profile Views", selectedOptionProfileViews)}
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

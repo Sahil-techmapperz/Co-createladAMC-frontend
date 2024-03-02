@@ -20,7 +20,7 @@ function ClientNotice() {
 
 
             <div className="max-sm:hidden  ">
-                <ClientSidebar />
+                <ClientSidebar liname={"clientNotice"}/>
             </div>
             <div className='w-[100%]  notice_board_body_main max-sm:w-[100%] max-sm:ml-[0px]' >
 
@@ -36,8 +36,38 @@ function ClientNotice() {
 
                         <div className=' md:h-[85vh] md:overflow-y-auto'>
                             <div className='flex-col justify-center rounded-lg items-center  '>
-                                <div className='notice_board_blog1 '>
-                                    <img className='ml-[10px] max-sm:w-[100px] max-sm:h-[100px] max-sm:flex max-sm:justifi-center max-sm:items-center' src={Blog1} />
+                                <div className='notice_board_blog1 flex justify-between max-md:gap-[20px] p-[30px] max-md:flex-col '>
+                                    <img className='md:ml-[10px]  max-sm:flex max-md:object-contain' src={Blog1} />
+                                    <div className='notice_board_header_part'>
+                                        <div className='notice_board_blogHeader'>
+                                            <h5 className='font-medium mt-[15px] text-[20px]'>Hay When You Need It</h5>
+                                            {/* <FontAwesomeIcon icon={faBookmark} /> */}
+                                        </div>
+
+                                        <p className='notice_board_blog_cotesion text-[14px] mt-[20px] p-0'>it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years,</p>
+                                        <div className='flex justify-between'>
+                                            <p className='noticeBoardName text-[14px]'>George Washington</p>
+                                            <p className='noticeBoardDate text-[14px] mt-[0]'>Thurday 09 2022</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='notice_board_blog1 flex justify-between max-md:gap-[20px] p-[30px] max-md:flex-col '>
+                                    <img className='md:ml-[10px]  max-sm:flex max-md:object-contain' src={Blog1} />
+                                    <div className='notice_board_header_part'>
+                                        <div className='notice_board_blogHeader'>
+                                            <h5 className='font-medium mt-[15px] text-[20px]'>Hay When You Need It</h5>
+                                            {/* <FontAwesomeIcon icon={faBookmark} /> */}
+                                        </div>
+
+                                        <p className='notice_board_blog_cotesion text-[14px] mt-[20px] p-0'>it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years,</p>
+                                        <div className='flex justify-between'>
+                                            <p className='noticeBoardName text-[14px]'>George Washington</p>
+                                            <p className='noticeBoardDate text-[14px] mt-[0]'>Thurday 09 2022</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='notice_board_blog1 flex justify-between max-md:gap-[20px] p-[30px] max-md:flex-col '>
+                                    <img className='md:ml-[10px]  max-sm:flex max-md:object-contain' src={Blog1} />
                                     <div className='notice_board_header_part'>
                                         <div className='notice_board_blogHeader'>
                                             <h5 className='font-medium mt-[15px] text-[20px]'>Hay When You Need It</h5>

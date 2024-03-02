@@ -17,15 +17,15 @@ const ClientMyWallet = () => {
                     <ClientSidebar liname={"clientMyWallet"} />
                 </div>
 
-                <div className='w-[80%] h-[100vh] md:overflow-y-hidden ml-[30px] max-sm:ml-[0px] max-sm:w-[100%]'>
+                <div className='w-[100%] h-[100vh] md:overflow-y-hidden ml-[30px] max-sm:ml-[0px] max-sm:w-[100%]'>
                     {/* <div className="sm:hidden  ml-[10px]">  <MobileNav /> </div> */}
                     <div className=''>  <ClientNavbar Navtext={"My Wallet"} /></div>
 
-                    <div className='flex justify-between py-[10px] pr-[20px] pl-[0px] max-sm:mt-[0px] max-sm:pl-[20px]'>
+                    <div className='flex justify-between py-[10px] md:pr-[20px] pl-[0px] max-sm:mt-[0px] max-sm:pl-[20px]'>
                         <h1 className='text-lg font-medium'>My Wallet</h1>
                     </div>
 
-                    <div className='flex gap-5 items-center'>
+                    <div className='w-[98%] grid grid-cols-1 md:grid-cols-3 md:gap-5 gap-2 justify-center md:justify-between items-center'>
                         {/* Card UI adjusted for top-left placement and responsive height */}
                         <div className='w-full ml-2 p-4 max-w-xs rounded-lg shadow-lg bg-white' >
                             <div className='flex justify-center'>
@@ -33,7 +33,7 @@ const ClientMyWallet = () => {
                             </div>
                             <div className='text-center'>
                                 <p className='text-xl font-bold'>Team</p>
-                                <p className='text-4xl font-bold'>350 CCL = $15</p>
+                                <p className='text-2xl font-bold'>350 CCL = $15</p>
                                 <p>/month</p>
                                 {Functions.map((_, index) => (
                                     <div key={index} className='flex justify-center items-center mt-2'>
@@ -46,21 +46,46 @@ const ClientMyWallet = () => {
                                 <button className='rounded-lg bg-sky-500 text-white font-bold py-2 px-4 w-fit'>My Current Plan</button>
                             </div>
                         </div>
-
-                        {/* Hidden on smaller screens, shown on larger screens */}
-                        <div className='hidden sm:flex cursor-pointer justify-center items-center'>
-                            <div className='bg-sky-500 rounded-lg flex flex-col items-center justify-center p-4 h-48 w-48'>
-                                <div className='bg-white p-2 rounded-full text-sky-500'>
-                                    <FaPlus />
-                                </div>
-                                <p className='mt-4 text-white font-bold'>Add More</p>
+                        <div className='w-full ml-2 p-4 max-w-xs rounded-lg shadow-lg bg-white' >
+                            <div className='flex justify-center'>
+                                <img src={BasicImage} alt="Basic Plan" className='h-32' /> {/* Adjusted for responsive design */}
+                            </div>
+                            <div className='text-center'>
+                                <p className='text-xl font-bold'>Team</p>
+                                <p className='text-2xl font-bold'>1350 CCL = $50</p>
+                                <p>/month</p>
+                                {Functions.map((_, index) => (
+                                    <div key={index} className='flex justify-center items-center mt-2'>
+                                        <TiTick />
+                                        <p className='ml-2'>{Functions[index]}</p>
+                                    </div>
+                                ))}
+                            </div>
+                            <div className='flex justify-center mt-4'>
+                                <button className='rounded-lg bg-sky-500 text-white font-bold py-2 px-4 w-fit'>Buy Plan</button>
+                            </div>
+                        </div>
+                        <div className='w-full ml-2 p-4 max-w-xs rounded-lg shadow-lg bg-white' >
+                            <div className='flex justify-center'>
+                                <img src={BasicImage} alt="Basic Plan" className='h-32' /> {/* Adjusted for responsive design */}
+                            </div>
+                            <div className='text-center'>
+                                <p className='text-xl font-bold'>Team</p>
+                                <p className='text-2xl font-bold'>6350 CCL = $100</p>
+                                <p>/month</p>
+                                {Functions.map((_, index) => (
+                                    <div key={index} className='flex justify-center items-center mt-2'>
+                                        <TiTick />
+                                        <p className='ml-2'>{Functions[index]}</p>
+                                    </div>
+                                ))}
+                            </div>
+                            <div className='flex justify-center mt-4'>
+                                <button className='rounded-lg bg-sky-500 text-white font-bold py-2 px-4 w-fit'>Buy Plan</button>
                             </div>
                         </div>
 
-                        {/* Floating action button for smaller screens */}
-                        <div className='sm:hidden cursor-pointer fixed bottom-4 right-4 bg-sky-500 text-white rounded-full p-3'>
-                            <FaPlus />
-                        </div>
+                       
                     </div>
                 </div>
 

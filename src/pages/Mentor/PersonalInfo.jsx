@@ -11,19 +11,14 @@ const PersonalInfo = () => {
     return (
         <div className='flex gap-2'>
             <div className="hidden sm:block">
-                <Sidebar liname={"Personal Info"}/>
+                <Sidebar liname={"My Account"}/>
             </div>
             <div className='flex flex-col w-full h-[100vh] overflow-y-auto py-[15px]'>
-                <Navbar Navtext={"Personal Info"} />
+                <Navbar Navtext={"My Account"} />
                 <div className='m-[20px] text-[18px] font-[600]'>
-                  <Link to={"/"}>Dashboard</Link> &gt; Personal Info
+                  <Link to={"/"}>Dashboard</Link> &gt; <Link to={"/Myaccounts"}>My Account</Link> &gt; Personal Info
                 </div>
-                <div className='p-4'>
-                    <div className='flex mb-4'>
-                        <p className='font-bold text-sm mr-2'>My Account /</p>
-                        <p className='font-bold text-sm'>Personal Info</p>
-                    </div>
-                    <p className='text-2xl font-bold mb-4'>Personal Info</p>
+                <div className='p-4 h-[80vh] overflow-y-auto'>
                     <div className='flex max-md:flex-col  gap-5'>
                         <div className='w-full'>
                             <PersonalEdit title="Legal name" content="Peter Griffin" actionText="Edit" />

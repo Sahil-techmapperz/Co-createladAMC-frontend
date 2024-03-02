@@ -43,7 +43,7 @@ const ClientSidebar = ({liname}) => {
                 {/* Sidebar content */}
                 <div className={`${isSidebarOpen ? 'block' : 'hidden'} lg:block`}>
                     <div>
-                        <Link to={"/"}>
+                        <Link to={"/clientDashboard"}>
                             <img className='md:min-h-[10vh] w-full mx-auto object-contain' src={Logo} alt="Website Logo" />
                         </Link>
                     </div>
@@ -51,7 +51,7 @@ const ClientSidebar = ({liname}) => {
                     <div className='min-h-[90vh] rounded-[8px] relative' style={{ background: 'linear-gradient(176.83deg, #52E7CF 0.29%, #0096F6 3.41%, #1DB3E8 57.31%, #52E7CF 85.81%)' }}>
                         {/* Profile and dropdown */}
                         <div className='flex justify-center items-center  gap-2 py-2'>
-                            <Link to={"/PersonalInfo"}>
+                            <Link to={"/clientPersonalInfo"}>
                             <img className='w-10 h-10  rounded-full object-cover' src={Profile} alt="Profile" />
                             </Link>
                             <div>
@@ -116,7 +116,7 @@ const ClientSidebar = ({liname}) => {
 
                         {/* Help & Support */}
                         <div className='absolute bottom-3 pl-4 py-4 text-[#0078C5] font-[600]'>
-                            <Link to="/" className='flex items-center gap-2'>
+                            <Link to="/clienthelp" className='flex items-center gap-2'>
                                 <BiSupport />
                                 <span className='w-[max-content]'>Help & Support</span>
                             </Link>

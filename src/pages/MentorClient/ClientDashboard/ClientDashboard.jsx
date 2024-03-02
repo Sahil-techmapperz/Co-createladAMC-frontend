@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaStar, FaStarHalfAlt } from "react-icons/fa";
+import { FaStar, FaStarHalfAlt,FaCoins } from "react-icons/fa";
 import ClientNavbar from '../ClientNavbar/ClientNavbar'
 import { IoLocation } from "react-icons/io5";
 import { IoMdContact } from "react-icons/io";
@@ -15,199 +15,48 @@ import 'react-multi-carousel/lib/styles.css';
 const ClientDashboard = () => {
 
     const mentors = [
-        {
-            name: "Sahil laskar",
-            specialization: "Computer Programming",
-            rating: 4,
-            price: {
-                current: "CCL400",
-                original: "CCL480"
-            },
-            location: "Paris, France",
-            studentCount: 412,
-            photo: Photo1, // Update this path to the actual path of your image
-            stars: 5, // Assuming 5 based on the HTML
-        },
+        
         {
             name: "Lincoln Siphron",
-            specialization: "Computer Programming",
+            specialization: "Web Development",
             rating: 4.9,
             price: {
-                current: "CCL400",
-                original: "CCL480"
+                current: "450",
+                original: "500"
             },
-            location: "Paris, France",
-            studentCount: 412,
-            photo: Photo1, // Update this path to the actual path of your image
-            stars: 5, // Assuming 5 based on the HTML
+            location: "Berlin, Germany",
+            studentCount: 389,
+            photo: "https://as2.ftcdn.net/v2/jpg/03/33/85/93/1000_F_333859358_gZclF8xXURJXUtaIxRJPnDt3BzKMzeFW.jpg", // Replace with the actual path
+            stars: 5,
         },
         {
-            name: "Lincoln Siphron",
-            specialization: "Computer Programming",
-            rating: 4.9,
+            name: "Mia Wong",
+            specialization: "Data Science",
+            rating: 4.7,
             price: {
-                current: "CCL400",
-                original: "CCL480"
+                current: "500",
+                original: "550"
             },
-            location: "Paris, France",
-            studentCount: 412,
-            photo: Photo1, // Update this path to the actual path of your image
-            stars: 5, // Assuming 5 based on the HTML
+            location: "San Francisco, USA",
+            studentCount: 305,
+            photo: "https://t4.ftcdn.net/jpg/04/36/52/69/360_F_436526998_I7I3xTi6tjLs1AEHAUWOR0zlmZz4zEV8.jpg", // Replace with the actual path
+            stars: 5,
         },
+        // Adding a new mentor with unique details
         {
-            name: "Lincoln Siphron",
-            specialization: "Computer Programming",
-            rating: 4.9,
+            name: "Alex Johnson",
+            specialization: "UI/UX Design",
+            rating: 4.8,
             price: {
-                current: "CCL400",
-                original: "CCL480"
+                current: "420",
+                original: "470"
             },
-            location: "Paris, France",
-            studentCount: 412,
-            photo: Photo1, // Update this path to the actual path of your image
-            stars: 5, // Assuming 5 based on the HTML
-        },
-        {
-            name: "Lincoln Siphron",
-            specialization: "Computer Programming",
-            rating: 4.9,
-            price: {
-                current: "CCL400",
-                original: "CCL480"
-            },
-            location: "Paris, France",
-            studentCount: 412,
-            photo: Photo1, // Update this path to the actual path of your image
-            stars: 5, // Assuming 5 based on the HTML
-        },
-        {
-            name: "Lincoln Siphron",
-            specialization: "Computer Programming",
-            rating: 4.9,
-            price: {
-                current: "CCL400",
-                original: "CCL480"
-            },
-            location: "Paris, France",
-            studentCount: 412,
-            photo: Photo1, // Update this path to the actual path of your image
-            stars: 5, // Assuming 5 based on the HTML
-        },
-        {
-            name: "Lincoln Siphron",
-            specialization: "Computer Programming",
-            rating: 4.9,
-            price: {
-                current: "CCL400",
-                original: "CCL480"
-            },
-            location: "Paris, France",
-            studentCount: 412,
-            photo: Photo1, // Update this path to the actual path of your image
-            stars: 5, // Assuming 5 based on the HTML
-        },
-        {
-            name: "Lincoln Siphron",
-            specialization: "Computer Programming",
-            rating: 4.9,
-            price: {
-                current: "CCL400",
-                original: "CCL480"
-            },
-            location: "Paris, France",
-            studentCount: 412,
-            photo: Photo1, // Update this path to the actual path of your image
-            stars: 5, // Assuming 5 based on the HTML
-        },
-        {
-            name: "Lincoln Siphron",
-            specialization: "Computer Programming",
-            rating: 4.9,
-            price: {
-                current: "CCL400",
-                original: "CCL480"
-            },
-            location: "Paris, France",
-            studentCount: 412,
-            photo: Photo1, // Update this path to the actual path of your image
-            stars: 5, // Assuming 5 based on the HTML
-        },
-        {
-            name: "Lincoln Siphron",
-            specialization: "Computer Programming",
-            rating: 4.9,
-            price: {
-                current: "CCL400",
-                original: "CCL480"
-            },
-            location: "Paris, France",
-            studentCount: 412,
-            photo: Photo1, // Update this path to the actual path of your image
-            stars: 5, // Assuming 5 based on the HTML
-        },
-        {
-            name: "Lincoln Siphron",
-            specialization: "Computer Programming",
-            rating: 4.9,
-            price: {
-                current: "CCL400",
-                original: "CCL480"
-            },
-            location: "Paris, France",
-            studentCount: 412,
-            photo: Photo1, // Update this path to the actual path of your image
-            stars: 5, // Assuming 5 based on the HTML
-        },
-        {
-            name: "Lincoln Siphron",
-            specialization: "Computer Programming",
-            rating: 4.9,
-            price: {
-                current: "CCL400",
-                original: "CCL480"
-            },
-            location: "Paris, France",
-            studentCount: 412,
-            photo: Photo1, // Update this path to the actual path of your image
-            stars: 5, // Assuming 5 based on the HTML
-        },
-
-    ];
-
-    const responsive = {
-        superLargeDesktop: {
-            // the naming can be any, depends on you.
-            breakpoint: { max: 4000, min: 3000 },
-            items: 5
-        },
-        desktop: {
-            breakpoint: { max: 3000, min: 1024 },
-            items: 3
-        },
-        tablet: {
-            breakpoint: { max: 1024, min: 464 },
-            items: 2
-        },
-        mobile: {
-            breakpoint: { max: 464, min: 0 },
-            items: 1
+            location: "London, UK",
+            studentCount: 256,
+            photo: "https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg", // Replace with the actual path
+            stars: 5,
         }
-    };
-
-
-    const CustomLeftArrow = ({ onClick }) => (
-        <button onClick={onClick} className="absolute left-0 z-10 cursor-pointer bg-black text-white">
-            {/* You can use an icon or text inside the button */}
-            Left
-        </button>
-    );
-
-    const CustomRightArrow = ({ onClick }) => (
-        <button onClick={onClick} className="absolute right-0 z-10 cursor-pointer bg-black text-white">
-            {/* You can use an icon or text inside the button */}
-            Right
-        </button>
-    );
+    ];
 
 
 
@@ -226,23 +75,8 @@ const ClientDashboard = () => {
                                 <h1 className='text-xl  font-bold'>Top Mentor</h1>
                                 <h1 className=' text-blue-500 font-bold flex justify-center items-center'><u>View All</u></h1>
                             </div>
-                            <div className='pt-[10px] pr-[10px] pb-[10px] pl-[0px] topMentor '>
-                                <Carousel
-                                    responsive={responsive}
-                                    swipeable={true}
-                                    draggable={false}
-                                    showDots={true}
-                                    infinite={true}
-                                    autoPlay={true}
-                                    autoPlaySpeed={3000}
-                                    keyBoardControl={true}
-                                    customTransition="all .5"
-                                    transitionDuration={500}
-                                    containerClass="carousel-container"
-                                    removeArrowOnDeviceType={["tablet", "mobile"]}
-                                    dotListClass="custom-dot-list-style "
-                                    itemClass="mx-2"
-                                >
+                            <div className='pt-[10px] pr-[10px] pb-[10px] pl-[0px] topMentor grid grid-cols-1 md:grid-cols-3 gap-2'>
+                               
                                     {mentors.map((mentor, index) => (
                                         <div key={index} className="mt-3 max-w-sm rounded overflow-hidden shadow-lg bg-white mb-4" style={{ maxHeight: '350px' }}>
                                             <img className="w-full" src={mentor.photo} alt="" style={{ height: '150px', objectFit: 'cover' }} />
@@ -260,10 +94,11 @@ const ClientDashboard = () => {
                                                         <span className="ml-2 text-gray-600">{mentor.rating} Rating</span>
                                                     </div>
                                                     <div className="flex gap-2 items-center">
-                                                        <span className="text-blue-500">
+                                                        <span className="text-blue-500 flex gap-2 justify-center items-center">
+                                                            <FaCoins/>
                                                             {mentor.price.current}
                                                         </span>
-                                                        <span className="text-gray-600"><del>{mentor.price.original}</del></span>
+                                                       
                                                     </div>
                                                 </div>
                                                 <div className="flex justify-between pt-2 pb-1">
@@ -277,7 +112,7 @@ const ClientDashboard = () => {
                                                         <span className="text-gray-600">
                                                             <IoMdContact />
                                                         </span>
-                                                        <span className="text-gray-600">{mentor.studentCount} Students</span>
+                                                        <span className="text-gray-600">{mentor.studentCount} {" "}Mentees</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -288,7 +123,7 @@ const ClientDashboard = () => {
                                             </div>
                                         </div>
                                     ))}
-                                </Carousel>
+                               
                             </div>
                         </div>
 
@@ -298,23 +133,8 @@ const ClientDashboard = () => {
                                 <h1 className=' text-blue-500 font-bold flex justify-center items-center'><u>View All</u></h1>
                             </div>
 
-                            <div className='pt-[10px] pr-[10px] pb-[10px] pl-[0px] topMentor '>
-                                <Carousel
-                                    responsive={responsive}
-                                    swipeable={true}
-                                    draggable={false}
-                                    showDots={true}
-                                    infinite={true}
-                                    autoPlay={true}
-                                    autoPlaySpeed={3000}
-                                    keyBoardControl={true}
-                                    customTransition="all .5"
-                                    transitionDuration={500}
-                                    containerClass="carousel-container"
-                                    removeArrowOnDeviceType={["tablet", "mobile"]}
-                                    dotListClass="custom-dot-list-style"
-                                    itemClass="mx-2"
-                                >
+                            <div className='pt-[10px] pr-[10px] pb-[10px] pl-[0px] topMentor grid grid-cols-1 md:grid-cols-3 gap-2'>
+                               
                                     {mentors.map((mentor, index) => (
                                         <div key={index} className="max-w-sm rounded overflow-hidden shadow-lg bg-white mb-4" style={{ maxHeight: '350px' }}>
                                             <img className="w-full" src={mentor.photo} alt="" style={{ height: '150px', objectFit: 'cover' }} />
@@ -333,10 +153,11 @@ const ClientDashboard = () => {
                                                         <span className="ml-2 text-gray-600">{mentor.rating} Rating</span>
                                                     </div>
                                                     <div className="flex gap-2 items-center">
-                                                        <span className="text-blue-500">
+                                                    <span className="text-blue-500 flex gap-2 justify-center items-center">
+                                                            <FaCoins/>
                                                             {mentor.price.current}
                                                         </span>
-                                                        <span className="text-gray-600"><del>{mentor.price.original}</del></span>
+                                                        
                                                     </div>
                                                 </div>
                                                 <div className="flex justify-between pt-2 pb-1">
@@ -350,7 +171,7 @@ const ClientDashboard = () => {
                                                         <span className="text-gray-600">
                                                             <IoMdContact />
                                                         </span>
-                                                        <span className="text-gray-600">{mentor.studentCount} Students</span>
+                                                        <span className="text-gray-600">{mentor.studentCount} {" "}Mentees</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -361,7 +182,7 @@ const ClientDashboard = () => {
                                             </div>
                                         </div>
                                     ))}
-                                </Carousel>
+                              
                             </div>
                         </div>
 
@@ -371,23 +192,8 @@ const ClientDashboard = () => {
                                 <h1 className=' text-blue-500 font-bold flex justify-center items-center'><u>View All</u></h1>
                             </div>
 
-                            <div className='pt-[10px] pr-[10px] pb-[10px] pl-[0px] topMentor '>
-                                <Carousel
-                                    responsive={responsive}
-                                    swipeable={true}
-                                    draggable={false}
-                                    showDots={true}
-                                    infinite={true}
-                                    autoPlay={true}
-                                    autoPlaySpeed={3000}
-                                    keyBoardControl={true}
-                                    customTransition="all .5"
-                                    transitionDuration={500}
-                                    containerClass="carousel-container"
-                                    removeArrowOnDeviceType={["tablet", "mobile"]}
-                                    dotListClass="custom-dot-list-style"
-                                    itemClass="mx-2"
-                                >
+                            <div className='pt-[10px] pr-[10px] pb-[10px] pl-[0px] topMentor grid grid-cols-1 md:grid-cols-3 gap-2'>
+                                
                                     {mentors.map((mentor, index) => (
                                         <div key={index} className="max-w-sm rounded overflow-hidden shadow-lg bg-white mb-4" style={{ maxHeight: '350px' }}>
                                             <img className="w-full" src={mentor.photo} alt="" style={{ height: '150px', objectFit: 'cover' }} />
@@ -406,10 +212,11 @@ const ClientDashboard = () => {
                                                         <span className="ml-2 text-gray-600">{mentor.rating} Rating</span>
                                                     </div>
                                                     <div className="flex gap-2 items-center">
-                                                        <span className="text-blue-500">
+                                                    <span className="text-blue-500 flex gap-2 justify-center items-center">
+                                                            <FaCoins/>
                                                             {mentor.price.current}
                                                         </span>
-                                                        <span className="text-gray-600"><del>{mentor.price.original}</del></span>
+                                                       
                                                     </div>
                                                 </div>
                                                 <div className="flex justify-between pt-2 pb-1">
@@ -423,7 +230,7 @@ const ClientDashboard = () => {
                                                         <span className="text-gray-600">
                                                             <IoMdContact />
                                                         </span>
-                                                        <span className="text-gray-600">{mentor.studentCount} Students</span>
+                                                        <span className="text-gray-600">{mentor.studentCount} {" "}Mentees</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -434,7 +241,7 @@ const ClientDashboard = () => {
                                             </div>
                                         </div>
                                     ))}
-                                </Carousel>
+                               
                             </div>
                         </div>
 

@@ -5,7 +5,7 @@ import Sidebar from '../../components/Sidebar.jsx';
 import Video1 from './../../assets/Video.png';
 import { PiBookOpen } from "react-icons/pi";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Profile1 from './../../assets/web.png';
+import Profile1 from '../../assets/web.png';
 import { MdEdit } from "react-icons/md";
 import { MdDelete } from "react-icons/md";
 import { RiArrowDropDownLine } from "react-icons/ri";
@@ -14,6 +14,7 @@ import Navbar from '../../components/Navbar.jsx';
 import { Link } from 'react-router-dom';
 import { FaPlus } from "react-icons/fa6";
 import AddSessionModal from '../../components/AddSessionModal.jsx';
+
 
 const categories = {
     'all Sessions': [
@@ -26,7 +27,7 @@ const categories = {
             },
             member: {
                 name: "Kaiya Workman",
-                profileImage: "Profile1", // Placeholder for actual image path
+                'profileImage': Profile1, // Placeholder for actual image path
             },
         },
         {
@@ -38,7 +39,7 @@ const categories = {
             },
             member: {
                 name: "Jordan Lee",
-                profileImage: "Profile2", // Placeholder for actual image path
+                'profileImage': Profile1, // Placeholder for actual image path
             },
         },
     ],
@@ -52,14 +53,26 @@ const categories = {
             },
             member: {
                 name: "Alex Smith",
-                profileImage: "Profile3", // Placeholder for actual image path
+                'profileImage': Profile1, // Placeholder for actual image path
             },
         },
     ],
     rescheduled: [
+        {
+            title: "Scheduled Session with LMN",
+            details: {
+                classTime: "11:00 - 11:45",
+                classDay: "Friday, 27 Oct",
+                scheduledTime: "05:16:20:30",
+            },
+            member: {
+                name: "Alex Smith",
+                'profileImage': Profile1, // Placeholder for actual image path
+            },
+        },
         // This category is empty for now but can be populated similarly
     ],
-    complete: [
+    completed: [
         {
             title: "Completed Session with DEF",
             details: {
@@ -69,33 +82,34 @@ const categories = {
             },
             member: {
                 name: "Taylor Brown",
-                profileImage: "Profile4", // Placeholder for actual image path
+                'profileImage': Profile1, // Placeholder for actual image path
             },
         },
+        // ... other completed sessions
     ],
-    cancel: [
+    cancelled: [
         // This category is empty for now but can be populated similarly
     ],
 };
 
 const lastWeekSessions = [
     {
-        type: "Biology",
+        type: "Session with ABC",
         date: "27 March 2020, at 12:30 PM",
         earnings: 2350,
     },
     {
-        type: "Mathematics",
+        type: "Session with ABC",
         date: "26 March 2020, at 10:00 AM",
         earnings: 2000,
     },
     {
-        type: "Physics",
+        type: "Session with ABC",
         date: "25 March 2020, at 2:30 PM",
         earnings: 2200,
     },
     {
-        type: "Chemistry",
+        type: "Session with ABC",
         date: "24 March 2020, at 11:00 AM",
         earnings: 2100,
     },
@@ -145,18 +159,40 @@ const Session = () => {
 
 
     return (
-        <div className='flex gap-2 overflow-hidden'>
-            <div className='max-sm:hidden'><Sidebar liname={"Session"}/></div>
-            <div className='w-full  py-[15px]'>
+        <div className='flex gap-[30px]  bg-gray-100 overflow-hidden'>
+            <div className='max-sm:hidden'><Sidebar liname={"Session"} /></div>
+            <div className='w-full  mr-[12px] '>
                 <Navbar Navtext={"Session"} />
-                <div className='m-[20px] text-[18px] font-[600]'>
+                {/* <div className='m-[20px] text-[18px] font-[600]'>
                     <Link to={"/"}>Dashboard</Link> &gt; Session
+                </div> */}
+
+
+
+
+
+
+                <div className='messageChartVideo'>
+                    <div className='messageChartVideo1'>
+                        <img src={Video1} />
+                        <p>Next Session: 2023-10-23 At 07:00 With</p>
+                    </div>
+                    <div className='messageChartVideo2'>
+                        <p>Time Left :  07:00</p>
+                        <div className='messageChartVideo3'>
+                            <div className='bookOpen'>
+                                <PiBookOpen />
+                            </div>
+                            <p>Enter Session</p>
+                        </div>
+                    </div>
                 </div>
+
 
                 {/* Video and upcoming session info omitted for brevity */}
 
-                <div className='flex  max-md:flex-col gap-6 my-2'>
-                    <div className='md:w-[50vw] w-full shadow-md md:h-[75VH] overflow-y-auto p-4 rounded-md bg-gray-50'>
+                <div className='flex  shadow-md md:h-[65VH] overflow-y-auto    max-md:flex-col gap-6 my-3'>
+                    <div className='md:w-[50vw] w-full shadow-md md:h-[65VH] overflow-y-auto p-4 rounded-md bg-gray-50'>
                         {/* Buttons and add new session link omitted for brevity */}
                         <div className='flex my-4 overflow-x-auto'>
                             <div className='flex space-x-4 min-w-max'>
@@ -179,7 +215,7 @@ const Session = () => {
                                 <p style={{ textTransform: 'uppercase' }}>{currentCategory}</p>
 
                                 {/* <div className='flex gap-2 justify-center items-center cursor-pointer font-[600] text-[#0078C5]' onClick={openModal}><FaPlus /> Add New Sessions</div> */}
-                                <div className='flex gap-2 justify-center items-center cursor-pointer font-[600] text-[#0078C5]' ><FaPlus /> Add New Sessions</div>
+                                {/* <div className='flex font-bold gap-2 justify-center items-center cursor-pointer  text-[#0078C5]' ><FaPlus /> Add New Sessions</div> */}
 
                                 <AddSessionModal isOpen={isModalOpen} onClose={closeModal} onAdd={addNewSession} />
                             </div>
@@ -195,35 +231,38 @@ const Session = () => {
                                     </div>
 
                                     <div>
-                                        <p className='font-bold'>Member</p>
+                                        <p className='font-bold'>Mentee</p>
                                         <div className='flex items-center gap-2 mt-[10px]'>
                                             <img className='w-10 h-10 rounded-full' src={session.member.profileImage} alt='Member Profile' />
                                             <p>{session.member.name}</p>
                                         </div>
                                     </div>
-                                    <div className='flex gap-4 mt-2 justify-center items-center'>
-                                        <div
-                                            className='flex gap-1 justify-center items-center cursor-pointer text-red-600'
-                                            onClick={() => handleDelete(currentCategory, index)}
-                                        >
-                                            <MdDelete />
-                                            <p>DELETE</p>
+
+                                    {currentCategory != 'completed' && (
+                                        <div className='flex gap-4 mt-2 justify-center items-center'>
+                                            <div
+                                                className='flex gap-1 justify-center items-center cursor-pointer text-red-600'
+                                                onClick={() => handleDelete(currentCategory, index)}
+                                            >
+                                                <MdDelete />
+                                                <p>Cancel</p>
+                                            </div>
+                                            <div
+                                                className='flex gap-1 justify-center items-center cursor-pointer hover:text-green-600'
+                                                onClick={() => handleReschedule(currentCategory, index)}
+                                            >
+                                                <MdEdit />
+                                                <p>Reschedule</p>
+                                            </div>
                                         </div>
-                                        <div
-                                            className='flex gap-1 justify-center items-center cursor-pointer hover:text-green-600'
-                                            onClick={() => handleReschedule(currentCategory, index)}
-                                        >
-                                            <MdEdit />
-                                            <p>Reschedule</p>
-                                        </div>
-                                    </div>
+                                    )}
                                 </div>
                             ))}
                         </div>
                     </div>
 
                     {/* Last week's sessions mapping */}
-                    <div className='md:w-[30vw] w-full shadow-md md:h-[75vh] overflow-y-auto p-4 rounded-md'>
+                    <div className='md:w-[30vw] w-full shadow-md md:h-[75vh] overflow-y-auto p-2 rounded-md'>
                         <div className='lastWeekSection1'>
                             <p>Last Week Sessions</p>
                             <div>
@@ -233,7 +272,7 @@ const Session = () => {
                         {lastWeekSessions.map((session, index) => (
                             <div key={index} className='lastWeekNews mt-[10px]'>
                                 <div className='classNews'>
-                                    <div className='classEdit border-2 border-red-600'><RiArrowDropDownLine /></div>
+                                    {/* <div className='classEdit border-2 border-red-600'><RiArrowDropDownLine /></div> */}
                                     <div>
                                         <p><b>{session.type}</b></p>
                                         <p>{session.date}</p>

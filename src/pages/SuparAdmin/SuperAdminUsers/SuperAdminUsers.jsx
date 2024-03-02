@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { CiEdit } from "react-icons/ci";
 import { MdDelete } from "react-icons/md";
 import SuperAdminSide from '../SuperAdminSide/SuperAdminSide';
-import ClientNavbar from '../../MentorClient/ClientNavbar/ClientNavbar';
 import MobileNav from '../../../components/Mobile/MobileNav';
+import SuperAdminNavbar from '../SuperAdminNav/SuperAdminNav';
+import { CiEdit } from "react-icons/ci";
 
 const SuperAdminUserTable = () => {
     const users = [
@@ -19,90 +19,72 @@ const SuperAdminUserTable = () => {
         // Add more user data as needed
     ];
 
-    const [selectedOption, setSelectedOption] = useState('Pending');
-
-    const dropdownOptions = ['Pending', 'Resolve', 'In Progress'];
 
     return (
-        <div className='flex gap-[30px]'>
-            <div className="max-sm:hidden"> <SuperAdminSide /></div>
-            <div className=' w-[100%] max-sm:ml-[10px] '>
-                <div className="sm:hidden  ml-[10px]"> <MobileNav /> </div>
-                <div className='max-sm:hidden'> <ClientNavbar Navtext={"Users"} /></div>
-                <div className='max-sm:hidden  flex justify-between mt-[20px] '>
-                    <div>
-                        <p className=' text-base font-bold'>Manage Users</p>
-                        <p className=' text-gray-600'>Administer and oversee user accounts and privileges within the platform.</p>
+        <div className='flex flex-col md:flex-row h-screen md:h-full bg-gray-100'>
+            <div className="max-sm:hidden"><SuperAdminSide  liname={"Super Admin Table"} /></div>
+            <div className='w-full md:w-[calc(100% - 250px)] mx-4 md:mx-0 md:ml-4'>
+                <div className="sm:hidden ml-4"><MobileNav /></div>
+                <div className='max-sm:hidden'><SuperAdminNavbar Navtext={"Users"} /></div>
+
+                <div className='max-sm:hidden flex flex-col md:flex-row items-center justify-between mt-4 md:mt-8'>
+                    <div className="md:ml-4">
+                        <p className='text-lg font-bold'>Manage Users</p>
+                        <p className='text-gray-600'>Administer and oversee user accounts and privileges within the platform.</p>
                     </div>
-                    <div className='flex gap-[20px]'>
-                        <button className="text-white bg-blue-500 h-[40px] w-[150px] flex justify-center items-center rounded-lg">Add Admin</button>
-                        <button className="text-white bg-blue-500 h-[40px] w-[150px] flex justify-center items-center rounded-lg">Add User</button>
+                    <div className='flex gap-4 mt-4 md:mt-0'>
+                        <button className="text-white bg-blue-500 h-10 md:h-[40px] w-24 md:w-[150px] flex justify-center items-center rounded-lg">Add Admin</button>
+                        <button className="text-white bg-blue-500 h-10 md:h-[40px] w-24 md:w-[150px] flex justify-center items-center rounded-lg">Add User</button>
                     </div>
                 </div>
-                <div className="sm:hidden flex gap-[20px] mt-[20px]">
-                    <p className=' text-base font-bold'>Manage Users</p>
-                    <button className="text-white bg-blue-500 h-[40px] w-[100px] flex justify-center items-center rounded-lg">Add Admin</button>
-                    <button className="text-white bg-blue-500 h-[40px] w-[100px] flex justify-center items-center rounded-lg">Add User</button>
+
+                <div className="sm:hidden flex flex-col gap-2 mt-4 md:mt-8">
+                    <p className='text-lg font-bold ml-4'>Manage Users</p>
+                    <div className='flex gap-4 ml-4'>
+                        <button className="text-white bg-blue-500 h-10 w-24 flex justify-center items-center rounded-lg">Add Admin</button>
+                        <button className="text-white bg-blue-500 h-10 w-24 flex justify-center items-center rounded-lg">Add User</button>
+                    </div>
                 </div>
-                <div className="sm:hidden ">
+                <div className="sm:hidden ml-4">
                     <p>Administer and oversee user accounts and privileges within the platform.</p>
                 </div>
-                <div className='mt-[10px] shadow-lg  max-sm:mt-[10px]'>
-                    <div className='w-[97%] flex justify-between max-sm:mt-[10px] '>
-                        <div className="container mx-auto p-4 max-sm:p-0   max-sm:overflow-y-auto max-sm:overflow-x-auto">
-                            <table className="min-w-full  bg-white border border-gray-300">
-                                <thead className=''>
-                                    <tr>
-                                        <th className="py-2 px-4 bg-blue-500 text-white  border-b">Sl No.</th>
-                                        <th className="py-2 px-4 bg-blue-500 text-white  border-b">Name</th>
-                                        <th className="py-2 px-4 bg-blue-500 text-white  border-b">Type</th>
-                                        <th className="py-2 px-4 bg-blue-500 text-white border-b">Email</th>
-                                        <th className="py-2 px-4 bg-blue-500 text-white border-b">Contact Number</th>
-                                        <th className="py-2 px-4 bg-blue-500 text-white border-b">Account Created At</th>
-                                        <th className="py-2 px-4 bg-blue-500 text-white border-b">Role Created At</th>
-                                        <th className="py-2 px-4 bg-blue-500 text-white border-b">Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {users.map((user, index) => (
-                                        <tr key={index}>
-                                            <td className="py-2 px-4 border-b">{user.sl}</td>
-                                            <td className="py-2 px-4 border-b">{user.name}</td>
-                                            <td className="py-2 px-4 border-b">{user.type}</td>
-                                            <td className="py-2 px-4 border-b">{user.email}</td>
-                                            <td className="py-2 px-4 border-b">{user.contactNumber}</td>
-                                            <td className="py-2 px-4 border-b">{user.accountCreatedAt}</td>
-                                            <td className="py-2 px-4 border-b">{user.roleCreatedAt}</td>
-                                            <td className="py-2 px-4 border-b flex items-center">
-                                                <div className="flex gap-[10px] relative">
-                                                    <div className='flex justify-between items-center'>
-                                                        <MdDelete className='text-red-500' />
-                                                        <p className='text-red-500'> Delete</p>
-                                                    </div>
-                                                    <select>
-                                                        <option className='' value="option1" style={{ color: 'green' }}>Resolved</option>
-                                                        <option className='text-' value="option2" style={{ color: 'orange' }}>Pending</option>
-                                                        <option className='text-' value="option3" style={{ color: 'blue' }}>In Progress</option>
-                                                    </select>
-                                                </div>
-                                                <ul className="absolute hidden bg-white border border-gray-300 mt-2 p-2 rounded w-[120px]">
-                                                    {dropdownOptions.map((option) => (
-                                                        <li
-                                                            key={option}
-                                                            onClick={() => setSelectedOption(option)}
-                                                            className={`cursor-pointer py-1 px-2 hover:bg-gray-100 ${selectedOption === option ? 'bg-gray-200' : ''}`}
-                                                        >
-                                                            {option}
-                                                        </li>
-                                                    ))}
-                                                </ul>
-                                            </td>
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+
+                <div className='  shadow-sm ring-2 ring-gray-300 ring-opacity-50 overflow-x-auto mt-4 md:mt-8'>
+                    <table className="w-full md:max-w-[calc(100% - 20px)] bg-white border border-gray-300">
+                        <thead>
+                            <tr>
+                                <th className="py-2 px-4 text-nowrap bg-blue-500 text-white border-b">Sl No.</th>
+                                <th className="py-2 px-4 text-nowrap bg-blue-500 text-white border-b">Name</th>
+                                <th className="py-2 px-4 text-nowrap bg-blue-500 text-white border-b">Type</th>
+                                <th className="py-2 px-4 text-nowrap bg-blue-500 text-white border-b">Email</th>
+                                <th className="py-2 px-4 text-nowrap bg-blue-500 text-white border-b">Contact Number</th>
+                                <th className="py-2 px-4 text-nowrap bg-blue-500 text-white border-b">Account Created At</th>
+                                <th className="py-2 px-4 text-nowrap bg-blue-500 text-white border-b">Role Created At</th>
+                                <th className="py-2 px-4 text-nowrap bg-blue-500 text-white border-b">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {users.map((user, index) => (
+                                <tr key={index}>
+                                    <td className="py-2 px-4  border-none ">{user.sl}</td>
+                                    <td className="py-2 px-4  border-none ">{user.name}</td>
+                                    <td className="py-2 px-4  border-none ">{user.type}</td>
+                                    <td className="py-2 px-4  border-none ">{user.email}</td>
+                                    <td className="py-2 px-4  border-none ">{user.contactNumber}</td>
+                                    <td className="py-2 px-4  border-none ">{user.accountCreatedAt}</td>
+                                    <td className="py-2 px-4  border-none ">{user.roleCreatedAt}</td>
+                                    <td className="py-2 px-4  border-none flex  gap-[30px] ">
+                                        <CiEdit  className=' cursor-pointer' />
+
+                                        <MdDelete className='text-red-500 cursor-pointer' />
+
+
+
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

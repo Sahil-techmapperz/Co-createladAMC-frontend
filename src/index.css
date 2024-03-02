@@ -2,7 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-
+/* Add this CSS rule */
+.fc-event {
+  cursor: pointer;
+}
 
 /* CustomScrollbar.css */
 .overflow-x-auto::-webkit-scrollbar {
@@ -51,3 +54,15 @@
     scrollbar-color: #888 #f0f0f0;
   }
   
+
+  @media (max-width:400px) {
+    .fc .fc-toolbar{
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-start;
+    }   
+    .fc-toolbar-chunk{
+      display: flex;
+      gap: 20px;
+    }
+}

@@ -16,10 +16,7 @@ import NavbarSide from './Mobile/NavbarSide';
 import ClientDashboard from '../pages/MentorClient/ClientDashboard/ClientDashboard';
 import ClientNavbar from '../pages/MentorClient/ClientNavbar/ClientNavbar';
 import ClientIntroSession from '../pages/MentorClient/ClientIntroSession/ClientIntroSession';
-import SuparAdmin from '../pages/SuparAdmin/SuperAdminDashboard/SuparAdmin';
-import SuperAdminUserTable from '../pages/SuparAdmin/SuperAdminUsers/SuperAdminUsers';
-import SuperAdminSide from '../pages/SuparAdmin/SuperAdminSide/SuperAdminSide';
-import SuperAdminIssueReport from '../pages/SuparAdmin/SuperAdminIssuReport/SuperAdminIssuReport';
+
 import ReactBarchart from '../pages/SuparAdmin/ReactBarchart/ReactBarchart';
 import ClientMyWallet from '../pages/MentorClient/ClientMyWallet/ClientMyWallet';
 import ClientSidebar from '../pages/MentorClient/ClientSidebar/ClientSidebar';
@@ -29,6 +26,25 @@ import Signin from '../pages/Login';
 import ProtectedRoute from './ProtectedRoute';
 import NotFoundPage from '../pages/NotFoundPage';
 import ClientMyAcc from '../pages/MentorClient/ClientMyAccount/ClientMyAcc';
+
+
+
+import SuperAdminDashboard from '../pages/SuparAdmin/SuperAdminDashboard/SuperAdminDashboard';
+import SuperAdminUserTable from '../pages/SuparAdmin/SuperAdminUsers/SuperAdminUsers';
+import SuperAdminSide from '../pages/SuparAdmin/SuperAdminSide/SuperAdminSide';
+import SuperAdminNoticeBoard from '../pages/SuparAdmin/SuperAdminNoticeBoard/SuperAdminNoticeBoard';
+import SuperAdminNavbar from '../pages/SuparAdmin/SuperAdminNav/SuperAdminNav';
+import SuperAdminAccount from '../pages/SuparAdmin/SuperAdminAccount/SuperAdminAccount';
+import SuperAdminIssueReport from '../pages/SuparAdmin/SuperAdminIssuReport/SuperAdminIssuReport';
+import MentorSecuritypage from '../pages/Mentor/MentorSecurityPage';
+import MentorSkills from './MentorSkills';
+import HelpSupportPage from './HelpSupportPage';
+import ClientPersonalInfoPersonalInfo from '../pages/MentorClient/ClientPersonalInfo/ClientPersonalInfoPersonalInfo';
+import ClientHelpSupportPage from '../pages/MentorClient/ClientHelp/ClientHelpSupportPage';
+import MentorSecurity from '../pages/MentorClient/Mentorsecurity/Mentorsecurity';
+import MentorPersonal from '../pages/MentorClient/MentorPersonalEdit/MentorPersonal';
+import MentorSkillsformentor from './MentorSkillsformentor';
+
 
 
 
@@ -49,6 +65,7 @@ const AllRoute = () => {
         <Route path='/calender' element={<Calender />} />
         <Route path='/session' element={<Session />} />
         <Route path='/PersonalInfo' element={<PersonalInfo />} />
+        <Route path='/mentorskils' element={<MentorSkillsformentor />} />
         <Route path='/chatMessage' element={
           <ProtectedRoute>
             <MessageChat />
@@ -59,16 +76,28 @@ const AllRoute = () => {
         <Route path='/clientDashboard' element={<ClientDashboard />} />
         <Route path='/clientNavbar' element={<ClientNavbar />} />
         <Route path='/clientIntroSession' element={<ClientIntroSession />} />
-        <Route path='/suparAdmin' element={<SuparAdmin />} />
-        <Route path='/SuperAdminUserTable' element={<SuperAdminUserTable />} />
-        <Route path='/superAdminSide' element={<SuperAdminSide />} />
-        <Route path='/superAdminIssueReport' element={<SuperAdminIssueReport />} />
-        <Route path='/reactBarchart' element={<ReactBarchart />} />
         <Route path='/clientMyWallet' element={<ClientMyWallet />} />
         <Route path='/clientSideBar' element={<ClientSidebar />} />
         <Route path='/clientSnCalender' element={<ClientSnCalender />} />
         <Route path='/clientNotice' element={<ClientNotice />} />
         <Route path='/clientMyAccount' element={<ClientMyAcc />} />
+        <Route path='/clientsecurity' element={<MentorSecurity />} /> 
+        <Route path='/mentorsecurity' element={<MentorSecuritypage />} /> 
+        <Route path='/mentorskill' element={<MentorSkills />} />
+        <Route path='/help' element={<HelpSupportPage />} />
+        <Route path='/clientPersonalInfo' element={<MentorPersonal />} />
+        <Route path='/clienthelp' element={<ClientHelpSupportPage />} />
+
+
+        <Route path='/superAdminDashboard' element={<SuperAdminDashboard />} />
+        <Route path='/superAdminUserTable' element={<SuperAdminUserTable />} />
+        <Route path='/superAdminSidebar' element={<SuperAdminSide />} />
+        <Route path='/superAdminNavbar' element={<SuperAdminNavbar/>} />
+        <Route path='/superAdminAccount' element={<SuperAdminAccount/>} />
+        <Route path='/superAdminNoticeBoard' element={<SuperAdminNoticeBoard />} />
+        <Route path='/superAdminIssueReport' element={<SuperAdminIssueReport />} />
+        <Route path='/reactBarchart' element={<ReactBarchart />} />
+
         <Route path='*' element={<NotFoundPage />} />
       </Routes>
     </>

@@ -60,47 +60,51 @@ const ClientIntroSession = () => {
 
 
 
-                            <div className='absolute border rounded-md flex items-center justify-center h-[70px] bottom-0 w-[98%] bg-slate-900 bg-opacity-50 left-0' >
-                                <p className='text-sm text-white font-bold'>Thursday 09, 2022</p>
+                            <div className='max-md:hidden absolute cursor-pointer border rounded-md flex items-center justify-center h-[70px] bottom-0 w-[98%] bg-[#1E1E1E] bg-opacity-[86%] left-0' >
+                                <p className='text-sm text-white font-bold'>Please Join our Session to Know More</p>
                             </div>
 
 
 
                             <div>
-                                <div className='ml-[12px] mt-[12px] mr-[12px] mb-10'>
-                                    <p className='text-sm font-bold'>Students Comments </p>
-                                    <div className='flex gap-[20px] justify-between items-center mt-[10px]'>
-                                        <div className='flex  gap-[20px] '>
-                                            <img className='w-10 h-10  rounded-full object-cover' src={Profile} alt="Profile" />
-                                            <p className='text-sm flex justify-center items-center font-bold'>Philip Gouse</p>
-                                            <p className='text-sm flex justify-center items-center'> Iste quibusdam blanditiis praesentium suscipit tempore fugit vitae, sapiente minus iusto eligendi!</p>
-
+                                <div class='px-3 mt-3 mb-10 sm:px-4 md:ml-12 md:mt-12 md:mr-12'>
+                                    <p className='text-sm font-bold'>Students Comments</p>
+                                    <div className='flex flex-col gap-4 mt-4 md:flex-row md:justify-between md:items-center md:gap-5'>
+                                        <div className='flex flex-col md:flex-row md:gap-5'>
+                                            <img className='w-10 h-10 rounded-full object-cover' src={Profile} alt="Profile" />
+                                            <div>
+                                                <p className='text-sm font-bold'>Philip Gouse</p>
+                                                <p className='text-sm'>Iste quibusdam blanditiis praesentium suscipit tempore fugit vitae, sapiente minus iusto eligendi!</p>
+                                            </div>
                                         </div>
-                                        <p className='text-sm flex justify-center items-center font-bold'>Thurday 09 2022</p>
-
+                                        <p className='text-sm font-bold'>Thursday 09 2022</p>
+                                        
                                     </div>
-                                    <div className='flex gap-[20px] justify-between items-center mt-[10px]'>
-                                        <div className='flex  gap-[20px] '>
-                                            <img className='w-10 h-10  rounded-full object-cover' src={Profile} alt="Profile" />
-                                            <p className='text-sm flex justify-center items-center font-bold'>Philip Gouse</p>
-                                            <p className='text-sm flex justify-center items-center'> Iste quibusdam blanditiis praesentium suscipit tempore fugit vitae, sapiente minus iusto eligendi!</p>
-
+                                    <div className='flex flex-col gap-4 mt-4 md:flex-row md:justify-between md:items-center md:gap-5'>
+                                        <div className='flex flex-col md:flex-row md:gap-5'>
+                                            <img className='w-10 h-10 rounded-full object-cover' src={Profile} alt="Profile" />
+                                            <div>
+                                                <p className='text-sm font-bold'>Philip Gouse</p>
+                                                <p className='text-sm'>Iste quibusdam blanditiis praesentium suscipit tempore fugit vitae, sapiente minus iusto eligendi!</p>
+                                            </div>
                                         </div>
-                                        <p className='text-sm flex justify-center items-center font-bold'>Thurday 09 2022</p>
-
+                                        <p className='text-sm font-bold'>Thursday 09 2022</p>
+                                        
                                     </div>
-                                    <div className='flex gap-[20px] justify-between items-center mt-[10px]'>
-                                        <div className='flex  gap-[20px] '>
-                                            <img className='w-10 h-10  rounded-full object-cover' src={Profile} alt="Profile" />
-                                            <p className='text-sm  flex justify-center items-center font-bold'>Philip Gouse</p>
-                                            <p className='text-sm  flex justify-center items-center'> Iste quibusdam blanditiis praesentium suscipit tempore fugit vitae, sapiente minus iusto eligendi!</p>
-
+                                    <div className='flex flex-col gap-4 mt-4 md:flex-row md:justify-between md:items-center md:gap-5'>
+                                        <div className='flex flex-col md:flex-row md:gap-5'>
+                                            <img className='w-10 h-10 rounded-full object-cover' src={Profile} alt="Profile" />
+                                            <div>
+                                                <p className='text-sm font-bold'>Philip Gouse</p>
+                                                <p className='text-sm'>Iste quibusdam blanditiis praesentium suscipit tempore fugit vitae, sapiente minus iusto eligendi!</p>
+                                            </div>
                                         </div>
-                                        <p className='text-sm  flex justify-center items-center font-bold'>Thurday 09 2022</p>
-
+                                        <p className='text-sm font-bold'>Thursday 09 2022</p>
+                                        
                                     </div>
                                 </div>
                             </div>
+
 
                         </div>
 
